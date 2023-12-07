@@ -1,8 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 import { Linking } from "react-native";
+import SplashScreen from 'react-native-splash-screen'
 
 import AppForceUpdateContent from "../components/ui/AppForceUpdateContent";
 import { appCurrentVersion, isIos } from "../constants/CommonConsstats";
@@ -19,10 +19,10 @@ export function useAppReady(
   const appSetting = useAppReadyStore((state) => state.appSetting)
   const { showModal } = useModalContext()
 
-  const [fontsLoaded] = useFonts({
-    "Roboto-MedItalic": require("../assets/fonts/Roboto-MediumItalic.ttf"),
-    "Roboto-Med": require("../assets/fonts/Roboto-Medium.ttf"),
-  });
+  // const [fontsLoaded] = useFonts({
+  //   "Roboto-MedItalic": require("../assets/fonts/Roboto-MediumItalic.ttf"),
+  //   "Roboto-Med": require("../assets/fonts/Roboto-Medium.ttf"),
+  // });
 
 
 
@@ -32,7 +32,7 @@ export function useAppReady(
 
   useEffect(() => {
     getReadyApp()
-  }, [fontsLoaded, appSetting]);
+  }, [appSetting]);
 
 
   async function handleUpdatePress() {
@@ -54,11 +54,12 @@ export function useAppReady(
       // Alert.alert("Update Required", "please update app to the new version", [{ text: "update", onPress: () => { Linking.openURL("https://beautifier.io/") } }])
     }
 
-    if (fontsLoaded && !forceUpdate) {
+    if (!forceUpdate) {
       setAppIsReady(true);
       setTimeout(async () => {
         if (!forceUpdate) {
-          await SplashScreen.hideAsync()
+          SplashScreen.hide();
+
         }
       }, 3000);;
     }

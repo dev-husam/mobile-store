@@ -4,7 +4,6 @@ import { getUniqueId, getManufacturer, getBuildNumber, getBuildId, getVersion } 
 const deviceWidth = Dimensions.get("screen").width;
 const deviceHeight = Dimensions.get('screen').height;
 const isIos = Platform.OS === "ios"
-import Constants from 'expo-constants';
 
 
 const AsyncStorageConstants = {
@@ -13,8 +12,7 @@ const AsyncStorageConstants = {
     languageKey: "lang"
 }
 
-const appCurrentVersion = isIos ? Constants?.easConfig["ios"]?.buildNumber : Constants?.easConfig["android"]?.versionCode
-const appVersionDeviceINfo = getVersion()
+const appVersion = getVersion()
 const appBuildNumber = getBuildNumber()
 
 export {
@@ -22,7 +20,6 @@ export {
     deviceWidth,
     deviceHeight,
     isIos,
-    appCurrentVersion,
-    appVersionDeviceINfo,
+    appVersion,
     appBuildNumber
 }
