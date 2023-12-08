@@ -9,7 +9,8 @@ import { AppSizes } from '../../constants/Sizes'
 import { horizontalScale, verticalScale } from '../../helpers/Scalling'
 import useFetchV2 from '../../hooks/useFetchV2'
 import { AppApiPath } from '../../apis/apisPath'
-import ServiceListPH from '../placeHolders/ServiceListPH'
+// import ServiceListPH from '../placeHolders/ServiceListPH'
+import { ActivityIndicator } from 'react-native'
 
 
 const renderItem = ({ item }: any) => (
@@ -28,7 +29,10 @@ const ServicesList = () => {
     }, [responseData])
 
     if (loading) {
-        return (<ServiceListPH />)
+        // return (<ServiceListPH />)
+        return (<ActivityIndicator />)
+
+
     }
 
     return (

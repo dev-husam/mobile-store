@@ -1,6 +1,5 @@
-import { StyleSheet, Platform, SafeAreaView, ViewStyle } from "react-native";
-import Constants from "expo-constants";
-import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Platform, SafeAreaView, ViewStyle, StatusBar } from "react-native";
+
 import { ReactNode } from "react";
 
 
@@ -12,7 +11,11 @@ interface Props {
 const Screen = ({ children, style }: Props) => {
   return (
     <>
-      <StatusBar style="light" />
+      <StatusBar
+        animated={true}
+        barStyle="light-content"
+        backgroundColor="#6a51ae"
+      />
       <SafeAreaView style={[styles.AndroidSafeArea, style]}>
         {children}
       </SafeAreaView>

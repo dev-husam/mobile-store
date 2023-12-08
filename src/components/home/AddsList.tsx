@@ -5,7 +5,8 @@ import { useFetch } from '../../hooks/useFetch.hook'
 import { horizontalScale, verticalScale } from '../../helpers/Scalling'
 import useFetchV2 from '../../hooks/useFetchV2'
 import { AppApiPath } from '../../apis/apisPath'
-import AddsListPh from '../placeHolders/AddsListPh'
+import { ActivityIndicator } from 'react-native'
+// import AddsListPh from '../placeHolders/AddsListPh'
 
 const AddsList = () => {
     const { responseData: adds, loading } = useFetchV2({ method: "get", url: AppApiPath.addsListApi })
@@ -13,7 +14,8 @@ const AddsList = () => {
 
 
     if (loading) {
-        return <AddsListPh />
+        return <ActivityIndicator />
+        // return <AddsListPh />
     }
 
     return (

@@ -1,10 +1,10 @@
 import { Pressable, StyleSheet, Text, View, ViewStyle } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import React, { FC } from "react";
 import { AppColors, AppColorsTheme2 } from "../../constants/Colors";
 import { AppFonts } from "../../constants/fonts";
 import { AppSizes } from "../../constants/Sizes";
 import { StyleProp } from "react-native";
+import AppIcon from "./appIcon";
 
 const OutLinedButton = ({ disabled = false, onPress, icon, children, style }: {
   disabled?: boolean
@@ -22,7 +22,8 @@ const OutLinedButton = ({ disabled = false, onPress, icon, children, style }: {
       }}
     >
       {icon && (
-        <Ionicons
+        <AppIcon
+          type="Ionicons"
           style={styles.icon}
           name={icon}
           size={16}

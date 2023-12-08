@@ -1,6 +1,6 @@
 import { Modal, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import * as Updates from 'expo-updates';
+import RnRestart from "react-native-restart"
 
 import AppPressable from './AppPressable'
 import AppText from './AppText'
@@ -15,7 +15,8 @@ const AppPickerEnvModal = ({ isOpen, setIsOpen, setIsIpModalOpen }) => {
     async function handlePickedEnv(item) {
         await setStorageValues(AsyncStorageConstants.env, JSON.stringify(item))
         setIsOpen()
-        await Updates.reloadAsync();
+        RnRestart.restart()
+        // await Updates.reloadAsync();
     }
 
 

@@ -43,7 +43,7 @@ const AuthedReadyApp = () => {
 
     //userLocation
     const updateUserLocation = useUserLocationStore((state) => state.updateUserLocation)
-    const { currentLocation, isAppDenied } = userCurrentLocation()
+    const { currentLocation } = userCurrentLocation()
     useEffect(() => {
         if (currentLocation) {
             const location = { latitude: currentLocation?.coords.latitude, longitude: currentLocation?.coords.longitude }
@@ -60,7 +60,7 @@ const AuthedReadyApp = () => {
     return (
         <>
             <DrawerStackNavigator />
-            <AppAlert
+            {/* <AppAlert
                 title='location permissions required'
                 message='permission should be granted in order to use the app'
                 confirmMessage='open setting'
@@ -68,7 +68,7 @@ const AuthedReadyApp = () => {
                     Linking.openSettings()
                 }}
                 onCancel={() => BackHandler.exitApp()}
-                visible={isAppDenied} />
+                visible={isAppDenied} /> */}
         </>
     )
 }

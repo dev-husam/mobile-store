@@ -14,6 +14,7 @@ import { horizontalScale, verticalScale } from '../../helpers/Scalling'
 import NearByVehiclePH from '../placeHolders/NearByVehiclePH'
 import useFetchV2 from '../../hooks/useFetchV2'
 import { AppApiPath } from '../../apis/apisPath'
+import { ActivityIndicator } from 'react-native'
 
 
 const renderItem = ({ item }: any) => (
@@ -42,7 +43,8 @@ const VehiclesList = () => {
 
     if (loading) {
         return (
-            <NearByVehiclePH />
+            // <NearByVehiclePH />
+            <ActivityIndicator />
         )
 
     }

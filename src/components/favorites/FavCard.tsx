@@ -1,6 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Ionicons } from "@expo/vector-icons";
 import { useTranslation } from "react-i18next";
 
 import { AppColors } from "../../constants/Colors";
@@ -9,6 +8,7 @@ import {
   useFavouriteStore,
   useFavouriteStoreAsync,
 } from "../../store/Favorites.store";
+import AppIcon from "../ui/appIcon";
 
 const FavCard = ({ item, isOdd }: { item: Location; isOdd: boolean }) => {
   const { t } = useTranslation();
@@ -64,7 +64,7 @@ const FavCard = ({ item, isOdd }: { item: Location; isOdd: boolean }) => {
         }}
         style={{ position: "absolute", top: 5, right: 8 }}
       >
-        <Ionicons name="close-sharp" size={28} color="black" />
+        <AppIcon name="close-sharp" size={28} color="black" />
       </Pressable>
     </View>
   );

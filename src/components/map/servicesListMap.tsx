@@ -3,13 +3,15 @@ import React from 'react'
 import ServiceDetail from './ServiceDetail'
 import { ServiceDummy } from '../../constants/data'
 import { useServicesStore } from '../../store/services.store'
-import MapServiceListPh from '../placeHolders/MapServiceListPH'
+import { ActivityIndicator } from 'react-native'
+// import MapServiceListPh from '../placeHolders/MapServiceListPH'
 
 const ServicesListMap = ({ selectedServiceId, setActiveServiceId }) => {
     const services = useServicesStore((state) => state.services)
     if (!services || services.length == 0) {
         return (
-            <MapServiceListPh />
+            // <MapServiceListPh />
+            <ActivityIndicator />
         )
     }
 

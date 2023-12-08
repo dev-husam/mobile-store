@@ -6,19 +6,17 @@ import {
   View,
   I18nManager,
 } from "react-native";
-
 import React, { FC } from "react";
-import { Ionicons } from "@expo/vector-icons";
 import { useTranslation } from "react-i18next";
-// import * as Updates from "expo-updates";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as Updates from 'expo-updates';
-import { AppColors, AppColorsTheme2 } from "../constants/Colors";
+import RNRestart from 'react-native-restart';
+
+import { AppColorsTheme2 } from "../constants/Colors";
 import AppAlertEmpty from "./ui/AppAlertEmpty";
 import AppText from "./ui/AppText";
 import { AppLanguages, languages } from "../constants/languages";
 import { AsyncStorageConstants } from "../constants/CommonConsstats";
-import { getStorageValues, setStorageValues } from "../helpers/AppAsyncStoreage";
+import { setStorageValues } from "../helpers/AppAsyncStoreage";
+import PressbleAppIcon from "./ui/pressbleAppIcon";
 
 
 export interface LanguagePickerProps {
@@ -31,7 +29,9 @@ const LanguagePicker: FC<LanguagePickerProps> = ({
 }) => {
   const { i18n, t } = useTranslation(); //i18n instance
 
+
   async function selectLanguageHandler(lang: string) {
+
     i18n.changeLanguage(lang).then(async (res) => {
       if (lang === AppLanguages.arabic) {
         I18nManager.forceRTL(true);
@@ -43,7 +43,7 @@ const LanguagePicker: FC<LanguagePickerProps> = ({
       }
       await setStorageValues(AsyncStorageConstants.languageKey, lang);
     });
-    await Updates.reloadAsync();
+    RNRestart.restart();
     pickingLanguageHandler(false);
   }
   return (
@@ -51,7 +51,7 @@ const LanguagePicker: FC<LanguagePickerProps> = ({
       {/* <AppModel isModelOpen={isPickingLanguage}> */}
       <View style={styles.container}>
         <View style={{ justifyContent: "flex-end", alignItems: "flex-end" }}>
-          <Ionicons
+          <PressbleAppIcon
             name="close"
             size={24}
             color="black"

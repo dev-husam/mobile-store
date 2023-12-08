@@ -1,6 +1,5 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Ionicons } from "@expo/vector-icons";
 
 import Screen from "../components/Screen";
 import { useNavigation } from "@react-navigation/native";
@@ -8,6 +7,7 @@ import { AppFonts } from "../constants/fonts";
 import { AppSizes } from "../constants/Sizes";
 import { AppColorsTheme2 } from "../constants/Colors";
 import { useTranslation } from "react-i18next";
+import PressbleAppIcon from "../components/ui/pressbleAppIcon";
 
 const PrivacyAndPolicyScreen = () => {
   const { t } = useTranslation()
@@ -19,7 +19,8 @@ const PrivacyAndPolicyScreen = () => {
 
 
           <View style={{}}>
-            <Ionicons
+            <PressbleAppIcon
+              type="Ionicons"
               onPress={() => {
                 navigation.goBack();
               }}

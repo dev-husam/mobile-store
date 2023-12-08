@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Modal from "react-native-modal";
 
 import { TextInput } from 'react-native-gesture-handler'
-import * as Updates from 'expo-updates';
+// import * as Updates from 'expo-updates';
 
 import AppText from './AppText'
 import { AppColorsTheme2 } from '../../constants/Colors'
@@ -24,7 +24,7 @@ const AppCustomIpModal = ({ isOpen, setIsIpModalOpen }: { isOpen: boolean, setIs
         const obj = { name: "customIp", url: url }
         await setStorageValues(AsyncStorageConstants.env, JSON.stringify(obj))
         setIsIpModalOpen(false)
-        await Updates.reloadAsync();
+        // await Updates.reloadAsync();
     }
 
     return (

@@ -8,9 +8,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
-
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
 interface Props {
     type?: "Ionicons" | "AntDesign" | "MaterialIcons" | "Entypo" | "FontAwesome" | "Fontisto" | "MaterialCommunityIcons" | "FontAwesome5",
@@ -40,8 +38,6 @@ export const iconTypeEnum = {
     Fontisto: (name: string, size: number, color: string) => <Fontisto name={name} size={size} color={color} />,
     MaterialCommunityIcons: (name: string, size: number, color: string) => <MaterialCommunityIcons name={name} size={size} color={color} />,
     FontAwesome5: (name: string, size: number, color: string) => <FontAwesome5 name={name} size={size} color={color} />,
-
-
 
 }
 const styles = StyleSheet.create({})

@@ -3,26 +3,24 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import ProfileLables from "./ProfileLables";
-import languagePicker from "../languagePicker";
 import LanguagePicker from "../languagePicker";
 import { useNavigation } from "@react-navigation/native";
-import { AppColors, AppColorsTheme2 } from "../../constants/Colors";
+import { AppColorsTheme2 } from "../../constants/Colors";
 import { ScreenNames } from "../../constants/ScreenNames";
 import { useAuthenticationStoreAsync } from "../../store/auth.store";
 import AppAlert from "../ui/AppAlert";
 import { deleteAccount } from "../../apis/users.api";
 import { httpErrorHandler } from "../../helpers/AppHelpers";
 import { showMessage } from "react-native-flash-message";
-import useEnvAndSetting from "../../hooks/useEnvAndSetting";
 import AppPickerEnvModal from "../ui/AppPickerModal";
 import AppCustomIpModal from "../ui/AppCustomIpModal";
+import { AppEnv, isDev } from "../../constants/CommonConsstats";
 
 const ButtonSection = () => {
   const [isPickingLanguage, setIsPickingLanguage] = useState(false);
   const [deletingAccount, setDeletingAccount] = useState(false)
   const [isIpModalOpen, setIsIpModalOpen] = useState(false)
   const [isPickerOpen, setIsPickerOpen] = useState(false)
-  const { isDev, env } = useEnvAndSetting()
 
   const { t } = useTranslation();
   const navigation = useNavigation();
@@ -66,7 +64,7 @@ const ButtonSection = () => {
               iconName={"setting"}
               type={"AntDesign"}
               iconColor={AppColorsTheme2.secondary}
-              text={t("enviroment") + ` (${env})`}
+              text={t("environment") + ` (${AppEnv})`}
               onPress={() => { OnEnvPress() }}
 
             />

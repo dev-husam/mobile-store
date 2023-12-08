@@ -1,18 +1,25 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View, ViewStyle } from 'react-native'
 import React from 'react'
-
-import { AntDesign, MaterialIcons, MaterialCommunityIcons, Ionicons, Entypo, FontAwesome, Fontisto } from '@expo/vector-icons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Entypo from 'react-native-vector-icons/Entypo';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 interface props {
     type?: "Ionicons" | "AntDesign" | "MaterialIcons" | "Entypo" | "FontAwesome" | "Fontisto" | "MaterialCommunityIcons",
-    name?: string, size?: number, color?: string, onPress: () => void
+    name?: string, size?: number, color?: string, onPress: () => void,
+    style?: ViewStyle
 }
 
 
-const PressbleAppIcon = ({ size = 25, color = "black", name = "home", type = "Ionicons", onPress }: props) => {
+const PressbleAppIcon = ({ size = 25, color = "black", name = "home", type = "Ionicons", onPress, style }: props) => {
     let iconType = iconTypeEnum[type](name, size, color)
     return (
-        <Pressable onPress={onPress}>
+        <Pressable style={style} onPress={onPress}>
             {iconType}
         </Pressable>
     )

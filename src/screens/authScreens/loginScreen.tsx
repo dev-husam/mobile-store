@@ -11,16 +11,13 @@ import { useRef, useState } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { showMessage, } from "react-native-flash-message";
 import { Formik } from "formik";
-import * as Updates from 'expo-updates';
-import Constants from "expo-constants"
-
+import RNRestart from 'react-native-restart';
 
 import FilledButton from "../../components/ui/common/FilledButton";
 import { AppFonts } from "../../constants/fonts";
 import { AppSizes } from "../../constants/Sizes";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenNames } from "../../constants/ScreenNames";
-
 import { emailLogin, sendResetPassword } from "../../apis/Auth.api";
 import AppIcon from "../../components/ui/appIcon";
 import { loginValidationSchema } from "../../validationSchemas/loginSchema";
@@ -114,7 +111,7 @@ const LoginScreen = () => {
                 I18nManager.allowRTL(false);
             }
             await setStorageValues(AsyncStorageConstants.languageKey, changeLang);
-            await Updates.reloadAsync();
+            RNRestart.restart();
         });
 
     }

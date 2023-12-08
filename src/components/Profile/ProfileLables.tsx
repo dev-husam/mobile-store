@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, Pressable, I18nManager } from "react-native";
 import React from "react";
 
-import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import { AppSizes } from "../../constants/Sizes";
 import { AppFonts } from "../../constants/fonts";
 import AppIcon from "../ui/appIcon";
@@ -12,7 +11,8 @@ interface props {
   iconColor?: string;
   text: string;
   size?: number,
-  color?: string
+  color?: string,
+  onPress: () => void
 }
 
 const ProfileLables = ({
@@ -49,7 +49,8 @@ const ProfileLables = ({
         </View>
         <Text style={{ fontSize: AppSizes.medium, fontFamily: AppFonts.Roboto_Med }}>{text}</Text>
       </View>
-      <FontAwesome5
+      <AppIcon
+        type="FontAwesome5"
         name={I18nManager.isRTL ? "chevron-left" : "chevron-right"}
         size={20}
         color="black"

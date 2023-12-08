@@ -1,6 +1,5 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { StyleSheet, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 
 import { AppColors, AppColorsTheme2 } from "../constants/Colors";
 import FavotiesScreen from "../screens/FavotiesScreen";
@@ -12,6 +11,7 @@ import TabNavigator from "./TabNavigator";
 import ProfileScreen from "../screens/ProfileScreen";
 
 import NotificationsScreen from "../screens/NotificationsScreen";
+import PressbleAppIcon from "../components/ui/pressbleAppIcon";
 
 const Drawer = createDrawerNavigator();
 
@@ -68,7 +68,8 @@ const DrawerNavigator = () => {
             headerLeft: () => {
               return (
                 <View>
-                  <Ionicons
+                  <PressbleAppIcon
+                    type="Ionicons"
                     style={styles.lableIcon}
                     name="md-menu"
                     size={24}

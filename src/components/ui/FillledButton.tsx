@@ -6,11 +6,11 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import React, { FC } from "react";
 import { AppColors, AppColorsTheme2 } from "../../constants/Colors";
 import { AppSizes } from "../../constants/Sizes";
 import { AppFonts } from "../../constants/fonts";
+import AppIcon from "./appIcon";
 interface props {
   icon?: string;
   children?: JSX.Element;
@@ -34,11 +34,11 @@ const FillledButton: FC<props> = ({
       }}
     >
       {icon && !I18nManager.isRTL && (
-        <Ionicons style={styles.icon} name={icon} size={25} color={"white"} />
+        <AppIcon style={styles.icon} name={icon} size={25} color={"white"} />
       )}
       <Text style={styles.text}>{children}</Text>
       {icon && I18nManager.isRTL && (
-        <Ionicons style={styles.icon} name={icon} size={25} color={"white"} />
+        <AppIcon style={styles.icon} name={icon} size={25} color={"white"} />
       )}
     </Pressable>
   );

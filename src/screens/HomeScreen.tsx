@@ -29,7 +29,6 @@ const HomeScreen: React.FC<Props> = () => {
   async function callHomeScreenApi() {
     const serviceList = await getAllServices()
     const addsList = await getAllAdds()
-    console.log(addsList);
 
   }
 

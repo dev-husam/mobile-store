@@ -17,10 +17,11 @@ import AddNewCarContent from '../components/Profile/myCarList/AddNewCarContent'
 import useFetchV2 from '../hooks/useFetchV2'
 import { AppApiPath } from '../apis/apisPath'
 import { addUserCars, deleteUserCars, getUserCars } from '../apis/userCars.api'
-import MyCarListPh from '../components/placeHolders/MyCarListPh'
+// import MyCarListPh from '../components/placeHolders/MyCarListPh'
 import LoadingLoatie from '../components/ui/LoadingLootie'
 import UserCarsList from '../components/Profile/myCarList/CarList'
-import ItemsListPh from '../components/placeHolders/ItemsListPh'
+import { ActivityIndicator } from 'react-native'
+// import ItemsListPh from '../components/placeHolders/ItemsListPh'
 
 
 const MyCarScreen = ({ navigation }) => {
@@ -93,7 +94,9 @@ const MyCarScreen = ({ navigation }) => {
                     <AppSearch onSearch={handleSearch} label={t("Search")} />
                 </View>
 
-                {loading ? (<ItemsListPh />) : (
+                {/* {loading ? (<ItemsListPh />) : ( */}
+                {loading ? (<ActivityIndicator />) : (
+
                     <UserCarsList OnEmptyPress={OpenBottomSheetHandler} deleteCarHandler={deleteCarHandler} data={carList} filteredItem={filteredData} refreshHandler={refreshHandler} refreshing={refreshing} />
                 )}
 
