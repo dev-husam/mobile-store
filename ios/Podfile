@@ -35,6 +35,7 @@ target 'Yamak' do
   pod 'GoogleUtilities', :modular_headers => true
   pod 'FirebaseCore', :modular_headers => true
   pod 'react-native-restart', :path => '../node_modules/react-native-restart'
+  pod 'RNLocalize', :path => '../node_modules/react-native-localize'
 
   use_react_native!(
     :path => config[:reactNativePath],

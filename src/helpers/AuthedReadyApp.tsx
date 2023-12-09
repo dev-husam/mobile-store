@@ -12,41 +12,14 @@ import AppAlert from '../components/ui/AppAlert';
 
 const AuthedReadyApp = () => {
 
-    //notifications
-    const [expoPushToken, setExpoPushToken] = useState('');
-    const notificationListener = useRef();
-    const responseListener = useRef();
-
-    // useEffect(() => {
-
-    //     registerForPushNotificationsAsync().then(token => {
-    //         setExpoPushToken(token?.data)
-    //     })
-
-    //     notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
-
-    //         console.log({ notification: JSON.stringify(notification) });
-
-    //         // setNotification(notification);
-    //     });
-
-    //     responseListener.current = Notifications.addNotificationResponseReceivedListener(response => {
-
-    //     })
-
-    //     return () => {
-    //         Notifications.removeNotificationSubscription(notificationListener.current);
-    //         Notifications.removeNotificationSubscription(responseListener.current);
-    //     }
-    // }, [])
-
-
     //userLocation
     const updateUserLocation = useUserLocationStore((state) => state.updateUserLocation)
     const { currentLocation } = userCurrentLocation()
     useEffect(() => {
         if (currentLocation) {
-            const location = { latitude: currentLocation?.coords.latitude, longitude: currentLocation?.coords.longitude }
+            console.log({ currentLocation });
+
+            const location = { latitude: currentLocation?.latitude, longitude: currentLocation?.longitude }
             // updateUserProfile(location).catch(error => {
             //     console.log(error);
             // })

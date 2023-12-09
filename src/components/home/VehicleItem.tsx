@@ -14,6 +14,8 @@ import { useTranslation } from 'react-i18next'
 const VehicleItem = ({ item }: { item: any }) => {
     const navigator = useNavigation()
     const { t } = useTranslation()
+    console.log({ distance: item?.distance });
+
 
     function vehiclesPressHandler() {
         navigator.navigate(ScreenNames.Vehicle_Details_Screen, { _id: item._id })

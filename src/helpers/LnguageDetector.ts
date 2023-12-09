@@ -14,13 +14,15 @@ const languageDetectorPlugin = {
       //get stored language from Async storage
       // AsyncStorage.clear()
       await AsyncStorage.getItem(AsyncStorageConstants.languageKey).then((language) => {
+        console.log({ language });
+
         if (language) {
           //if language was stored before, use this language in the app
           return callback(language);
         } else {
           //if language was not stored yet, use device's locale
-          const language = getLocales()
-          console.log({ language });
+          const language = getLocales()[0]?.languageCode || "en"
+
 
           if (language === "ar") {
             I18nManager.forceRTL(true);
@@ -31,7 +33,6 @@ const languageDetectorPlugin = {
             I18nManager.allowRTL(false);
           }
           AsyncStorage.setItem(AsyncStorageConstants.languageKey, language);
-
           return callback(language);
         }
       });

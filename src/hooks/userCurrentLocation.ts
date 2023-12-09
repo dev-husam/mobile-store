@@ -15,6 +15,8 @@ const userCurrentLocation = () => {
         Geolocation.getCurrentPosition(
             position => {
                 const { latitude, longitude } = position.coords;
+                console.log({ latitude, longitude });
+
                 setCurrentLocation({ latitude, longitude });
             },
             error => {
@@ -25,6 +27,7 @@ const userCurrentLocation = () => {
     };
 
     const requestLocationPermission = async () => {
+
         if (Platform.OS === 'ios') {
             Geolocation.requestAuthorization();
             getCurrentLocation()
