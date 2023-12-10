@@ -17,7 +17,7 @@ import { useAppReady } from "./src/hooks/useAppReady";
 export function RootFun() {
     const setIsFirstLunch = useAppReadyStore((state) => state.setIsFirstLunch)
     const setAppSetting = useAppReadyStore((state) => state.setAppSetting)
-
+    const token = useAuthenticationStoreAsync((state) => state.token)
     const { appIsReady } = useAppReady()
 
     useEffect(() => {
@@ -44,7 +44,7 @@ export function RootFun() {
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
             <BottomSheetModalProvider >
-                <Navigation />
+                <Navigation token={token} />
             </BottomSheetModalProvider>
         </GestureHandlerRootView >
 

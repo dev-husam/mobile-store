@@ -2,8 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { memo, useEffect } from "react";
 import { FC, useRef, useState } from "react";
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
-import MapView, { Callout, Marker, PROVIDER_GOOGLE } from "react-native-maps";
-import { AppColorsTheme2 } from "../../constants/Colors";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { ScreenNames } from "../../constants/ScreenNames";
 import { useUserLocationStore } from "../../store/userLocation.store";
 
@@ -93,8 +92,8 @@ const AppMap: FC<MapProps> = ({
               coordinate={{ latitude: lat, longitude: long }}
             >
               <Image
-                style={{ width: 60, height: 60 }}
-                source={require("../../assets/images/truck1.png")}
+                style={{ width: 70, height: 70 }}
+                source={require("../../assets/images/YamakDriver1.png")}
               />
             </Marker>
           );
