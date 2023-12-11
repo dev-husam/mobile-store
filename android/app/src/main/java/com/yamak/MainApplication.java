@@ -1,5 +1,7 @@
 package com.yamak;
 
+
+import com.lugg.RNCConfig.RNCConfigPackage;
 import com.reactnativerestart.RestartPackage;
 import android.app.Application;
 import com.facebook.react.PackageList;
@@ -23,9 +25,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
-      packages.add(new RestartPackage());
-      packages.add(new RNCConfigPackage());
-      packages.add(new RNLocalizePackage());
+//      packages.add(new RestartPackage());
+//      packages.add(new RNCConfigPackage());
       // Packages that cannot be autolinked yet can be added manually here, for
       // packages.add(new MyReactNativePackage());
       return packages;

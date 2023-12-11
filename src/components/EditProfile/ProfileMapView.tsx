@@ -14,7 +14,6 @@ const ProfileMapView = () => {
                 style={styles.map}
                 provider={PROVIDER_GOOGLE}
                 showsUserLocation={true}
-
                 initialRegion={{
                     latitude: userLocation?.latitude,
                     longitude: userLocation.longitude,

@@ -231,9 +231,9 @@ const LoginScreen = () => {
                                         </View>
                                         <View style={{ width: "75%", paddingTop: 4 }}>
                                             <Pressable onPress={() => { bottomSheetRef.current.present() }}>
-                                                <Text style={{ fontSize: 11, textAlign: "right", color: AppColorsTheme2.secondary, marginTop: 4 }}>
+                                                <AppText textStyle={{ fontSize: AppSizes.small, color: AppColorsTheme2.secondary, marginTop: 4 }}>
                                                     {t("ForgotPassword")}
-                                                </Text>
+                                                </AppText>
                                             </Pressable>
 
                                         </View>

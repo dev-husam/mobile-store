@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <StatusBar />
+      <StatusBar animated={true} barStyle={"dark-content"} />
       <I18nextProvider i18n={i18next} >
         <ModalContextProvider>
           <RootFun />

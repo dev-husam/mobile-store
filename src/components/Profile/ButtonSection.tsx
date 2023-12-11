@@ -53,6 +53,7 @@ const ButtonSection = () => {
   async function OnEnvPress() {
     setIsPickerOpen((prev) => !prev)
   }
+  console.log({ AppEnv });
 
 
   return (
