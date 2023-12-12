@@ -54,7 +54,16 @@ target 'Yamak' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'YamakTests' do
+  # target 'YamakTests' do
+  #   inherit! :complete
+  #   # Pods for testing
+  # end
+
+  target 'Yamak-Dev' do
+    inherit! :complete
+    # Pods for testing
+  end
+  target 'Yamak-Stage' do
     inherit! :complete
     # Pods for testing
   end

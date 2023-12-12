@@ -14,7 +14,6 @@ const Screen = ({ children, style }: Props) => {
       <StatusBar
         animated={true}
         barStyle="light-content"
-        backgroundColor="#6a51ae"
       />
       <SafeAreaView style={[styles.AndroidSafeArea, style]}>
         {children}
