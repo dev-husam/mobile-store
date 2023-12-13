@@ -11,7 +11,8 @@ const AppEnv = Config.NODE_ENV
 const AsyncStorageConstants = {
     env: "environment",
     isLunched: "isLunched",
-    languageKey: "lang"
+    languageKey: "lang",
+    userLocation: "userLocation"
 }
 
 const appVersion = getVersion()

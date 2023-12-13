@@ -97,7 +97,7 @@
 		047215D62B23BF32005E22A7 /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 047215C32B23BF32005E22A7 /* FontAwesome6_Brands.ttf */; };
 		047215D72B23BF32005E22A7 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 047215C42B23BF32005E22A7 /* MaterialIcons.ttf */; };
 		04BF3E2B2B27A22500425A8F /* GoogleService-Info .plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BF3E2A2B27A22500425A8F /* GoogleService-Info .plist */; };
-		0C80B921A6F3F58F76C31292 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		0C80B921A6F3F58F76C31292 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		0F3254F5F5E943E297B4B523 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43F1FD7AFC2F4C2B9BFD1E69 /* Roboto-Thin.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -115,6 +115,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		CD80294720ADD5654C559D88 /* libPods-Yamak-Yamak-Stage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9523B188361398383046C938 /* libPods-Yamak-Yamak-Stage.a */; };
 		D27874AB13A348519BE21B74 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6560A3CFA1654910BB9E3C0D /* Roboto-Light.ttf */; };
+		EA1F0DC95D3F9B2C3BDD06EA /* libPods-Yamak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F92987A7DEF3A0531301AC2 /* libPods-Yamak.a */; };
 		FE74C89E23DC46619CB1DEAE /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83807D9A3C9E4EF68AE751F7 /* Roboto-BlackItalic.ttf */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +163,7 @@
 		5709B34CF0A7D63546082F79 /* Pods-Yamak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamak.release.xcconfig"; path = "Target Support Files/Pods-Yamak/Pods-Yamak.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Yamak-YamakTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamak-YamakTests.debug.xcconfig"; path = "Target Support Files/Pods-Yamak-YamakTests/Pods-Yamak-YamakTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6560A3CFA1654910BB9E3C0D /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../src/assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		6F92987A7DEF3A0531301AC2 /* libPods-Yamak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Yamak/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83807D9A3C9E4EF68AE751F7 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BlackItalic.ttf"; path = "../src/assets/fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Yamak-YamakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamak-YamakTests.release.xcconfig"; path = "Target Support Files/Pods-Yamak-YamakTests/Pods-Yamak-YamakTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,7 +203,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* (null) in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* BuildFile in Frameworks */,
+				EA1F0DC95D3F9B2C3BDD06EA /* libPods-Yamak.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +302,7 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-Yamak-YamakTests.a */,
 				4D2834CB808129D9E4A26A80 /* libPods-Yamak-Yamak-Dev.a */,
 				9523B188361398383046C938 /* libPods-Yamak-Yamak-Stage.a */,
+				6F92987A7DEF3A0531301AC2 /* libPods-Yamak.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

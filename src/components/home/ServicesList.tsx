@@ -32,7 +32,6 @@ const ServicesList = () => {
         // return (<ServiceListPH />)
         return (<ActivityIndicator />)
 
-
     }
 
     return (

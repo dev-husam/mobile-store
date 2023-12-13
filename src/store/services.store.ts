@@ -6,5 +6,5 @@ export const useServicesStore = create((set) => ({
     setServices: (services: IServices[]) => set((state) => ({ ...state, services: services })),
     selectedServiceId: null,
     setSelectServiceId: (id: String) => set(() => ({ selectedServiceId: id })),
-    removeAllBears: () => set({ bears: 0 }),
+    removeAllServices: () => set({ services: [] }),
 }))

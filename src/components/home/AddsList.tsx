@@ -1,17 +1,21 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import CarouselCards from '../ui/carousel-snap/CarouselCards'
-import { useFetch } from '../../hooks/useFetch.hook'
 import { horizontalScale, verticalScale } from '../../helpers/Scalling'
 import useFetchV2 from '../../hooks/useFetchV2'
 import { AppApiPath } from '../../apis/apisPath'
 import { ActivityIndicator } from 'react-native'
+import { useAddsStore } from '../../store/adds.store'
 // import AddsListPh from '../placeHolders/AddsListPh'
 
 const AddsList = () => {
-    const { responseData: adds, loading } = useFetchV2({ method: "get", url: AppApiPath.addsListApi })
+    const setAdds = useAddsStore((state) => state.setAdds)
+    const adds = useAddsStore((state) => state.adds)
+    const { responseData: addsResponse, loading } = useFetchV2({ method: "get", url: AppApiPath.addsListApi })
 
-
+    useEffect(() => {
+        setAdds(addsResponse?.list)
+    }, [addsResponse])
 
     if (loading) {
         return <ActivityIndicator />
@@ -20,7 +24,7 @@ const AddsList = () => {
 
     return (
         <View style={styles.sectionContainer}>
-            <CarouselCards data={adds?.list} />
+            <CarouselCards data={adds} />
         </View>
     )
 }

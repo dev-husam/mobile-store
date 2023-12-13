@@ -15,6 +15,7 @@ import NearByVehiclePH from '../placeHolders/NearByVehiclePH'
 import useFetchV2 from '../../hooks/useFetchV2'
 import { AppApiPath } from '../../apis/apisPath'
 import { ActivityIndicator } from 'react-native'
+import { useVehicleStore } from '../../store/vehicles.store'
 
 
 const renderItem = ({ item }: any) => (
@@ -23,10 +24,15 @@ const renderItem = ({ item }: any) => (
 const VehiclesList = () => {
     const { t } = useTranslation()
     const userLocation = useUserLocationStore((state) => state.userLocation)
+    const setVehicles = useVehicleStore((state) => state.setVehicles)
+    const vehicles = useVehicleStore((state) => state.vehicles)
     const [params, setParams] = useState({
         latitude: userLocation?.latitude,
         longitude: userLocation?.longitude,
     });
+    const { responseData: vehiclesList, loading } = useFetchV2({
+        url: AppApiPath.vehiclesListApi, method: "get", params
+    })
 
     useEffect(() => {
         setParams({
@@ -35,11 +41,7 @@ const VehiclesList = () => {
         });
     }, [userLocation?.latitude, userLocation?.longitude]);
 
-    const { responseData: vehiclesList, loading } = useFetchV2({
-        url: AppApiPath.vehiclesListApi, method: "get", params
-    })
-    // console.log(vehiclesList);
-
+    useEffect(() => { setVehicles(vehiclesList?.list) }, [vehiclesList])
 
     if (loading) {
         return (
@@ -68,7 +70,7 @@ const VehiclesList = () => {
                 <FlatList
                     showsHorizontalScrollIndicator={false}
                     horizontal={true}
-                    data={vehiclesList?.list}
+                    data={vehicles}
                     renderItem={renderItem}
                 />
             </View>

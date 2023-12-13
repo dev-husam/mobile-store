@@ -7,6 +7,10 @@ import ViewMap from "../components/home/ViewMap";
 import AddsList from "../components/home/AddsList";
 import { getAllServices } from "../apis/services.api";
 import { getAllAdds } from "../apis/common.api";
+import { getAllVehicles } from "../apis/vehicles.api";
+import { useServicesStore } from "../store/services.store";
+import { useAddsStore } from "../store/adds.store";
+import { useVehicleStore } from "../store/vehicles.store";
 
 
 
@@ -19,17 +23,32 @@ export type Props = {
 const HomeScreen: React.FC<Props> = () => {
 
   const [refreshing, setRefreshing] = useState(false);
+  const setServices = useServicesStore(state => state.setServices)
+  const setAdds = useAddsStore(state => state.setAdds)
+  const setVehicles = useVehicleStore(state => state.setVehicles)
+
+
 
   function pullToRefreshFunction() {
     setRefreshing(true)
-    callHomeScreenApi()
-    setRefreshing(false)
+    setTimeout(() => {
+      callHomeScreenApi().then(res => {
+        setRefreshing(false)
+      }).catch(e => {
+        console.log(e);
+        setRefreshing(false)
+      })
+
+    }, 1500)
+
+
   }
 
   async function callHomeScreenApi() {
-    const serviceList = await getAllServices()
-    const addsList = await getAllAdds()
-
+    const [serviceList, addsList, vehicles] = await Promise.all([getAllServices(), getAllAdds(), getAllVehicles()])
+    setAdds(addsList?.list)
+    setServices(serviceList?.list)
+    setVehicles(vehicles)
   }
 
   return (

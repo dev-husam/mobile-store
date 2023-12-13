@@ -1,13 +1,12 @@
-import { BackHandler, Linking, StyleSheet, Text, View } from 'react-native'
-import React, { useEffect, useRef, useState } from 'react'
-import { registerForPushNotificationsAsync } from '../notifications/expoNotification';
+import { StyleSheet, } from 'react-native'
+import React, { useEffect } from 'react'
 import { useUserLocationStore } from '../store/userLocation.store';
 import userCurrentLocation from '../hooks/userCurrentLocation';
-import * as Notifications from 'expo-notifications';
-import AuthStackNavigator from '../navigations/AuthStackNavigator';
-import DrawerNavigator from '../navigations/DrawerNavigator';
+
 import DrawerStackNavigator from '../navigations/drawerStackNavigator';
 import AppAlert from '../components/ui/AppAlert';
+import { setStorageValues } from './AppAsyncStoreage';
+import { AsyncStorageConstants } from '../constants/CommonConsstats';
 
 
 const AuthedReadyApp = () => {
@@ -17,13 +16,9 @@ const AuthedReadyApp = () => {
     const { currentLocation } = userCurrentLocation()
     useEffect(() => {
         if (currentLocation) {
-            console.log({ currentLocation });
-
             const location = { latitude: currentLocation?.latitude, longitude: currentLocation?.longitude }
-            // updateUserProfile(location).catch(error => {
-            //     console.log(error);
-            // })
             updateUserLocation(location)
+            setStorageValues(AsyncStorageConstants.userLocation, JSON.stringify(location))
         }
     }, [currentLocation]);
 
