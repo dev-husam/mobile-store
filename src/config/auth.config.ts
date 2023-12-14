@@ -1,10 +1,17 @@
 import {
     GoogleSignin,
 } from '@react-native-google-signin/google-signin';
-
+import Config from 'react-native-config';
+console.log({
+    ios: Config.IOS_CLIENT_ID,
+    androidClientId: Config.ANDROID_CLIENT_ID,
+    webClientId: Config.WEB_CLIENT_ID
+})
 GoogleSignin.configure({
-    androidClientId: "899706158244-0g2g4n0cbqbhnmjf7levgrtbp3972s90.apps.googleusercontent.com",
-    iosClientId: "899706158244-dpdmje9fhef4vrk9ii746lbhlvdsn6hp.apps.googleusercontent.com"
+    offlineAccess: false,
+    scopes: ["profile", "email"],
+    iosClientId: Config.IOS_CLIENT_ID,
+    webClientId: "899706158244-qrv9stfvk9bqods0gc0bp6eiuvq4bpfg.apps.googleusercontent.com"
 });
 
 

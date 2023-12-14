@@ -1,5 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 // import { OtpInput } from "react-native-otp-entry";
 import OTPTextInput from "react-native-otp-textinput"
@@ -14,20 +14,26 @@ import { checkCode, emailVerify } from '../../apis/Auth.api'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { httpErrorHandler } from '../../helpers/AppHelpers';
 import { useAuthenticationStoreAsync } from '../../store/auth.store';
-import { isLoaded } from 'expo-font';
+
 import LoadingLoatie from '../../components/ui/LoadingLootie';
-import AppIcon from '../../components/ui/appIcon';
+
 import GoBackButton from '../../components/ui/GoBackButton';
+import { useCounter } from '../../hooks/useCounter';
+import AppText from '../../components/ui/AppText';
 
 
 const OtpEmailVerificationScreen = ({ route }) => {
     const [code, setCode] = useState("")
+    const { counter, setCounter } = useCounter()
     const { inputs: values } = route?.params
     const [loading, setIsLoading] = useState(false)
 
 
     const authenticate = useAuthenticationStoreAsync((state) => state.authenticate)
     const { t } = useTranslation()
+    useEffect(() => {
+        setCounter(60)
+    }, [])
 
     async function verifyCode() {
         if (!code || code.length < 4) {
@@ -90,14 +96,17 @@ const OtpEmailVerificationScreen = ({ route }) => {
                         </FilledButton>
                     </View>
                     <View style={{ marginVertical: 20 }}>
-                        <Text style={styles.subTitle}>
+                        {counter > 0 ? (<AppText textStyle={styles.subTitle}>{counter}</AppText>) : (<Text style={styles.subTitle}>
                             {/* Didnt receive the mail ? */}
                             {t("DidntReceiveMain")}
                             {" "}
-                            <Pressable style={({ pressed }) => [styles.resendButton, pressed && styles.pressed]}>
+                            <Pressable
+                                onPress={() => { setCounter(60) }}
+                                style={({ pressed }) => [styles.resendButton, pressed && styles.pressed]}>
                                 <Text style={{ ...styles.subTitle, color: AppColorsTheme2.secondary, textDecorationLine: "underline" }}>{t("Resend")} </Text>
                             </Pressable>
-                        </Text>
+                        </Text>)}
+
                     </View>
                 </View>
             </KeyboardAwareScrollView>

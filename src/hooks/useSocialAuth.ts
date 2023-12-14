@@ -16,6 +16,7 @@ export function useSocialAuth(type: "login" | "register") {
             const hasPlayService = await GoogleSignin.hasPlayServices()
             if (!hasPlayService) return
             const userInfo = await GoogleSignin.signIn().catch(error => {
+                console.log("error google ====>");
                 console.log({ error: JSON.stringify(error) });
             })
             if (userInfo) {
@@ -32,8 +33,6 @@ export function useSocialAuth(type: "login" | "register") {
 
     async function handleRegisterWithGoogle() {
         try {
-            console.log("pressed");
-
             const hasPlayService = await GoogleSignin.hasPlayServices()
             if (!hasPlayService) return
             const userInfo = await GoogleSignin.signIn()
