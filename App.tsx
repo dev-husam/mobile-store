@@ -17,6 +17,8 @@ import { I18nextProvider } from 'react-i18next';
 import { ModalContextProvider } from './src/context/modelContext';
 import AppFlashMessage from './src/components/ui/AppFlashMessage';
 import i18next from "./src/translation/Translation.config"
+import 'react-native-url-polyfill/auto';
+
 
 function App() {
 

@@ -42,9 +42,10 @@ const LanguagePicker: FC<LanguagePickerProps> = ({
         I18nManager.allowRTL(false);
       }
       await setStorageValues(AsyncStorageConstants.languageKey, lang);
+      RNRestart.restart();
+      pickingLanguageHandler(false);
     });
-    RNRestart.restart();
-    pickingLanguageHandler(false);
+
   }
   return (
     <AppAlertEmpty visible={isPickingLanguage} >

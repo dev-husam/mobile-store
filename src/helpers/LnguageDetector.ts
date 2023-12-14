@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { getLocales } from "react-native-localize";
 import { I18nManager } from "react-native";
 import { AsyncStorageConstants } from "../constants/CommonConsstats";
+import i18next from "i18next";
 
 ;
 
@@ -14,16 +15,12 @@ const languageDetectorPlugin = {
       //get stored language from Async storage
       // AsyncStorage.clear()
       await AsyncStorage.getItem(AsyncStorageConstants.languageKey).then((language) => {
-        console.log({ language });
-
         if (language) {
           //if language was stored before, use this language in the app
           return callback(language);
         } else {
           //if language was not stored yet, use device's locale
-          const language = getLocales()[0]?.languageCode || "en"
-
-
+          const language = "ar"
           if (language === "ar") {
             I18nManager.forceRTL(true);
             I18nManager.allowRTL(true);

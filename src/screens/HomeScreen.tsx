@@ -11,9 +11,11 @@ import { getAllVehicles } from "../apis/vehicles.api";
 import { useServicesStore } from "../store/services.store";
 import { useAddsStore } from "../store/adds.store";
 import { useVehicleStore } from "../store/vehicles.store";
+import Config from "react-native-config";
 
 
 
+console.log({ env: Config.NODE_ENV });
 
 
 export type Props = {

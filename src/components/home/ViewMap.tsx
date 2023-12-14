@@ -39,7 +39,7 @@ const ViewMap = () => {
                     <Image
                         resizeMode='contain'
                         style={{ height: 200, }}
-                        source={require("../../assets/images/map2.jpeg")}>
+                        source={require("../../assets/images/map.jpg")}>
                     </Image>
                 </View>
             </View>

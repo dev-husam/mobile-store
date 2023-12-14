@@ -1,4 +1,5 @@
 import axios from "axios";
+import { URL } from 'react-native-url-polyfill';
 
 
 export function ErrorHandlerApi(e: any) {
