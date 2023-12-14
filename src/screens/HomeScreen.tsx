@@ -63,6 +63,7 @@ const HomeScreen: React.FC<Props> = () => {
         />}
       showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
+        {/* <Text>{Config.NODE_ENV}</Text> */}
         <ServicesList />
         <AddsList />
         <VehiclesList />

@@ -1,5 +1,14 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
+
+project.ext.envConfigFiles = [
+   productiondebug: ".env.production",
+   productionrelease: ".env.production",
+   developmentrelease: ".env.development",
+   developmentdebug: ".env.development",
+   stagingrelease: ".env.staging",
+   stagingdebug: ".env.staging"
+]
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 /**
  * This is the configuration block to customize your React Native Android app.
@@ -70,8 +79,29 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 
 android {
     ndkVersion rootProject.ext.ndkVersion
-
     compileSdkVersion rootProject.ext.compileSdkVersion
+
+      flavorDimensions "default"
+    productFlavors {
+        production {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.yamak.mobapp"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.yamak"
+        }
+        staging {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.yamak.mobstaging"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.yamak"
+        }
+        development {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.yamak.mobdev"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.yamak"
+        }
+    }
 
     namespace "com.yamak"
     defaultConfig {
