@@ -9,6 +9,7 @@ import AppIcon from '../components/ui/appIcon';
 import { AppColorsTheme2 } from '../constants/Colors';
 import PressbleAppIcon from '../components/ui/pressbleAppIcon';
 import { useNavigation } from '@react-navigation/native';
+import AllVicelessScreen from '../screens/AllVicelessScreen';
 
 const HomeStack = createStackNavigator();
 
@@ -36,6 +37,7 @@ const HomeStackNavigator = () => {
 
                 component={HomeScreen} />
             <HomeStack.Screen name={ScreenNames.Vehicle_Details_Screen} component={VehiclesDetailsScreen} />
+            <HomeStack.Screen name={ScreenNames.ALL_VEHICLES_SCREEN} component={AllVicelessScreen} />
 
             <HomeStack.Screen
                 options={{

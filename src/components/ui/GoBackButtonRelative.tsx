@@ -5,13 +5,16 @@ import AppIcon from './appIcon'
 import { useTranslation } from 'react-i18next'
 
 
-const GoBackButton = ({ style }: { style?: ViewStyle }) => {
+const GoBackButtonRelative = ({ style }: { style?: ViewStyle }) => {
 
     const navigation = useNavigation()
     const { i18n } = useTranslation()
+
     function goBackPressHandler() {
         navigation.goBack()
     }
+
+
     return (
         <Pressable
             onPress={goBackPressHandler}
@@ -21,8 +24,8 @@ const GoBackButton = ({ style }: { style?: ViewStyle }) => {
     )
 }
 
-export default GoBackButton
+export default GoBackButtonRelative
 
 const styles = StyleSheet.create({
-    container: { zIndex: 999, position: "absolute", flex: 1, left: 20, borderWidth: 1, padding: 4, borderRadius: 10, backgroundColor: "gray" }
+    container: { left: 16, borderWidth: 1, padding: 4, borderRadius: 10, width: 35, height: 35, backgroundColor: "gray" }
 })

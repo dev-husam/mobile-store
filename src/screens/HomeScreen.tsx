@@ -42,8 +42,6 @@ const HomeScreen: React.FC<Props> = () => {
       })
 
     }, 1500)
-
-
   }
 
   async function callHomeScreenApi() {

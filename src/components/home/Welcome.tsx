@@ -31,13 +31,13 @@ const Welcome = () => {
 
 export const styles = StyleSheet.create({
   text1: {
-    fontFamily: AppFonts.ROBOTO_Med_Itl,
+    fontFamily: AppFonts.Roboto_Med,
     fontSize: 20,
     color: AppColorsTheme2.black,
     textAlign: "left"
   },
   text2: {
-    fontFamily: AppFonts.ROBOTO_Med_Itl,
+    fontFamily: AppFonts.Roboto_Med,
     fontSize: AppSizes.large,
     maxWidth: 220,
     width: 300,

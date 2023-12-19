@@ -105,10 +105,11 @@ export const makeApiCall = async ({ method, url, data, params }: apiCallProps) =
 
 
   } catch (error) {
-    console.log({ error: error.response.data });
+    if (error?.response?.data?.message == "user not registered") { throw error?.response?.data?.message }
+    console.log({ error: error?.response?.data });
 
     // throw error;
   }
 };
 
-export interface apiCallProps { method: "get" | "post" | "patch" | "delete", url: string, data?: any, params?: any, itemId?: string }
+export interface apiCallProps { method: "get" | "post" | "patch" | "delete", url: string, data?: any, params?: any, itemId?: string, isRefetch?: boolean }

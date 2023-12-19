@@ -44,7 +44,7 @@ const RegisterScreen = () => {
 
     const navigation = useNavigation()
     const { t } = useTranslation()
-    const { handleSignInWithGoogle } = useSocialAuth("register")
+    const { handleRegisterWithGoogle } = useSocialAuth("register")
 
     async function onSubmitHandler(values, { setSubmitting }) {
 
@@ -134,7 +134,7 @@ const RegisterScreen = () => {
                                                 </AppText>
                                                 <View style={{ justifyContent: "space-around", alignItems: "center", flexDirection: "row" }}>
                                                     <AppPressable
-                                                        onPress={() => handleSignInWithGoogle()}
+                                                        onPress={() => handleRegisterWithGoogle()}
                                                         style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
                                                         <AppIcon size={30} name='google' type="FontAwesome" />
                                                     </AppPressable>

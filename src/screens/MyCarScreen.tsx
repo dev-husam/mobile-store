@@ -34,7 +34,6 @@ const MyCarScreen = ({ navigation }) => {
 
     const bottomSheetRef = useRef()
     const { t } = useTranslation()
-    const [searchText, setSearchText] = useState("")
 
     useEffect(() => {
         setCarList(data?.list)

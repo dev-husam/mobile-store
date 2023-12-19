@@ -18,6 +18,8 @@ import { ModalContextProvider } from './src/context/modelContext';
 import AppFlashMessage from './src/components/ui/AppFlashMessage';
 import i18next from "./src/translation/Translation.config"
 import 'react-native-url-polyfill/auto';
+import 'react-native-reanimated'
+import 'react-native-gesture-handler'
 
 
 function App() {

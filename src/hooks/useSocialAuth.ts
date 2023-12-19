@@ -5,9 +5,14 @@ import { useAuthenticationStoreAsync } from "../store/auth.store";
 import { loginUserWithSocial, registerUserWithSocial } from "../apis/Auth.api";
 import { httpErrorHandler } from "../helpers/AppHelpers";
 import { GoogleSignin } from "../config/auth.config"
+import { Alert } from 'react-native';
+import { Navigation } from '../../RootFun';
+import { useNavigation } from '@react-navigation/native';
+import { ScreenNames } from '../constants/ScreenNames';
 
 
 export function useSocialAuth(type: "login" | "register") {
+    const navigation = useNavigation()
     const authenticate = useAuthenticationStoreAsync((state) => state.authenticate)
 
     async function handleSignInWithGoogle() {
@@ -17,17 +22,22 @@ export function useSocialAuth(type: "login" | "register") {
             if (!hasPlayService) return
             const userInfo = await GoogleSignin.signIn().catch(error => {
                 console.log("error google ====>");
-                console.log({ error: JSON.stringify(error) });
+                console.log({ error: error });
             })
             if (userInfo) {
                 const serverRes = await loginUserWithSocial({ googleAccessToken: userInfo?.idToken })
-                const { accessToken, user } = serverRes.data
+                const { accessToken, user } = serverRes?.data
                 authenticate(accessToken, user)
                 showMessage({ message: "login success", type: "success" })
             }
         }
         catch (error) {
-            console.log(error);
+            if (error == "user not registered") {
+                Alert.alert("login failed ", "email must register first")
+                navigation.navigate(ScreenNames.Register_Screen)
+            }
+            console.log("backend error ====>", error)
+
         }
     }
 
@@ -36,8 +46,12 @@ export function useSocialAuth(type: "login" | "register") {
             const hasPlayService = await GoogleSignin.hasPlayServices()
             if (!hasPlayService) return
             const userInfo = await GoogleSignin.signIn()
+            console.log({ userInfo });
+
             if (userInfo) {
                 const response = await registerUserWithSocial({ googleAccessToken: userInfo?.idToken })
+                console.log({ response });
+
                 const { accessToken, user } = response.data
                 authenticate(accessToken, user)
             }

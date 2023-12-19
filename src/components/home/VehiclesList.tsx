@@ -11,18 +11,20 @@ import { AppSizes } from '../../constants/Sizes'
 import userCurrentLocation from '../../hooks/userCurrentLocation'
 import { useUserLocationStore } from '../../store/userLocation.store'
 import { horizontalScale, verticalScale } from '../../helpers/Scalling'
-import NearByVehiclePH from '../placeHolders/NearByVehiclePH'
 import useFetchV2 from '../../hooks/useFetchV2'
 import { AppApiPath } from '../../apis/apisPath'
 import { ActivityIndicator } from 'react-native'
 import { useVehicleStore } from '../../store/vehicles.store'
+import { useNavigation } from '@react-navigation/native'
+import { ScreenNames } from '../../constants/ScreenNames'
 
 
 const renderItem = ({ item }: any) => (
     <VehicleItem item={item} />
 );
-const VehiclesList = () => {
+const VehiclesList = ({ horizontal = true }) => {
     const { t } = useTranslation()
+    const navigation = useNavigation()
     const userLocation = useUserLocationStore((state) => state.userLocation)
     const setVehicles = useVehicleStore((state) => state.setVehicles)
     const vehicles = useVehicleStore((state) => state.vehicles)
@@ -59,7 +61,11 @@ const VehiclesList = () => {
                     <Text style={styles.labelText}>
                         {t("VehiclesNearBy")}
                     </Text>
-                    <Pressable>
+                    <Pressable
+                        onPress={() => {
+                            navigation.navigate(ScreenNames.ALL_VEHICLES_SCREEN)
+                        }}
+                    >
                         <Text style={styles.ViewLabelText}>
                             {t("ViewAll")}
                         </Text>
@@ -68,8 +74,9 @@ const VehiclesList = () => {
                 </View>
 
                 <FlatList
+
                     showsHorizontalScrollIndicator={false}
-                    horizontal={true}
+                    horizontal={horizontal}
                     data={vehicles}
                     renderItem={renderItem}
                 />

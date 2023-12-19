@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Pressable, StyleSheet, Text, TextInput, View, ViewStyle } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { AppColorsTheme2 } from '../../constants/Colors'
 import AppIcon from '../ui/appIcon'
@@ -6,12 +6,10 @@ import { AppFonts } from '../../constants/fonts'
 import { useLanguage } from '../../hooks/useLanguage.hook'
 import PressbleAppIcon from '../ui/pressbleAppIcon'
 
-
-const AppSearch = ({ label = "", onSearch = (text: string) => { } }) => {
+interface props { style?: ViewStyle, label: string, onSearch: (text: string) => void }
+const AppSearch = ({ label = "", onSearch = (text: string) => { }, style }: props) => {
     const { isArabic } = useLanguage()
     const [searchTerm, setSearchTerm] = useState('');
-    console.log(searchTerm);
-
     useEffect(() => {
         onSearch(searchTerm)
     }, [searchTerm]);
@@ -22,9 +20,8 @@ const AppSearch = ({ label = "", onSearch = (text: string) => { } }) => {
     };
     return (
         <Pressable
-            style={styles.container}>
+            style={[styles.container, style && style]}>
             <View style={{ flex: 1, justifyContent: "center" }}>
-
                 <TextInput
                     onChangeText={(text) => setSearchTerm(text)}
                     value={searchTerm}
@@ -42,7 +39,7 @@ export default AppSearch
 
 const styles = StyleSheet.create({
     text: {
-        fontFamily: AppFonts.ROBOTO_Med_Itl
+        fontFamily: AppFonts.Roboto_Med
     },
     container: { borderWidth: 1, height: 50, backgroundColor: AppColorsTheme2.secondary200, borderRadius: 20, padding: 10, flexDirection: "row" }
 })

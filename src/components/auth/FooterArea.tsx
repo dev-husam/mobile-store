@@ -16,7 +16,7 @@ const FooterArea = () => {
                     {t("ByProvidingPhoneNumber")}
                     <Text
                         onPress={() => Linking.openURL("https://yamak-kw.com/terms")}
-                        style={{ color: "red", fontFamily: AppFonts.ROBOTO_Med_Itl, textDecorationLine: "underline" }}
+                        style={{ color: "red", fontFamily: AppFonts.Roboto_Med, textDecorationLine: "underline" }}
                     >
                         {/* Terms of Services */}
                         {t("TermOfService")}
@@ -26,7 +26,7 @@ const FooterArea = () => {
                     {" "}
                     <Text
                         onPress={() => Linking.openURL("https://yamak-kw.com/privacy")}
-                        style={{ color: "red", fontFamily: AppFonts.ROBOTO_Med_Itl, textDecorationLine: "underline" }}
+                        style={{ color: "red", fontFamily: AppFonts.Roboto_Med, textDecorationLine: "underline" }}
                     >
                         {/* Privacy and Policy */}
                         {t("PrivacyandPolicy")}

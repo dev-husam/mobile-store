@@ -14,6 +14,7 @@ const AsyncStorageConstants = {
     languageKey: "lang",
     userLocation: "userLocation"
 }
+const AppLimitList = 10
 
 const appVersion = getVersion()
 const appBuildNumber = getBuildNumber()
@@ -26,5 +27,6 @@ export {
     appVersion,
     appBuildNumber,
     isDev,
-    AppEnv
+    AppEnv,
+    AppLimitList
 }

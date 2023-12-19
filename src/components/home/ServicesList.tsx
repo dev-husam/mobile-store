@@ -11,6 +11,7 @@ import useFetchV2 from '../../hooks/useFetchV2'
 import { AppApiPath } from '../../apis/apisPath'
 // import ServiceListPH from '../placeHolders/ServiceListPH'
 import { ActivityIndicator } from 'react-native'
+import ServiceListPH from '../placeHolders/ServiceListPH'
 
 
 const renderItem = ({ item }: any) => (
