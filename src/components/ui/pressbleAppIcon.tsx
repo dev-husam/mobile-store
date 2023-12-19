@@ -10,7 +10,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 interface props {
-    type?: "Ionicons" | "AntDesign" | "MaterialIcons" | "Entypo" | "FontAwesome" | "Fontisto" | "MaterialCommunityIcons",
+    type?: "Ionicons" | "AntDesign" | "MaterialIcons" | "Entypo" | "FontAwesome" | "Fontisto" | "MaterialCommunityIcons" | "FontAwesome5",
     name?: string, size?: number, color?: string, onPress: () => void,
     style?: ViewStyle
 }
@@ -35,6 +35,8 @@ export const iconTypeEnum = {
     FontAwesome: (name: string, size: number, color: string) => <FontAwesome name={name} size={size} color={color} />,
     Fontisto: (name: string, size: number, color: string) => <Fontisto name={name} size={size} color={color} />,
     MaterialCommunityIcons: (name: string, size: number, color: string) => <MaterialCommunityIcons name={name} size={size} color={color} />,
+    FontAwesome5: (name: string, size: number, color: string) => <MaterialCommunityIcons name={name} size={size} color={color} />,
+
 
 }
 const styles = StyleSheet.create({})

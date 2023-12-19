@@ -108,5 +108,7 @@
   "UserCarWillAppear": "سيظهر قائمة هنا عند اضافة واحدة",
   "Back": "رجوع",
   "Search": "ابحث",
-  "Environment": "البيئة"
+  "Environment": "البيئة",
+  "Filter": "فلتر",
+  "YouHaveNREsult": "يوجد نتيجة {{count}}"
 }

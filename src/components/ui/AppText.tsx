@@ -9,7 +9,7 @@ const AppText = ({ children, size = AppSizes.medium, color = AppColorsTheme2.bla
     const { isArabic } = useLanguage()
 
     return (
-        <View style={[style && style,]}>
+        <View style={[{ justifyContent: "center", alignItems: "center" }, style && style]}>
             <Text style={[{ fontFamily: AppFonts.Roboto_Med, fontSize: size, color }, isArabic && styles.arabicRight, textStyle && textStyle,]}>{children}</Text>
         </View>
     )

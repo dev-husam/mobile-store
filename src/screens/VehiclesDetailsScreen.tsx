@@ -55,7 +55,7 @@ const VehiclesDetailsScreen = ({ route }) => {
                 <GoBackButton />
 
                 <View style={{ borderBottomWidth: 1, justifyContent: "center", alignItems: "center", backgroundColor: AppColorsTheme2.white }}>
-                    <Image style={{ height: 250 }} resizeMode={"contain"} source={require("../assets/images/truck1.png")} />
+                    <Image style={{ height: 250 }} resizeMode={"contain"} source={require("../assets/images/YamakTow4.png")} />
 
                 </View>
                 <View style={{}}>

@@ -11,7 +11,7 @@ const useFetchV2 = ({ method, url, data, params }: apiCallProps) => {
     useEffect(() => {
         if (url)
             sendRequest()
-    }, [method, url, params])
+    }, [method, url])
 
 
 
@@ -28,8 +28,10 @@ const useFetchV2 = ({ method, url, data, params }: apiCallProps) => {
             setLoading(false);
         }
     };
-
-    return { loading, error, responseData };
+    const refetch = async () => {
+        await sendRequest();
+    };
+    return { loading, error, responseData, refetch };
 };
 
 export default useFetchV2;

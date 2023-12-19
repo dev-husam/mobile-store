@@ -16,6 +16,7 @@ i18next
   .use(initReactI18next)
   .use(languageDetectorPlugin)
   .init({
+    preload: ['ar'],
     compatibilityJSON: 'v3',
     resources,
     fallbackLng: "en",

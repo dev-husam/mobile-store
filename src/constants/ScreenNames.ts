@@ -18,6 +18,8 @@ export const ScreenNames = {
     Email_OTP_Screen: "EmailOtp",
     Reset_OTP_Screen: "RestOtp",
     MY_CAR_SCREEN: "MyCar",
+    ALL_VEHICLES_SCREEN: "ALL_VEHICLES",
+
 
 }
 

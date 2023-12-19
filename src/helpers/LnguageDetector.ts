@@ -17,6 +17,14 @@ const languageDetectorPlugin = {
       await AsyncStorage.getItem(AsyncStorageConstants.languageKey).then((language) => {
         if (language) {
           //if language was stored before, use this language in the app
+          if (language === "ar") {
+            I18nManager.forceRTL(true);
+            I18nManager.allowRTL(true);
+            I18nManager.swapLeftAndRightInRTL(true);
+          } else {
+            I18nManager.forceRTL(false);
+            I18nManager.allowRTL(false);
+          }
           return callback(language);
         } else {
           //if language was not stored yet, use device's locale
