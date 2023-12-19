@@ -10,6 +10,8 @@ import VehicleItem from './VehicleItem'
 import { useNavigation } from '@react-navigation/native';
 import { ScreenNames } from '../../constants/ScreenNames';
 import { useTranslation } from 'react-i18next';
+import AppText from '../ui/AppText';
+import { AppSizes } from '../../constants/Sizes';
 
 
 const renderItem = ({ item }: any) => (
@@ -27,9 +29,9 @@ const ViewMap = () => {
         }}>
             <View style={styles.sectionContainer}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                    <Text style={styles.labelText}>
+                    <AppText textStyle={styles.labelText}>
                         {t("ViewOurMap")}
-                    </Text>
+                    </AppText>
 
 
                 </View>
@@ -50,7 +52,7 @@ const ViewMap = () => {
 export default ViewMap
 
 const styles = StyleSheet.create({
-    labelText: { fontSize: 20, fontFamily: AppFonts.Roboto_Med },
+    labelText: { fontSize: AppSizes.medium, fontFamily: AppFonts.Roboto_Med },
     ViewLabelText: { fontSize: 15, color: AppColorsTheme2.secondary, fontFamily: AppFonts.Roboto_Med },
     sectionContainer: {
         padding: 6,

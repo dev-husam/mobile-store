@@ -25,11 +25,11 @@
   "PhoneNumber": "Phone Number",
   "LoginText": "please enter your phone number to recive a verfication code tologin and use our app",
   "WelcomeLabel": "let`s find what we can help you",
-  "Services": "services",
+  "Services": "Services",
   "Adds": "ads area",
   "ViewAll": "View All",
   "VehiclesNearBy": "Vehicles Nearby",
-  "ViewOurMap": "view our map",
+  "ViewOurMap": "View map",
   "Hello": "Hello",
   "User": "User",
   "HelloAgain": "Welcome ",
@@ -88,5 +88,6 @@
   "Search": "Search",
   "Environment": "Environment",
   "YouHaveNREsult": "you have {{count}} result",
-  "AvailableServices": "Available Services"
+  "AvailableServices": "Available Services",
+  "FollowUs": "Follow Us"
 }

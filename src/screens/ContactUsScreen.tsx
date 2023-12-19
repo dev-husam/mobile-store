@@ -51,12 +51,13 @@ const ContactUsScreen = () => {
                     </Text>
                     <View style={{ flexDirection: "row", justifyContent: "center", marginTop: 10 }}>
                         <AppPressable
-                            onPress={iconPressHandler.bind(this, "https://www.instagram.com/yamak.app/")}
+                            onPress={iconPressHandler.bind(this, "https://twitter.com/yamak_kw")}
                             style={styles.iconContainer}>
-                            <Image style={{ width: 50, height: 50 }} source={require("../assets/icons/twitter.png")} />
+                            <Image style={{ width: 30, height: 30 }} source={require("../assets/images/x.png")} />
                         </AppPressable>
                         <AppPressable
-                            onPress={iconPressHandler.bind(this, "https://www.instagram.com/yamak.app/")}
+
+                            onPress={iconPressHandler.bind(this, "https://www.linkedin.com/in/yamak-undefined-a0923929a/")}
                             style={styles.iconContainer}>
                             <Image style={{ width: 50, height: 50 }} source={require("../assets/icons/linkedin.png")} />
                         </AppPressable>
@@ -92,7 +93,7 @@ const ContactUsItem = ({ item }: { item: { phone: string, name: string } }) => {
         onPress={() => contactPressHandler(item.phone)}
         style={{ marginBottom: 10, flexDirection: "row", borderTopWidth: 0.5, paddingVertical: 10 }}>
         <View style={{ borderRadius: 10, justifyContent: "center", alignItems: "center" }}>
-            <Image source={require("../assets/images/appLogo.png")} resizeMode="center" style={{ width: 80, height: 80 }} />
+            <Image source={require("../assets/images/appLogo.png")} resizeMode="contain" style={{ width: 80, height: 80 }} />
         </View>
         <View style={{ justifyContent: "center", flex: 1, padding: 10, }}>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -124,28 +125,28 @@ const customerServicesList = [
             en: "customer service - salmiya",
             ar: "خدمة الزبائن - السالميه"
         },
-        phone: "+96550535103"
+        phone: "(+965) 50535103"
     },
     {
         name: {
             en: "customer service - hawally",
             ar: "خدمة الزبائن - حولي"
         },
-        phone: "+96550535103"
+        phone: "(+965) 50535103"
     },
     {
         name: {
             en: "customer service - farwaniya",
             ar: "خدمة الزبائن - فروانيه"
         },
-        phone: "+96566917953"
+        phone: "(+965) 66917953"
     },
     {
         name: {
             en: "customer service - sabah salem",
             ar: "خدمة الزبائن - صباح سالم"
         },
-        phone: "+96566917953"
+        phone: "(+965) 66917953"
     },
 
 ]

@@ -93,8 +93,10 @@ const AppMap: FC<MapProps> = ({
             >
               <Image
                 style={{ width: 70, height: 70 }}
-                source={require("../../assets/images/YamakDriver1.png")}
+                source={require("../../assets/images/point.png")}
               />
+              <Image style={{ width: 50, height: 30, position: "absolute", right: 8, top: 10 }}
+                source={require("../../assets/images/YamakTow3.png")} />
             </Marker>
           );
         })}

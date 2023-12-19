@@ -34,7 +34,7 @@ const HeaderList = ({ count = 0, showSearch = false, onSortPress = (sortingType:
         setSorting(newSort)
     }
     function handleNotificationPress() {
-        navigation.navigate(StackNames.Profile_Stack, { screen: ScreenNames.Notification_Screen })
+        navigation.navigate(StackNames.Profile_Stack, { screen: ScreenNames.Notification_Screen, initial: false })
     }
 
     return (

@@ -60,7 +60,7 @@ const AllVicelessScreen = () => {
 
     return (
         <Screen style={{ backgroundColor: "white" }}>
-            <HeaderList showSearch={true} onSortPress={handleSorting} count={totalCount} />
+            <HeaderList showSearch={false} onSortPress={handleSorting} count={totalCount} />
             {loading ? <ActivityIndicator /> : (<AllVehiclesList setAllVehicles={setAllVehicles} allVehicles={allVehicles} onEndReached={onEndReachedHandler} />
             )}
         </Screen>
