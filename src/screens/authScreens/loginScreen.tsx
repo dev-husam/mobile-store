@@ -40,7 +40,7 @@ import { useLanguage } from "../../hooks/useLanguage.hook";
 import { AppLanguages } from "../../constants/languages";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { getStorageValues, setStorageValues } from "../../helpers/AppAsyncStoreage";
-import { AsyncStorageConstants } from "../../constants/CommonConsstats";
+import { AsyncStorageConstants, isIos } from "../../constants/CommonConsstats";
 
 
 
@@ -53,7 +53,7 @@ const LoginScreen = () => {
     const formRef = useRef();
     const bottomSheetRef = useRef()
 
-    const { handleSignInWithGoogle } = useSocialAuth("login")
+    const { handleSignInWithGoogle, handleAuthWithApple } = useSocialAuth("login")
 
     const { currentLanguage } = useLanguage()
     const { i18n, t } = useTranslation()
@@ -187,6 +187,12 @@ const LoginScreen = () => {
                                                     style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
                                                     <AppIcon size={30} name='google' type="FontAwesome" />
                                                 </AppPressable>
+                                                {isIos ? (<AppPressable
+                                                    onPress={() => handleAuthWithApple("login")}
+                                                    style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
+                                                    <AppIcon size={30} name='apple' type="FontAwesome" />
+                                                </AppPressable>) : null}
+
                                                 {/* <AppPressable
                                                     onPress={() => fbPromptAsync()}
                                                     style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>

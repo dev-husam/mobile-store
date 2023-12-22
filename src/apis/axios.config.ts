@@ -79,11 +79,10 @@ export const makeApiCall = async ({ method, url, data, params }: apiCallProps) =
       // Set dynamic base URL
       await setDynamicBaseURL(config);
 
-
+      console.log("Api request ==> " + JSON.stringify(config))
       const response = await client(config);
 
-      // console.log("Api request ==> " + JSON.stringify(config))
-      // console.log("Api response ==> " + JSON.stringify(response.data))
+      console.log("Api response ==> " + JSON.stringify(response.data))
 
       return response.data;
     } else {

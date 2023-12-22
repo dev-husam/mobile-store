@@ -5,6 +5,7 @@ import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { ScreenNames } from "../../constants/ScreenNames";
 import { useUserLocationStore } from "../../store/userLocation.store";
+import { useLanguage } from "../../hooks/useLanguage.hook";
 
 
 const AppMap: FC<MapProps> = ({
@@ -17,6 +18,7 @@ const AppMap: FC<MapProps> = ({
   });
 
   const [activeMarker, setActiveMarker] = useState(null)
+  const { isArabic } = useLanguage()
 
   const mapRef = useRef(null);
   const navigation = useNavigation()
@@ -95,7 +97,7 @@ const AppMap: FC<MapProps> = ({
                 style={{ width: 70, height: 70 }}
                 source={require("../../assets/images/point.png")}
               />
-              <Image style={{ width: 50, height: 30, position: "absolute", right: 8, top: 10 }}
+              <Image style={{ width: 50, height: 30, position: "absolute", right: isArabic ? 8 : 12, top: 10 }}
                 source={require("../../assets/images/YamakTow3.png")} />
             </Marker>
           );

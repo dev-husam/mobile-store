@@ -11,7 +11,7 @@ GoogleSignin.configure({
     offlineAccess: false,
     scopes: ["profile", "email"],
     iosClientId: Config.IOS_CLIENT_ID,
-    webClientId: "899706158244-qrv9stfvk9bqods0gc0bp6eiuvq4bpfg.apps.googleusercontent.com"
+    webClientId: Config.WEB_CLIENT_ID
 });
 
 
