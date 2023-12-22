@@ -89,5 +89,7 @@
   "Environment": "Environment",
   "YouHaveNREsult": "you have {{count}} result",
   "AvailableServices": "Available Services",
-  "FollowUs": "Follow Us"
+  "FollowUs": "Follow Us",
+  "AllowNotification": "Allow Notification",
+  "DateOfBirth": "Date Of Birth"
 }

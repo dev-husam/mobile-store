@@ -10,6 +10,8 @@ export const useAuthenticationStoreAsync = create(
             token: null,
             authenticate: (token: string, user: any) =>
                 set({ token: token, user }),
+            updateUserInfo: (user: any) =>
+                set({ token: get().token, user }),
             removeAuthentication: () => {
                 set({ token: null, user: null });
             },

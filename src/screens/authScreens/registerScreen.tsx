@@ -25,6 +25,7 @@ import OutLinedButton from '../../components/ui/OutLinedButton';
 import AppPressable from '../../components/ui/AppPressable';
 import AppSeparator from '../../components/ui/AppSeparator';
 import { useSocialAuth } from '../../hooks/useSocialAuth';
+import { isIos } from '../../constants/CommonConsstats';
 
 
 
@@ -44,7 +45,7 @@ const RegisterScreen = () => {
 
     const navigation = useNavigation()
     const { t } = useTranslation()
-    const { handleRegisterWithGoogle } = useSocialAuth("register")
+    const { handleRegisterWithGoogle, handleAuthWithApple } = useSocialAuth("register")
 
     async function onSubmitHandler(values, { setSubmitting }) {
 
@@ -138,6 +139,11 @@ const RegisterScreen = () => {
                                                         style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
                                                         <AppIcon size={30} name='google' type="FontAwesome" />
                                                     </AppPressable>
+                                                    {isIos ? (<AppPressable
+                                                        onPress={() => handleAuthWithApple("signUp")}
+                                                        style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
+                                                        <AppIcon size={30} name='apple' type="FontAwesome" />
+                                                    </AppPressable>) : null}
                                                     {/* <AppPressable
                                                         onPress={() => fbPromptAsync()}
                                                         style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>

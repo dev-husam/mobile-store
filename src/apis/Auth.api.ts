@@ -78,23 +78,25 @@ export const registerUser = async ({ phone, email, password, callingCode, name }
   return response;
 };
 
-export const registerUserWithSocial = async ({ googleAccessToken, facebookAccessToken }: { googleAccessToken?: string | undefined, facebookAccessToken?: string | undefined }) => {
+export const registerUserWithSocial = async ({ googleAccessToken, facebookAccessToken, appleAccessToken, appleInfo }: { googleAccessToken?: string | undefined, facebookAccessToken?: string | undefined, appleAccessToken: string | undefined, appleInfo?: any }) => {
   const body = {
     googleAccessToken: googleAccessToken ? googleAccessToken : ""
-    , facebookAccessToken: facebookAccessToken ? facebookAccessToken : ""
-  };
-  // const response = await client.post("auth/signup-social", body);
-  const response = await makeApiCall({ url: "auth/signup-social", data: body, method: "post" })
+    , facebookAccessToken: facebookAccessToken ? facebookAccessToken : "",
+    appleAccessToken: appleAccessToken ? appleAccessToken : "",
+    appleInfo
 
+  };
+  const response = await makeApiCall({ url: "auth/signup-social", data: body, method: "post" })
   return response;
 };
 
-export const loginUserWithSocial = async ({ googleAccessToken, facebookAccessToken }: { googleAccessToken?: string | undefined, facebookAccessToken?: string | undefined }) => {
+export const loginUserWithSocial = async ({ googleAccessToken, facebookAccessToken, appleAccessToken }: { googleAccessToken?: string | undefined, facebookAccessToken?: string | undefined, appleAccessToken: string | undefined }) => {
   const body = {
     googleAccessToken: googleAccessToken ? googleAccessToken : ""
-    , facebookAccessToken: facebookAccessToken ? facebookAccessToken : ""
+    , facebookAccessToken: facebookAccessToken ? facebookAccessToken : "",
+    appleAccessToken: appleAccessToken ? appleAccessToken : "",
+
   };
-  // const response = await client.post("auth/login-social", body);
   const response = await makeApiCall({ url: "auth/login-social", data: body, method: "post" })
 
   return response;

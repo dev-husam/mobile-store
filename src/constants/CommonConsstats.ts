@@ -12,7 +12,9 @@ const AsyncStorageConstants = {
     env: "environment",
     isLunched: "isLunched",
     languageKey: "lang",
-    userLocation: "userLocation"
+    userLocation: "userLocation",
+    appleLoginKeys: "appleLoginKeys",
+
 }
 const AppLimitList = 10
 
