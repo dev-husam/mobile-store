@@ -9,7 +9,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [[RCTI18nUtil sharedInstance] allowRTL:YES];
-  [[RCTI18nUtil sharedInstance] forceRTL:YES];
+  // [[RCTI18nUtil sharedInstance] forceRTL:YES];
   [GMSServices provideAPIKey:@"AIzaSyBSkbMtiUQH4TtRnWj4O4Tcs0WRyRN98pU"];
   self.moduleName = @"Yamak";
   // You can add your custom initial props in the dictionary below.
