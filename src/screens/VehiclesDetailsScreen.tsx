@@ -22,6 +22,8 @@ const VehiclesDetailsScreen = ({ route }) => {
     const { currentLanguage } = useLanguage()
     const driverPhone = vehicle?.currentDriver?.phoneNum
 
+    console.log({ loloooo: vehicle?.iconMap });
+
 
     useEffect(() => {
         if (_id) fetchVehicleData()
@@ -55,8 +57,7 @@ const VehiclesDetailsScreen = ({ route }) => {
                 <GoBackButton />
 
                 <View style={{ borderBottomWidth: 1, justifyContent: "center", alignItems: "center", backgroundColor: AppColorsTheme2.white }}>
-                    <Image style={{ height: 250 }} resizeMode={"contain"} source={require("../assets/images/YamakTow4.png")} />
-
+                    <Image style={{ height: 250, width: 250 }} resizeMode={"contain"} source={{ uri: vehicle?.iconMap }} />
                 </View>
                 <View style={{}}>
 

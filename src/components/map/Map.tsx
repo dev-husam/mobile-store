@@ -83,6 +83,8 @@ const AppMap: FC<MapProps> = ({
       {data &&
         data.length > 0 &&
         data.map((item: any, index) => {
+          console.log({ item });
+
           const [long, lat] = item.geoMetry.coordinates
           return (
             <Marker
@@ -95,10 +97,12 @@ const AppMap: FC<MapProps> = ({
             >
               <Image
                 style={{ width: 70, height: 70 }}
-                source={require("../../assets/images/point.png")}
+                source={require("../../assets/images/PinLocation.png")}
               />
               <Image style={{ width: 50, height: 30, position: "absolute", right: isArabic ? 8 : 12, top: 10 }}
-                source={require("../../assets/images/YamakTow3.png")} />
+                // source={require("../../assets/images/YamakTow3.png")} 
+                source={{ uri: item?.iconMap }}
+              />
             </Marker>
           );
         })}

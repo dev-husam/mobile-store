@@ -12,6 +12,8 @@ import { useTranslation } from 'react-i18next'
 import { verticalScale } from '../../helpers/Scalling'
 
 const VehicleItem = ({ item, isVertical = false }: { item: any, isVertical: boolean }) => {
+    console.log({ item });
+
     const navigator = useNavigation()
     const { t } = useTranslation()
 
@@ -23,7 +25,9 @@ const VehicleItem = ({ item, isVertical = false }: { item: any, isVertical: bool
         <Pressable onPress={vehiclesPressHandler} style={({ pressed }) => [styles.container, isVertical ? { marginVertical: verticalScale(5) } : { marginRight: 20, width: 350, }, pressed && styles.pressed]}>
             <View style={styles.innerContainer} >
                 <View style={{ flex: isVertical ? 1 : 1.5, alignItems: "center", justifyContent: "center" }}>
-                    <Image resizeMode='contain' source={require("../../assets/images/YamakTow3.png")} style={{ width: "100%", height: "100%" }} />
+                    {/* <Image resizeMode='contain' source={require("../../assets/images/YamakTow3.png")} style={{ width: "100%", height: "100%" }} /> */}
+                    <Image resizeMode='contain' source={{ uri: item?.iconMap }} style={{ width: "100%", height: "100%" }} />
+
                 </View>
                 <View style={{ borderWidth: 1, height: "80%", alignSelf: "center" }}>
                 </View>
