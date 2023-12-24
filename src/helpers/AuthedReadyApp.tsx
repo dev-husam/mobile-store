@@ -7,9 +7,14 @@ import DrawerStackNavigator from '../navigations/drawerStackNavigator';
 import AppAlert from '../components/ui/AppAlert';
 import { setStorageValues } from './AppAsyncStoreage';
 import { AsyncStorageConstants } from '../constants/CommonConsstats';
+import useNotification from '../notification/useNotification';
 
 
 const AuthedReadyApp = () => {
+
+    const { granted } = useNotification()
+    console.log({ granted });
+
 
     //userLocation
     const updateUserLocation = useUserLocationStore((state) => state.updateUserLocation)
