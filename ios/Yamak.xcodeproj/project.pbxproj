@@ -149,6 +149,7 @@
 		047215C42B23BF32005E22A7 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		0B22DE202B35E4B1006DDB64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B22DE222B35E531006DDB64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0B57F07A2B380D600024997A /* Yamak-Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Yamak-Dev.entitlements"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Yamak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yamak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Yamak/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Yamak/AppDelegate.mm; sourceTree = "<group>"; };
@@ -337,6 +338,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				0B57F07A2B380D600024997A /* Yamak-Dev.entitlements */,
 				04BF3E222B279E3400425A8F /* Google_Service */,
 				13B07FAE1A68108700A75B9A /* Yamak */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -930,9 +932,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC8AF50EB1628EDA1EF61119 /* Pods-Yamak-Yamak-Dev.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-dev";
+				ASSETCATALOG_COMPILER_APPICON_NAME = App_dev;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CODE_SIGN_ENTITLEMENTS = "Yamak-Dev.entitlements";
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = GBT2N5V28S;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Yamak dev-Info.plist";
@@ -959,9 +962,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 177717B5C2FAC50AB0B149C7 /* Pods-Yamak-Yamak-Dev.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-dev";
+				ASSETCATALOG_COMPILER_APPICON_NAME = App_dev;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CODE_SIGN_ENTITLEMENTS = "Yamak-Dev.entitlements";
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = GBT2N5V28S;
 				INFOPLIST_FILE = "Yamak dev-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

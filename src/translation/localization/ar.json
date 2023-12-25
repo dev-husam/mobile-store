@@ -110,5 +110,9 @@
   "Search": "ابحث",
   "Environment": "البيئة",
   "Filter": "فلتر",
-  "YouHaveNREsult": "يوجد نتيجة {{count}}"
+  "YouHaveNREsult": "يوجد نتيجة {{count}}",
+  "SigninwithApple": "تسجيل دخول باستخدام ابل",
+  "SigninwithGoogle": "تسجيل دخول باستخدام جوجل",
+  "RegisterwithGoogle": "تسجيل باستخدام جوجل",
+  "RegisterwithApple": "تسجيل باستخدام ابل"
 }

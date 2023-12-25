@@ -81,9 +81,9 @@ const EditProfileScreen = () => {
     return (
         <ScrollView style={{ flexGrow: 1, }}>
             <View style={{ flex: 1, padding: 20 }}>
-                <View >
+                {/* <View >
                     <ProfileMapView />
-                </View>
+                </View> */}
                 <KeyboardAwareScrollView>
 
                     <View style={{ paddingVertical: 20, opacity: 0.8, }}>

@@ -91,5 +91,9 @@
   "AvailableServices": "Available Services",
   "FollowUs": "Follow Us",
   "AllowNotification": "Allow Notification",
-  "DateOfBirth": "Date Of Birth"
+  "DateOfBirth": "Date Of Birth",
+  "SigninwithApple": "Sign in With Apple",
+  "SigninwithGoogle": "Sign in With Google",
+  "RegisterwithGoogle": "Register with Google",
+  "RegisterwithApple": "Register with Apple"
 }

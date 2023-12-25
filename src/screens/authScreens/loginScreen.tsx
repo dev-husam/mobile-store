@@ -181,16 +181,23 @@ const LoginScreen = () => {
                                             <AppText textStyle={{ textAlign: "center" }}>
                                                 {t("LoginWith")}
                                             </AppText>
-                                            <View style={{ justifyContent: "space-around", alignItems: "center", flexDirection: "row" }}>
+                                            <View style={{ justifyContent: "space-around", alignItems: "center", }}>
                                                 <AppPressable
                                                     onPress={() => handleSignInWithGoogle()}
-                                                    style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
-                                                    <AppIcon size={30} name='google' type="FontAwesome" />
+                                                    style={{ justifyContent: "center", alignItems: "center", padding: 8 }}>
+                                                    <View style={{ flexDirection: "row", backgroundColor: AppColorsTheme2.secondary, minWidth: 200, alignItems: "center", justifyContent: "center", borderRadius: 80, paddingHorizontal: 10, paddingVertical: 4 }}>
+                                                        <AppIcon style={{ marginRight: 8 }} size={30} color="white" name='google' type="FontAwesome" />
+                                                        <AppText color="white" >{t("SigninwithGoogle")}</AppText>
+                                                    </View>
                                                 </AppPressable>
                                                 {isIos ? (<AppPressable
                                                     onPress={() => handleAuthWithApple("login")}
-                                                    style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
-                                                    <AppIcon size={30} name='apple' type="FontAwesome" />
+                                                    style={{ justifyContent: "center", alignItems: "center", padding: 8 }}>
+                                                    <View style={{ flexDirection: "row", backgroundColor: AppColorsTheme2.primary, minWidth: 200, alignItems: "center", justifyContent: "center", borderRadius: 80, paddingHorizontal: 10, paddingVertical: 4 }}>
+                                                        <AppIcon style={{ marginRight: 8 }} size={30} color="white" name='apple' type="FontAwesome" />
+                                                        <AppText color="white" >{t("SigninwithApple")}</AppText>
+                                                    </View>
+
                                                 </AppPressable>) : null}
 
                                                 {/* <AppPressable
