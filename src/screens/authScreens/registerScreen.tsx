@@ -133,22 +133,31 @@ const RegisterScreen = () => {
                                                 <AppText textStyle={{ textAlign: "center" }}>
                                                     {t("LoginWith")}
                                                 </AppText>
-                                                <View style={{ justifyContent: "space-around", alignItems: "center", flexDirection: "row" }}>
-                                                    <AppPressable
+                                                <View style={{ justifyContent: "space-around", alignItems: "center", }}>
+                                                    {/* <AppPressable
                                                         onPress={() => handleRegisterWithGoogle()}
                                                         style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
                                                         <AppIcon size={30} name='google' type="FontAwesome" />
-                                                    </AppPressable>
-                                                    {isIos ? (<AppPressable
-                                                        onPress={() => handleAuthWithApple("signUp")}
-                                                        style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
-                                                        <AppIcon size={30} name='apple' type="FontAwesome" />
-                                                    </AppPressable>) : null}
-                                                    {/* <AppPressable
-                                                        onPress={() => fbPromptAsync()}
-                                                        style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
-                                                        <AppIcon size={30} name='ios-logo-facebook' />
                                                     </AppPressable> */}
+                                                    <AppPressable
+                                                        onPress={() => handleRegisterWithGoogle()}
+                                                        style={{ justifyContent: "center", alignItems: "center", padding: 8 }}>
+                                                        <View style={{ flexDirection: "row", backgroundColor: AppColorsTheme2.secondary, minWidth: 200, alignItems: "center", justifyContent: "center", borderRadius: 80, paddingHorizontal: 10, paddingVertical: 4 }}>
+                                                            <AppIcon style={{ marginRight: 8 }} size={30} color="white" name='google' type="FontAwesome" />
+                                                            <AppText color="white" >{t("RegisterwithGoogle")}</AppText>
+                                                        </View>
+                                                    </AppPressable>
+
+                                                    {isIos ? (<AppPressable
+                                                        onPress={() => handleAuthWithApple("login")}
+                                                        style={{ justifyContent: "center", alignItems: "center", padding: 8 }}>
+                                                        <View style={{ flexDirection: "row", backgroundColor: AppColorsTheme2.primary, minWidth: 200, alignItems: "center", justifyContent: "center", borderRadius: 80, paddingHorizontal: 10, paddingVertical: 4 }}>
+                                                            <AppIcon style={{ marginRight: 8 }} size={30} color="white" name='apple' type="FontAwesome" />
+                                                            <AppText color="white" >{t("RegisterwithApple")}</AppText>
+                                                        </View>
+
+                                                    </AppPressable>) : null}
+
                                                 </View>
                                             </View>
                                             <AppSeparator />
