@@ -1,58 +1,139 @@
 
 
-import { StyleSheet, Text, View } from 'react-native'
+import { PermissionsAndroid, Platform, StyleSheet, Text, View } from 'react-native'
 import messaging from '@react-native-firebase/messaging';
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import { getStorageValues, setStorageValues } from '../helpers/AppAsyncStoreage';
+import { AsyncStorageConstants } from '../constants/CommonConsstats';
 
 const useNotification = () => {
-    const [granted, setGranted] = useState(false)
+    const [fcmToken, setFcmToken] = useState("")
 
-    useEffect(() => {
-        requestUserPermission()
-        if (granted) {
 
-            checkToken()
+    const getFcmToken = async () => {
+        let token = null;
+        await registerAppWithFCM();
+        try {
+            let storedToken = await getStorageValues(AsyncStorageConstants.fcmToken)
+            if (storedToken) {
+                setFcmToken(JSON.parse(storedToken))
+                return
+            }
+            token = await messaging().getToken();
+            if (token) {
+                console.log('getFcmToken-->', token);
+                await setStorageValues(AsyncStorageConstants.fcmToken, JSON.stringify(token))
+                setFcmToken(token)
+            }
+
+
+
+        } catch (error) {
+            console.log('getFcmToken Device Token error ', error);
         }
+        return token;
+    };
 
 
-    }, [])
 
-    useEffect(() => {
-        messaging().setBackgroundMessageHandler(async remote => {
-            console.log({ remote });
-        })
+
+
+    async function registerAppWithFCM() {
+        console.log(
+            'registerAppWithFCM status',
+            messaging().isDeviceRegisteredForRemoteMessages,
+        );
+        if (!messaging().isDeviceRegisteredForRemoteMessages) {
+            await messaging()
+                .registerDeviceForRemoteMessages()
+                .then(status => {
+                    console.log('registerDeviceForRemoteMessages status', status);
+                })
+                .catch(error => {
+                    console.log('registerDeviceForRemoteMessages error ', error);
+                });
+        }
+    }
+    const listenToForegroundNotifications = async () => {
         const unsubscribe = messaging().onMessage(async remoteMessage => {
-            console.log("message recived ===>", remoteMessage);
+            console.log(
+                'A new message arrived! (FOREGROUND)',
+                JSON.stringify(remoteMessage),
+            );
+        });
+        return unsubscribe;
+    }
 
-        })
+    const listenToBackgroundNotifications = async () => {
+        const unsubscribe = messaging().setBackgroundMessageHandler(
+            async remoteMessage => {
+                console.log(
+                    'A new message arrived! (BACKGROUND)',
+                    JSON.stringify(remoteMessage),
+                );
+            },
+        );
+        return unsubscribe;
+    }
 
+    const onNotificationOpenedAppFromBackground = async () => {
+        const unsubscribe = messaging().onNotificationOpenedApp(
+            async remoteMessage => {
+                console.log(
+                    'App opened from BACKGROUND by tapping notification:',
+                    JSON.stringify(remoteMessage),
+                );
+            },
+        );
+        return unsubscribe;
+    };
 
-    }, [])
+    const onNotificationOpenedAppFromQuit = async () => {
+        const message = await messaging().getInitialNotification();
 
-    async function checkToken() {
-        const fcmToken = await messaging().getToken()
-        console.log({ fcmToken });
-        if (fcmToken) {
-            console.log("got token ====>", fcmToken);
+        if (message) {
+            console.log('App opened from QUIT by tapping notification:', JSON.stringify(message));
+        }
+    };
+
+    const checkApplicationNotificationPermission = async () => {
+        if (Platform.OS === 'ios') {
+            //Request iOS permission
+            const authStatus = await messaging().requestPermission();
+            const enabled =
+                authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+                authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+            if (enabled) {
+                getFcmToken()
+                console.log('Authorization status:', authStatus);
+            }
+        } else if (Platform.OS === 'android') {
+            //Request Android permission (For API level 33+, for 32 or below is not required)
+            const res = await PermissionsAndroid.request(
+                PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS,
+            );
+            if (res === "granted") {
+                getFcmToken()
+                console.log({ res });
+            }
         }
 
+    };
+
+
+    async function onDisplayNotification(title: string, body: string, data: any) {
 
     }
 
-    async function requestUserPermission() {
-        const authStatus = await messaging().requestPermission();
-        const enabled =
-            authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
-            authStatus === messaging.AuthorizationStatus.PROVISIONAL;
-
-        if (enabled) {
-            console.log('Authorization status:', authStatus);
-            setGranted(true)
-        }
-    }
     return {
-        granted
+        fcmToken,
+        getFcmToken,
+        checkApplicationNotificationPermission,
+        listenToForegroundNotifications,
+        listenToBackgroundNotifications,
+        onNotificationOpenedAppFromBackground,
+        onNotificationOpenedAppFromQuit,
     }
 }
 

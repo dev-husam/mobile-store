@@ -8,16 +8,38 @@ import AppAlert from '../components/ui/AppAlert';
 import { setStorageValues } from './AppAsyncStoreage';
 import { AsyncStorageConstants } from '../constants/CommonConsstats';
 import useNotification from '../notification/useNotification';
+import AppText from '../components/ui/AppText';
+import { updateUserProfile } from '../apis/users.api';
 
 
 const AuthedReadyApp = () => {
 
-    const { granted } = useNotification()
-    console.log({ granted });
+    const { fcmToken, listenToBackgroundNotifications, listenToForegroundNotifications, onNotificationOpenedAppFromQuit, onNotificationOpenedAppFromBackground, checkApplicationNotificationPermission } = useNotification()
+    console.log({ fcmToken });
+
+
+    useEffect(() => {
+        if (fcmToken) {
+            updateUserProfile({ fcmToken: fcmToken })
+        }
+        const listenToNotifications = () => {
+            try {
+                checkApplicationNotificationPermission()
+                onNotificationOpenedAppFromQuit();
+                listenToBackgroundNotifications();
+                listenToForegroundNotifications();
+                onNotificationOpenedAppFromBackground();
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
+        listenToNotifications();
+    }, []);
 
 
     //userLocation
-    const updateUserLocation = useUserLocationStore((state) => state.updateUserLocation)
+    const updateUserLocation = useUserLocationStore((state) => state?.updateUserLocation)
     const { currentLocation } = userCurrentLocation()
     useEffect(() => {
         if (currentLocation) {

@@ -98,7 +98,6 @@
 		047215D72B23BF32005E22A7 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 047215C42B23BF32005E22A7 /* MaterialIcons.ttf */; };
 		0B22DE212B35E4B1006DDB64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B22DE202B35E4B1006DDB64 /* GoogleService-Info.plist */; };
 		0B22DE232B35E531006DDB64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B22DE222B35E531006DDB64 /* GoogleService-Info.plist */; };
-		0C80B921A6F3F58F76C31292 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		0F3254F5F5E943E297B4B523 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43F1FD7AFC2F4C2B9BFD1E69 /* Roboto-Thin.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -106,17 +105,17 @@
 		17C6521C11884B6A8630FF59 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1CEBAB1AD744F78B4DC72B3 /* Roboto-Medium.ttf */; };
 		184A9A3E3DE54BDAB4B93A11 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FBD891B427DC4809AB7B41DD /* Roboto-ThinItalic.ttf */; };
 		1BDF72DE2EFD4E6F8136F95C /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE75EDDFCF4B4FF9A3278E64 /* Roboto-LightItalic.ttf */; };
+		2945987E77A69BE9D49E2442 /* libPods-Yamak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D79CD617B8833A1189B429 /* libPods-Yamak.a */; };
 		2A5BBFA10B7D4732B6DF0505 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D846AA17669A43BF938E7A5B /* Roboto-MediumItalic.ttf */; };
-		4426330F8283544010A1352D /* libPods-Yamak-Yamak-Dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D2834CB808129D9E4A26A80 /* libPods-Yamak-Yamak-Dev.a */; };
+		51464C3B0A966F02BE5E669D /* libPods-Yamak-Yamak-Dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 179CE6930F34D101DF36C28F /* libPods-Yamak-Yamak-Dev.a */; };
 		58F57B34BB834E1BB22D76CD /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD64E8D00B242B1A71F9443 /* Roboto-Bold.ttf */; };
 		603B0E0921504A5194F317AD /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27CE7AE1E97046DD946AF644 /* Roboto-Regular.ttf */; };
 		6AF57926CF124F57BACAF081 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2981234E1194C52A8AD8E80 /* Roboto-BoldItalic.ttf */; };
+		786C44815C717DE64B814FC6 /* libPods-Yamak-Yamak-Stage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4146128C6419D6D5EB59A367 /* libPods-Yamak-Yamak-Stage.a */; };
 		790A373F7AF84151A4804786 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE484CA4AF594579A98AF1DC /* Roboto-Black.ttf */; };
 		7B65466D42AE4E69B6C1DA15 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C43704E0741998EEDEBC7 /* Roboto-Italic.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		CD80294720ADD5654C559D88 /* libPods-Yamak-Yamak-Stage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9523B188361398383046C938 /* libPods-Yamak-Yamak-Stage.a */; };
 		D27874AB13A348519BE21B74 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6560A3CFA1654910BB9E3C0D /* Roboto-Light.ttf */; };
-		EA1F0DC95D3F9B2C3BDD06EA /* libPods-Yamak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F92987A7DEF3A0531301AC2 /* libPods-Yamak.a */; };
 		FE74C89E23DC46619CB1DEAE /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83807D9A3C9E4EF68AE751F7 /* Roboto-BlackItalic.ttf */; };
 /* End PBXBuildFile section */
 
@@ -157,19 +156,19 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Yamak/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Yamak/main.m; sourceTree = "<group>"; };
 		177717B5C2FAC50AB0B149C7 /* Pods-Yamak-Yamak-Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamak-Yamak-Dev.release.xcconfig"; path = "Target Support Files/Pods-Yamak-Yamak-Dev/Pods-Yamak-Yamak-Dev.release.xcconfig"; sourceTree = "<group>"; };
+		179CE6930F34D101DF36C28F /* libPods-Yamak-Yamak-Dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak-Yamak-Dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Yamak-YamakTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak-YamakTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CE7AE1E97046DD946AF644 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Yamak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamak.debug.xcconfig"; path = "Target Support Files/Pods-Yamak/Pods-Yamak.debug.xcconfig"; sourceTree = "<group>"; };
+		4146128C6419D6D5EB59A367 /* libPods-Yamak-Yamak-Stage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak-Yamak-Stage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F1FD7AFC2F4C2B9BFD1E69 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../src/assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		4D2834CB808129D9E4A26A80 /* libPods-Yamak-Yamak-Dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak-Yamak-Dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5709B34CF0A7D63546082F79 /* Pods-Yamak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamak.release.xcconfig"; path = "Target Support Files/Pods-Yamak/Pods-Yamak.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Yamak-YamakTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamak-YamakTests.debug.xcconfig"; path = "Target Support Files/Pods-Yamak-YamakTests/Pods-Yamak-YamakTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6560A3CFA1654910BB9E3C0D /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../src/assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
-		6F92987A7DEF3A0531301AC2 /* libPods-Yamak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76D79CD617B8833A1189B429 /* libPods-Yamak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Yamak/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83807D9A3C9E4EF68AE751F7 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BlackItalic.ttf"; path = "../src/assets/fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Yamak-YamakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamak-YamakTests.release.xcconfig"; path = "Target Support Files/Pods-Yamak-YamakTests/Pods-Yamak-YamakTests.release.xcconfig"; sourceTree = "<group>"; };
-		9523B188361398383046C938 /* libPods-Yamak-Yamak-Stage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak-Yamak-Stage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8C43704E0741998EEDEBC7 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../src/assets/fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		A1CEBAB1AD744F78B4DC72B3 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		A2981234E1194C52A8AD8E80 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BoldItalic.ttf"; path = "../src/assets/fonts/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -189,7 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4426330F8283544010A1352D /* libPods-Yamak-Yamak-Dev.a in Frameworks */,
+				51464C3B0A966F02BE5E669D /* libPods-Yamak-Yamak-Dev.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD80294720ADD5654C559D88 /* libPods-Yamak-Yamak-Stage.a in Frameworks */,
+				786C44815C717DE64B814FC6 /* libPods-Yamak-Yamak-Stage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* BuildFile in Frameworks */,
-				EA1F0DC95D3F9B2C3BDD06EA /* libPods-Yamak.a in Frameworks */,
+				2945987E77A69BE9D49E2442 /* libPods-Yamak.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,9 +300,9 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-Yamak-YamakTests.a */,
-				4D2834CB808129D9E4A26A80 /* libPods-Yamak-Yamak-Dev.a */,
-				9523B188361398383046C938 /* libPods-Yamak-Yamak-Stage.a */,
-				6F92987A7DEF3A0531301AC2 /* libPods-Yamak.a */,
+				76D79CD617B8833A1189B429 /* libPods-Yamak.a */,
+				179CE6930F34D101DF36C28F /* libPods-Yamak-Yamak-Dev.a */,
+				4146128C6419D6D5EB59A367 /* libPods-Yamak-Yamak-Stage.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1150,6 +1148,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
@@ -1225,6 +1231,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon/ReactCommon.framework/Headers/react/nativemodule/core",
+					"${PODS_CONFIGURATION_BUILD_DIR}/ReactCommon-Samples/ReactCommon_Samples.framework/Headers/platform/ios",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-NativeModulesApple/React_NativeModulesApple.framework/Headers",
+					"${PODS_CONFIGURATION_BUILD_DIR}/React-graphics/React_graphics.framework/Headers/react/renderer/graphics/platform/ios",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,

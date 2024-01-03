@@ -2,13 +2,15 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <GoogleMaps/GoogleMaps.h>
-// #import <React/RCTI18nUtil.h> 
-#import <React/RCTI18nUtil.h> 
+
+#import <Firebase.h>
+#import <React/RCTI18nUtil.h>
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [[RCTI18nUtil sharedInstance] allowRTL:YES];
+   [FIRApp configure];
   // [[RCTI18nUtil sharedInstance] forceRTL:YES];
   [GMSServices provideAPIKey:@"AIzaSyBSkbMtiUQH4TtRnWj4O4Tcs0WRyRN98pU"];
   self.moduleName = @"Yamak";

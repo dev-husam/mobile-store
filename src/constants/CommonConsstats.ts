@@ -14,6 +14,7 @@ const AsyncStorageConstants = {
     languageKey: "lang",
     userLocation: "userLocation",
     appleLoginKeys: "appleLoginKeys",
+    fcmToken: "fcmToken"
 
 }
 const AppLimitList = 10
