@@ -55,6 +55,14 @@ const useNotification = () => {
                 });
         }
     }
+    async function subscribeTopic(topic: string) {
+        messaging()
+            .subscribeToTopic(topic)
+            .then(() => console.log("Subscribed to topic:", topic))
+            .catch((e) => {
+                console.log(e);
+            });
+    };
     const listenToForegroundNotifications = async () => {
         const unsubscribe = messaging().onMessage(async remoteMessage => {
             console.log(
@@ -134,6 +142,7 @@ const useNotification = () => {
         listenToBackgroundNotifications,
         onNotificationOpenedAppFromBackground,
         onNotificationOpenedAppFromQuit,
+        subscribeTopic
     }
 }
 

@@ -6,7 +6,7 @@ import userCurrentLocation from '../hooks/userCurrentLocation';
 import DrawerStackNavigator from '../navigations/drawerStackNavigator';
 import AppAlert from '../components/ui/AppAlert';
 import { setStorageValues } from './AppAsyncStoreage';
-import { AsyncStorageConstants } from '../constants/CommonConsstats';
+import { AsyncStorageConstants, NotificationTopicConstants } from '../constants/CommonConsstats';
 import useNotification from '../notification/useNotification';
 import AppText from '../components/ui/AppText';
 import { updateUserProfile } from '../apis/users.api';
@@ -14,7 +14,7 @@ import { updateUserProfile } from '../apis/users.api';
 
 const AuthedReadyApp = () => {
 
-    const { fcmToken, listenToBackgroundNotifications, listenToForegroundNotifications, onNotificationOpenedAppFromQuit, onNotificationOpenedAppFromBackground, checkApplicationNotificationPermission } = useNotification()
+    const { fcmToken, listenToBackgroundNotifications, subscribeTopic, listenToForegroundNotifications, onNotificationOpenedAppFromQuit, onNotificationOpenedAppFromBackground, checkApplicationNotificationPermission } = useNotification()
     console.log({ fcmToken });
 
 
@@ -29,6 +29,7 @@ const AuthedReadyApp = () => {
                 listenToBackgroundNotifications();
                 listenToForegroundNotifications();
                 onNotificationOpenedAppFromBackground();
+                subscribeTopic(NotificationTopicConstants.yamakAll)
             } catch (error) {
                 console.log(error);
             }

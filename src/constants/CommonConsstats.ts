@@ -17,6 +17,11 @@ const AsyncStorageConstants = {
     fcmToken: "fcmToken"
 
 }
+
+const NotificationTopicConstants = {
+    yamakAll: "yamak-all",
+
+}
 const AppLimitList = 10
 
 const appVersion = getVersion()
@@ -31,5 +36,6 @@ export {
     appBuildNumber,
     isDev,
     AppEnv,
-    AppLimitList
+    AppLimitList,
+    NotificationTopicConstants
 }
