@@ -13,22 +13,22 @@ const languageDetectorPlugin = {
     try {
       await AsyncStorage.getItem(AsyncStorageConstants.languageKey).then((language) => {
         if (!language) {
-
           I18nManager.forceRTL(false);
           I18nManager.allowRTL(false);
           AsyncStorage.setItem(AsyncStorageConstants.languageKey, AppLanguages.english);
           return callback(AppLanguages.english);
-        } else {
-          if (language === "ar") {
-            I18nManager.forceRTL(true);
-            I18nManager.allowRTL(true);
-            I18nManager.swapLeftAndRightInRTL(true);
-          } else {
-            I18nManager.forceRTL(false);
-            I18nManager.allowRTL(false);
-          }
-          return callback(language);
         }
+
+        if (language === "ar") {
+          I18nManager.forceRTL(true);
+          I18nManager.allowRTL(true);
+          I18nManager.swapLeftAndRightInRTL(true);
+        } else {
+          I18nManager.forceRTL(false);
+          I18nManager.allowRTL(false);
+        }
+        return callback(language);
+
       });
     } catch (error) {
     }
