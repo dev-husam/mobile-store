@@ -96,8 +96,8 @@
 		047215D52B23BF32005E22A7 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 047215C22B23BF32005E22A7 /* SimpleLineIcons.ttf */; };
 		047215D62B23BF32005E22A7 /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 047215C32B23BF32005E22A7 /* FontAwesome6_Brands.ttf */; };
 		047215D72B23BF32005E22A7 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 047215C42B23BF32005E22A7 /* MaterialIcons.ttf */; };
-		0B22DE212B35E4B1006DDB64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B22DE202B35E4B1006DDB64 /* GoogleService-Info.plist */; };
 		0B22DE232B35E531006DDB64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B22DE222B35E531006DDB64 /* GoogleService-Info.plist */; };
+		0BC951BD2B484C8000ACDDF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BC951BC2B484C8000ACDDF2 /* GoogleService-Info.plist */; };
 		0F3254F5F5E943E297B4B523 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43F1FD7AFC2F4C2B9BFD1E69 /* Roboto-Thin.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -146,9 +146,9 @@
 		047215C22B23BF32005E22A7 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		047215C32B23BF32005E22A7 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
 		047215C42B23BF32005E22A7 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		0B22DE202B35E4B1006DDB64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B22DE222B35E531006DDB64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B57F07A2B380D600024997A /* Yamak-Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Yamak-Dev.entitlements"; sourceTree = "<group>"; };
+		0BC951BC2B484C8000ACDDF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Yamak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yamak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Yamak/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Yamak/AppDelegate.mm; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 		04BF3E262B27A1C000425A8F /* prod */ = {
 			isa = PBXGroup;
 			children = (
-				0B22DE202B35E4B1006DDB64 /* GoogleService-Info.plist */,
+				0BC951BC2B484C8000ACDDF2 /* GoogleService-Info.plist */,
 			);
 			path = prod;
 			sourceTree = "<group>";
@@ -596,7 +596,7 @@
 				603B0E0921504A5194F317AD /* Roboto-Regular.ttf in Resources */,
 				047215C52B23BF32005E22A7 /* Fontisto.ttf in Resources */,
 				047215D52B23BF32005E22A7 /* SimpleLineIcons.ttf in Resources */,
-				0B22DE212B35E4B1006DDB64 /* GoogleService-Info.plist in Resources */,
+				0BC951BD2B484C8000ACDDF2 /* GoogleService-Info.plist in Resources */,
 				047215D12B23BF32005E22A7 /* FontAwesome.ttf in Resources */,
 				0F3254F5F5E943E297B4B523 /* Roboto-Thin.ttf in Resources */,
 				047215CC2B23BF32005E22A7 /* AntDesign.ttf in Resources */,
@@ -1047,6 +1047,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Yamak/Yamak.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = GBT2N5V28S;
 				ENABLE_BITCODE = NO;
@@ -1064,6 +1066,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yamak.mobapp;
 				PRODUCT_NAME = Yamak;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1077,6 +1080,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Yamak/Yamak.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = GBT2N5V28S;
 				INFOPLIST_FILE = Yamak/Info.plist;
@@ -1093,6 +1098,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yamak.mobapp;
 				PRODUCT_NAME = Yamak;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

@@ -2,6 +2,7 @@
 
 import { PermissionsAndroid, Platform, StyleSheet, Text, View } from 'react-native'
 import messaging from '@react-native-firebase/messaging';
+import PushNotification from "react-native-push-notification";
 
 import React, { useState } from 'react'
 import { getStorageValues, setStorageValues } from '../helpers/AppAsyncStoreage';
@@ -26,8 +27,6 @@ const useNotification = () => {
                 await setStorageValues(AsyncStorageConstants.fcmToken, JSON.stringify(token))
                 setFcmToken(token)
             }
-
-
 
         } catch (error) {
             console.log('getFcmToken Device Token error ', error);
@@ -65,6 +64,16 @@ const useNotification = () => {
     };
     const listenToForegroundNotifications = async () => {
         const unsubscribe = messaging().onMessage(async remoteMessage => {
+
+            PushNotification.localNotification({
+                title: remoteMessage?.notification?.title,
+                message: remoteMessage?.notification?.body,
+                contentAvailable: true,
+                date: new Date(Date.now() + 1 * 1000), // in 1 secs
+                allowWhileIdle: false, // (optional) set notification to work while on doze, default: false
+                channelId: 'checkNotification',
+                soundName: "default",
+            });
             console.log(
                 'A new message arrived! (FOREGROUND)',
                 JSON.stringify(remoteMessage),
@@ -108,7 +117,11 @@ const useNotification = () => {
     const checkApplicationNotificationPermission = async () => {
         if (Platform.OS === 'ios') {
             //Request iOS permission
-            const authStatus = await messaging().requestPermission();
+            const authStatus = await messaging().requestPermission({
+                sound: true,
+                carPlay: true,
+                announcement: true,
+            });
             const enabled =
                 authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
                 authStatus === messaging.AuthorizationStatus.PROVISIONAL;
@@ -130,9 +143,6 @@ const useNotification = () => {
     };
 
 
-    async function onDisplayNotification(title: string, body: string, data: any) {
-
-    }
 
     return {
         fcmToken,

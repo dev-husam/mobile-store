@@ -1,14 +1,13 @@
-import { StyleSheet, } from 'react-native'
+import { Alert, StyleSheet, } from 'react-native'
 import React, { useEffect } from 'react'
 import { useUserLocationStore } from '../store/userLocation.store';
 import userCurrentLocation from '../hooks/userCurrentLocation';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 import DrawerStackNavigator from '../navigations/drawerStackNavigator';
-import AppAlert from '../components/ui/AppAlert';
 import { setStorageValues } from './AppAsyncStoreage';
-import { AsyncStorageConstants, NotificationTopicConstants } from '../constants/CommonConsstats';
+import { AsyncStorageConstants, NotificationTopicConstants, isIos } from '../constants/CommonConsstats';
 import useNotification from '../notification/useNotification';
-import AppText from '../components/ui/AppText';
 import { updateUserProfile } from '../apis/users.api';
 
 
@@ -20,8 +19,12 @@ const AuthedReadyApp = () => {
 
     useEffect(() => {
         if (fcmToken) {
+            console.log({ update: fcmToken });
+
             updateUserProfile({ fcmToken: fcmToken })
         }
+
+
         const listenToNotifications = () => {
             try {
                 checkApplicationNotificationPermission()
@@ -34,9 +37,8 @@ const AuthedReadyApp = () => {
                 console.log(error);
             }
         };
-
         listenToNotifications();
-    }, []);
+    }, [fcmToken]);
 
 
     //userLocation
