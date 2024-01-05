@@ -12,7 +12,6 @@ import { useTranslation } from 'react-i18next'
 import { verticalScale } from '../../helpers/Scalling'
 
 const VehicleItem = ({ item, isVertical = false }: { item: any, isVertical: boolean }) => {
-    console.log({ item });
 
     const navigator = useNavigation()
     const { t } = useTranslation()

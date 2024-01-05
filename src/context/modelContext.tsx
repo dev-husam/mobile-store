@@ -42,7 +42,6 @@ export const ModalContextProvider = ({ children }: { children: ReactNode }) => {
             content,
             showModalControls,
         });
-        console.log("invoked");
 
         setOpen(true);
         if (hasTimeOut) {

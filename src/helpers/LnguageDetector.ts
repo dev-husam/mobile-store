@@ -1,8 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { getLocales } from "react-native-localize";
 import { I18nManager } from "react-native";
 import { AsyncStorageConstants } from "../constants/CommonConsstats";
-import i18next from "i18next";
+import { AppLanguages } from "../constants/languages";
 
 ;
 
@@ -12,43 +11,34 @@ const languageDetectorPlugin = {
   init: () => { },
   detect: async function (callback: (lang: string) => void) {
     try {
-      //get stored language from Async storage
-      // AsyncStorage.clear()
       await AsyncStorage.getItem(AsyncStorageConstants.languageKey).then((language) => {
-        if (language) {
-          //if language was stored before, use this language in the app
-          if (language === "ar") {
-            I18nManager.forceRTL(true);
-            I18nManager.allowRTL(true);
-            I18nManager.swapLeftAndRightInRTL(true);
-          } else {
-            I18nManager.forceRTL(false);
-            I18nManager.allowRTL(false);
-          }
-          return callback(language);
-        } else {
-          //if language was not stored yet, use device's locale
-          const language = "ar"
-          if (language === "ar") {
-            I18nManager.forceRTL(true);
-            I18nManager.allowRTL(true);
-            I18nManager.swapLeftAndRightInRTL(true);
-          } else {
-            I18nManager.forceRTL(false);
-            I18nManager.allowRTL(false);
-          }
-          AsyncStorage.setItem(AsyncStorageConstants.languageKey, language);
-          return callback(language);
+        if (!language) {
+          I18nManager.forceRTL(false);
+          I18nManager.allowRTL(false);
+          AsyncStorage.setItem(AsyncStorageConstants.languageKey, AppLanguages.english);
+          return callback(AppLanguages.english);
         }
+
+        if (language === "ar") {
+          I18nManager.forceRTL(true);
+          I18nManager.allowRTL(true);
+          I18nManager.swapLeftAndRightInRTL(true);
+        } else {
+          I18nManager.forceRTL(false);
+          I18nManager.allowRTL(false);
+        }
+        return callback(language);
+
       });
     } catch (error) {
     }
   },
-  cacheUserLanguage: async function (language: string) {
+  cacheUserLanguage: async function (language: string, options: any) {
     try {
-      //save a user's language choice in Async storage
       await AsyncStorage.setItem(AsyncStorageConstants.languageKey, language);
-    } catch (error) { }
+    } catch (error) {
+      console.log("error storing language in detector ==>", error.messsage)
+    }
   },
 };
 

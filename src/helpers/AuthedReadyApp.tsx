@@ -1,18 +1,48 @@
-import { StyleSheet, } from 'react-native'
+import { Alert, StyleSheet, } from 'react-native'
 import React, { useEffect } from 'react'
 import { useUserLocationStore } from '../store/userLocation.store';
 import userCurrentLocation from '../hooks/userCurrentLocation';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 import DrawerStackNavigator from '../navigations/drawerStackNavigator';
-import AppAlert from '../components/ui/AppAlert';
 import { setStorageValues } from './AppAsyncStoreage';
-import { AsyncStorageConstants } from '../constants/CommonConsstats';
+import { AsyncStorageConstants, NotificationTopicConstants, isIos } from '../constants/CommonConsstats';
+import useNotification from '../notification/useNotification';
+import { updateUserProfile } from '../apis/users.api';
 
 
 const AuthedReadyApp = () => {
 
+    const { fcmToken, listenToBackgroundNotifications, subscribeTopic, listenToForegroundNotifications, onNotificationOpenedAppFromQuit, onNotificationOpenedAppFromBackground, checkApplicationNotificationPermission } = useNotification()
+    console.log({ fcmToken });
+
+
+    useEffect(() => {
+        if (fcmToken) {
+            console.log({ update: fcmToken });
+
+            updateUserProfile({ fcmToken: fcmToken })
+        }
+
+
+        const listenToNotifications = () => {
+            try {
+                checkApplicationNotificationPermission()
+                onNotificationOpenedAppFromQuit();
+                listenToBackgroundNotifications();
+                listenToForegroundNotifications();
+                onNotificationOpenedAppFromBackground();
+                subscribeTopic(NotificationTopicConstants.yamakAll)
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        listenToNotifications();
+    }, [fcmToken]);
+
+
     //userLocation
-    const updateUserLocation = useUserLocationStore((state) => state.updateUserLocation)
+    const updateUserLocation = useUserLocationStore((state) => state?.updateUserLocation)
     const { currentLocation } = userCurrentLocation()
     useEffect(() => {
         if (currentLocation) {

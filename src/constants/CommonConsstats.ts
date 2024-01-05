@@ -14,6 +14,12 @@ const AsyncStorageConstants = {
     languageKey: "lang",
     userLocation: "userLocation",
     appleLoginKeys: "appleLoginKeys",
+    fcmToken: "fcmToken"
+
+}
+
+const NotificationTopicConstants = {
+    yamakAll: "yamak-all",
 
 }
 const AppLimitList = 10
@@ -30,5 +36,6 @@ export {
     appBuildNumber,
     isDev,
     AppEnv,
-    AppLimitList
+    AppLimitList,
+    NotificationTopicConstants
 }

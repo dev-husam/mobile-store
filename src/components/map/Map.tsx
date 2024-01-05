@@ -83,8 +83,6 @@ const AppMap: FC<MapProps> = ({
       {data &&
         data.length > 0 &&
         data.map((item: any, index) => {
-          console.log({ item });
-
           const [long, lat] = item.geoMetry.coordinates
           return (
             <Marker

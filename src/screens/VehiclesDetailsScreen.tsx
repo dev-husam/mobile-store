@@ -22,9 +22,6 @@ const VehiclesDetailsScreen = ({ route }) => {
     const { currentLanguage } = useLanguage()
     const driverPhone = vehicle?.currentDriver?.phoneNum
 
-    console.log({ loloooo: vehicle?.iconMap });
-
-
     useEffect(() => {
         if (_id) fetchVehicleData()
     }, [])
