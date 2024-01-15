@@ -8,12 +8,12 @@ import { AppColors, AppColorsTheme2 } from '../../constants/Colors'
 import { AppFonts } from '../../constants/fonts'
 import { ScreenNames } from '../../constants/ScreenNames'
 import AppSeparator from '../ui/AppSeparator'
+import { androidPlayStoreLink, iosAppStoreLink, isIos } from '../../constants/CommonConsstats'
 
 const ProfileMainButtons = () => {
 
     const navigator = useNavigation()
     const { t } = useTranslation()
-    const isAndroid = Platform.OS === "android"
 
     function pressButtonNavigateHandlerHandler(screenName: string) {
         navigator.navigate(screenName)
@@ -25,7 +25,7 @@ const ProfileMainButtons = () => {
     }
     async function shareAppHandler() {
         try {
-            const url = isAndroid ? "https://play.google.com/store/games" : "https://www.apple.com/kw/app-store/"
+            const url = isIos ? iosAppStoreLink : androidPlayStoreLink
             const result = await Share.share({
                 message:
                     ("Try Yamak the first application in Kuwait for roads helping and more " + '\n' + url)

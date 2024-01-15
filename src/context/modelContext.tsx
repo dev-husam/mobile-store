@@ -53,7 +53,6 @@ export const ModalContextProvider = ({ children }: { children: ReactNode }) => {
             resolver.current = resolve;
         });
     }
-    console.log({ open });
 
 
     return (<ModalContext.Provider value={{ showModal, close }}>

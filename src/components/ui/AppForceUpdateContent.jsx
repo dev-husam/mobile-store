@@ -5,9 +5,10 @@ import { AppFonts } from '../../constants/fonts'
 import { AppColorsTheme2 } from '../../constants/Colors'
 import { useTranslation } from 'react-i18next'
 
-const AppForceUpdateContent = ({ message = "",
+const AppForceUpdateContent = ({
+    message = "",
     title = "",
-    visible,
+    isForceUpdate = false,
     onCancel,
     onConfirm,
     cancelMessage,
@@ -19,7 +20,7 @@ const AppForceUpdateContent = ({ message = "",
             <View style={styles.innerContainer}>
                 <View style={{ flex: 0.3, backgroundColor: AppColorsTheme2.primary }}>
                     <View style={{ width: 100, height: 100, borderWidth: 6, borderColor: "white", position: "absolute", alignSelf: "center", top: -50, backgroundColor: AppColorsTheme2.primary, borderRadius: 50, justifyContent: "center", alignItems: "center" }}>
-                        <Image style={{ width: 70, height: 70 }} source={require("../../assets/images/exclamation.png")} />
+                        <Image style={{ width: 60, height: 60 }} source={require("../../assets/images/update.png")} />
                     </View>
                 </View>
                 <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -31,7 +32,7 @@ const AppForceUpdateContent = ({ message = "",
                     <Pressable style={({ pressed }) => [styles.confirmButton, pressed && styles.pressed]} onPress={onConfirm}>
                         <Text style={styles.confirmButtonText}>{confirmMessage ? confirmMessage : t("Update")}</Text>
                     </Pressable>
-                    {cancelMessage ? <Pressable style={({ pressed }) => [styles.cancelButton, pressed && styles.pressed]} onPress={onCancel}>
+                    {(cancelMessage && !isForceUpdate) ? <Pressable style={({ pressed }) => [styles.cancelButton, pressed && styles.pressed]} onPress={onCancel}>
                         <Text style={styles.cancelButtonText}>{cancelMessage ? cancelMessage : t("Cancel")}</Text>
                     </Pressable> : null}
 
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
         fontSize: AppSizes.medium
         , maxWidth: 240,
         color: AppColorsTheme2.gray,
+        lineHeight: 30,
         textAlign: "center"
     },
     confirmButton: {
@@ -85,13 +87,14 @@ const styles = StyleSheet.create({
         width: "60%",
         alignSelf: "center",
         borderRadius: 20
-        , marginBottom: 8
+        , marginBottom: 12
     },
     cancelButton: {
         justifyContent: "center",
         alignItems: "center",
         height: 40,
-        color: AppColorsTheme2.secondary
+        color: AppColorsTheme2.secondary,
+        marginBottom: 8
     },
     confirmButtonText: {
         fontFamily: AppFonts.Roboto_Med,
