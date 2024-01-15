@@ -1,5 +1,5 @@
 import { Dimensions, Platform } from 'react-native';
-import { getUniqueId, getManufacturer, getBuildNumber, getBuildId, getVersion } from 'react-native-device-info';
+import { getBuildNumber, getVersion } from 'react-native-device-info';
 import Config from "react-native-config";
 
 const deviceWidth = Dimensions.get("screen").width;
@@ -23,6 +23,8 @@ const NotificationTopicConstants = {
 
 }
 const AppLimitList = 10
+const iosAppStoreLink = "https://apps.apple.com/kw/app/yamak-%D9%8A%D9%85%D9%83/id6473277118"
+const androidPlayStoreLink = "https://play.google.com/store/apps/details?id=com.yamak.mobapp"
 
 const appVersion = getVersion()
 const appBuildNumber = getBuildNumber()
@@ -32,7 +34,9 @@ export {
     deviceWidth,
     deviceHeight,
     isIos,
+    iosAppStoreLink,
     appVersion,
+    androidPlayStoreLink,
     appBuildNumber,
     isDev,
     AppEnv,
