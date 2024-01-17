@@ -108,7 +108,7 @@ android {
         applicationId "com.yamak.mobapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 8
+        versionCode 9
         versionName "2.2"
     }
     signingConfigs {
