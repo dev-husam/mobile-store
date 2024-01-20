@@ -29,10 +29,17 @@ client.interceptors.request.use(async req => {
   if (!token) return
   token = JSON.parse(token)
   req.headers["Authorization"] = `Bearer ${token?.state?.token}`
+  req.headers['request-startTime'] = new Date()
+
   return req;
 });
 
 client.interceptors.response.use(function (response) {
+  const start = new Date(response.config.headers['request-startTime'])
+  const end = new Date()
+  response.headers['request-duration'] = (end - start) / 1000
+  console.log({ durations: response.headers['request-duration'] });
+
   return response;
 }, function (error) {
   return Promise.reject(error);
