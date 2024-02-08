@@ -1,5 +1,5 @@
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { AppColorsTheme2 } from '../../constants/Colors'
 import { AppFonts } from '../../constants/fonts'
 import VehicleItem from './VehicleItem'
@@ -18,12 +18,12 @@ import { ScreenNames } from '../../constants/ScreenNames'
 const renderItem = ({ item }: any) => (
     <VehicleItem item={item} />
 );
-const VehiclesList = ({ horizontal = true }) => {
+const VehiclesList = ({ horizontal = true, title = "", selectedId = "" }) => {
     const { t } = useTranslation()
     const navigation = useNavigation()
     const userLocation = useUserLocationStore((state) => state.userLocation)
     const setVehicles = useVehicleStore((state) => state.setVehicles)
-    const vehicles = useVehicleStore((state) => state.vehicles)
+    let vehicles = useVehicleStore((state) => state.vehicles)
     const [params, setParams] = useState({
         latitude: userLocation?.latitude,
         longitude: userLocation?.longitude,
@@ -31,6 +31,12 @@ const VehiclesList = ({ horizontal = true }) => {
     const { responseData: vehiclesList, loading } = useFetchV2({
         url: AppApiPath.vehiclesListApi, method: "get", params
     })
+
+    vehicles = useMemo(() => {
+        return vehicles?.filter(el => el?._id !== selectedId)
+    }, [selectedId, vehicles])
+
+    console.log("render");
 
     useEffect(() => {
         setParams({
@@ -48,6 +54,9 @@ const VehiclesList = ({ horizontal = true }) => {
         )
 
     }
+    if (!title) {
+        title = t("VehiclesNearBy")
+    }
 
 
     return (
@@ -55,7 +64,7 @@ const VehiclesList = ({ horizontal = true }) => {
             <View style={styles.sectionContainer}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                     <Text style={styles.labelText}>
-                        {t("VehiclesNearBy")}
+                        {title}
                     </Text>
                     <Pressable
                         onPress={() => {

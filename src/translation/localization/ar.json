@@ -76,7 +76,6 @@
   "DidntReceiveMain": "لم تستلم البريد؟",
   "Resend": "إعادة إرسال",
   "EnterEmailAddress": "ادخل عنوان البريد الالكتروني",
-  "WeWillSendYouMail": "سوف نرسل لك بريد الكتروني مع رقم تاكيد",
   "DeleteAccount": "حذف الحساب",
   "AreYouSureDeleteAccount": "هل انت متاكد من انك تريد حذف الحساب",
   "LoginWith": "تسجيل باستخدام ",
@@ -111,8 +110,9 @@
   "Environment": "البيئة",
   "Filter": "فلتر",
   "YouHaveNREsult": "يوجد نتيجة {{count}}",
-  "SigninwithApple": "تسجيل دخول باستخدام ابل",
-  "SigninwithGoogle": "تسجيل دخول باستخدام جوجل",
-  "RegisterwithGoogle": "تسجيل باستخدام جوجل",
-  "RegisterwithApple": "تسجيل باستخدام ابل"
+  "SigninwithApple": "تسجيل دخول ابل",
+  "SigninwithGoogle": "تسجيل دخول جوجل",
+  "RegisterwithGoogle": "تسجيل جوجل",
+  "RegisterwithApple": "تسجيل ابل",
+  "WeWillSendYouMail": "سوف نرسل بريدك مع رمز التأكيد "
 }

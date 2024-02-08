@@ -7,6 +7,7 @@ const whatsAppMessage = {
 
 export function getWhatsAppMessage(lang: "en" | "ar" = "en", serviceName: string[]) {
 
+    if (!serviceName) return whatsAppMessage[lang]
     return whatsAppMessage[lang] + ` [ ${serviceName.join(" --- ")} ]`
 
 

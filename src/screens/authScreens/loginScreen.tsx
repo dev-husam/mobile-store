@@ -41,6 +41,7 @@ import { AppLanguages } from "../../constants/languages";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { getStorageValues, setStorageValues } from "../../helpers/AppAsyncStoreage";
 import { AsyncStorageConstants, isIos } from "../../constants/CommonConsstats";
+import { verticalScale } from "../../helpers/Scalling";
 
 
 
@@ -141,7 +142,7 @@ const LoginScreen = () => {
                     <View
                         style={{
                             zIndex: 0,
-                            marginTop: "40%",
+                            marginTop: verticalScale(120),
                             width: "100%",
                         }}
                     >
@@ -154,7 +155,7 @@ const LoginScreen = () => {
                         </View>
 
                         {/* <WelcomeArea subTitle={t("loginWithEmailPassword")} /> */}
-                        <View style={{ paddingVertical: 20, backgroundColor: AppColorsTheme2.white, marginHorizontal: 40, opacity: 0.8, justifyContent: "center", alignItems: "center", borderRadius: 20 }}>
+                        <View style={{ paddingVertical: verticalScale(20), backgroundColor: AppColorsTheme2.white, marginHorizontal: 40, opacity: 0.8, justifyContent: "center", alignItems: "center", borderRadius: 20 }}>
 
                             <Formik
                                 innerRef={formRef}
@@ -186,7 +187,7 @@ const LoginScreen = () => {
                                                     onPress={() => handleSignInWithGoogle()}
                                                     style={{ justifyContent: "center", alignItems: "center", padding: 8 }}>
                                                     <View style={{ flexDirection: "row", backgroundColor: AppColorsTheme2.secondary, minWidth: 200, alignItems: "center", justifyContent: "center", borderRadius: 80, paddingHorizontal: 10, paddingVertical: 4 }}>
-                                                        <AppIcon style={{ marginRight: 8 }} size={30} color="white" name='google' type="FontAwesome" />
+                                                        <AppIcon style={{ marginRight: 8 }} size={25} color="white" name='google' type="FontAwesome" />
                                                         <AppText color="white" >{t("SigninwithGoogle")}</AppText>
                                                     </View>
                                                 </AppPressable>
@@ -194,7 +195,7 @@ const LoginScreen = () => {
                                                     onPress={() => handleAuthWithApple("login")}
                                                     style={{ justifyContent: "center", alignItems: "center", padding: 8 }}>
                                                     <View style={{ flexDirection: "row", backgroundColor: AppColorsTheme2.primary, minWidth: 200, alignItems: "center", justifyContent: "center", borderRadius: 80, paddingHorizontal: 10, paddingVertical: 4 }}>
-                                                        <AppIcon style={{ marginRight: 8 }} size={30} color="white" name='apple' type="FontAwesome" />
+                                                        <AppIcon style={{ marginRight: 8 }} size={25} color="white" name='apple' type="FontAwesome" />
                                                         <AppText color="white" >{t("SigninwithApple")}</AppText>
                                                     </View>
 
@@ -282,7 +283,7 @@ const LoginScreen = () => {
             </View>
 
             {/* </SafeAreaProvider> */}
-            <BottomSheet ref={bottomSheetRef} snapPoint={"40%"} >
+            <BottomSheet ref={bottomSheetRef} snapPoint={["40%", "50%", "75%"]} >
                 <EmailForgotPassword onSubmit={onSubmitRestPassword} setEmail={setResetEmail} />
             </BottomSheet>
         </>

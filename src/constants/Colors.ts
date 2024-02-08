@@ -21,6 +21,7 @@ export const AppColorsTheme2 = {
   // backgroundColor: "#f4f1f6"
   // gray: "#e5e5e5",
   gray: "#ABB0B8",
+  gray11: "gray",
   black: "#000000",
   white: "#fff",
   offGray: "#efefef",

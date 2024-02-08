@@ -1,5 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 // import { OtpInput } from 'react-native-otp-entry';
 import { showMessage, hideMessage } from "react-native-flash-message";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
@@ -15,6 +15,9 @@ import { httpErrorHandler } from '../../helpers/AppHelpers';
 import GoBackButton from '../../components/ui/GoBackButton';
 import { useNavigation } from '@react-navigation/native';
 import { ScreenNames } from '../../constants/ScreenNames';
+import { useTranslation } from 'react-i18next';
+import { useCounter } from '../../hooks/useCounter';
+import AppText from '../../components/ui/AppText';
 
 
 const OtpResetPasswordScreen = ({ route }) => {
@@ -22,6 +25,10 @@ const OtpResetPasswordScreen = ({ route }) => {
     const { email } = route?.params
     const navigation = useNavigation()
     const { t } = useTranslation()
+    const { counter, setCounter } = useCounter()
+    useEffect(() => {
+        setCounter(60)
+    }, [])
 
 
     async function verifyCode() {
@@ -53,8 +60,8 @@ const OtpResetPasswordScreen = ({ route }) => {
 
                     </View>
                     <View style={{ marginVertical: 20, width: "70%" }}>
-                        <Text style={{ fontFamily: AppFonts.Roboto_Med, fontSize: AppSizes.xLarge, textAlign: "center", marginBottom: 8, color: AppColorsTheme2.secondary }}>Account Verification</Text>
-                        <Text style={styles.subTitle}>please enter the 4 digit sent to : </Text>
+                        <Text style={{ fontFamily: AppFonts.Roboto_Med, fontSize: AppSizes.xLarge, textAlign: "center", marginBottom: 8, color: AppColorsTheme2.secondary }}>{t("AccountVerification")}</Text>
+                        <Text style={styles.subTitle}> {t("PleaseEnterThe4")} </Text>
                         <Text style={styles.subTitle}> {email}</Text>
                     </View>
                     <View style={{ width: "70%", }}>
@@ -75,15 +82,16 @@ const OtpResetPasswordScreen = ({ route }) => {
                         </FilledButton>
                     </View>
                     <View style={{ marginVertical: 20 }}>
-                        <Text style={styles.subTitle}>
+                        {counter > 0 ? (<AppText textStyle={styles.subTitle}>{counter}</AppText>) : (<Text style={styles.subTitle}>
+                            {/* Didnt receive the mail ? */}
                             {t("DidntReceiveMain")}
                             {" "}
                             <Pressable
-
+                                onPress={() => { setCounter(60) }}
                                 style={({ pressed }) => [styles.resendButton, pressed && styles.pressed]}>
-                                <Text style={{ ...styles.subTitle, color: AppColorsTheme2.secondary, textDecorationLine: "underline" }}>Resend </Text>
+                                <Text style={{ ...styles.subTitle, color: AppColorsTheme2.secondary, textDecorationLine: "underline" }}>{t("Resend")} </Text>
                             </Pressable>
-                        </Text>
+                        </Text>)}
                     </View>
                 </View>
             </KeyboardAwareScrollView>
@@ -94,7 +102,7 @@ const OtpResetPasswordScreen = ({ route }) => {
 export default OtpResetPasswordScreen
 
 const styles = StyleSheet.create({
-    subTitle: { fontFamily: AppFonts.Roboto_Med, color: AppColorsTheme2.gray, fontSize: AppSizes.medium, textAlign: "center" },
+    subTitle: { fontFamily: AppFonts.Roboto_Med, color: AppColorsTheme2.gray, fontSize: AppSizes.medium, textAlign: "center", marginTop: 4 },
     resendButton: { justifyContent: "center", alignItems: "center" },
     pressed: { opacity: 0.7 }
 
