@@ -7,11 +7,13 @@ export const useCounter = () => {
     const [counter, setCounter] = useState(0)
 
     useEffect(() => {
+        let timeout
         if (counter > 0) {
-            setTimeout(() => {
+            timeout = setTimeout(() => {
                 setCounter(counter - 1);
             }, 1000);
         }
+        return () => clearTimeout(timeout)
     }, [counter]);
 
 

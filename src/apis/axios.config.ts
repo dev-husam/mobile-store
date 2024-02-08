@@ -2,7 +2,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import { AsyncStorageConstants } from "../constants/CommonConsstats";
 import NetInfo from '@react-native-community/netinfo';
-import { showMessage } from "react-native-flash-message";
 import { Alert } from "react-native";
 import i18next from "i18next";
 
@@ -38,7 +37,6 @@ client.interceptors.response.use(function (response) {
   const start = new Date(response.config.headers['request-startTime'])
   const end = new Date()
   response.headers['request-duration'] = (end - start) / 1000
-  console.log({ durations: response.headers['request-duration'] });
 
   return response;
 }, function (error) {
@@ -86,7 +84,7 @@ export const makeApiCall = async ({ method, url, data, params }: apiCallProps) =
       // Set dynamic base URL
       await setDynamicBaseURL(config);
 
-      // console.log("Api request ==> " + JSON.stringify(config))
+      console.log("Api request ==> " + JSON.stringify(config))
       const response = await client(config);
 
       // console.log("Api response ==> " + JSON.stringify(response.data))

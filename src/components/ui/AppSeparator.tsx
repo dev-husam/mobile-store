@@ -4,8 +4,7 @@ import { AppColors } from '../../constants/Colors'
 
 const AppSeparator = () => {
   return (
-    <View style={{ borderWidth: 1, width: "90%", alignSelf: "center", marginVertical: 10, borderColor: AppColors.gray }}>
-
+    <View style={{ borderWidth: 1, width: "90%", alignSelf: "center", borderColor: AppColors.gray }}>
     </View>
   )
 }

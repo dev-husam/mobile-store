@@ -68,5 +68,11 @@ export const wait = (timeout: number) => {
     return new Promise(resolve => setTimeout(resolve, timeout));
 };
 
+export const fixNumbers = (number: number = 0, fixNumber = 1) => {
+
+    return number?.toFixed(fixNumber)
+}
+
+
 
 export const pagination = 1

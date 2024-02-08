@@ -12,8 +12,8 @@ import GoBackButton from '../components/ui/GoBackButton';
 import { showMessage } from 'react-native-flash-message';
 import { getWhatsAppMessage } from '../constants/messages';
 import { t } from 'i18next';
-import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../hooks/useLanguage.hook';
+import VehiclesList from '../components/home/VehiclesList';
 
 const VehiclesDetailsScreen = ({ route }) => {
     const { _id } = route?.params
@@ -36,11 +36,13 @@ const VehiclesDetailsScreen = ({ route }) => {
     }
 
     async function whatsappButtonPressHandler() {
-        if (pickedServices.length == 0) {
-            showMessage({ message: "services should be selected", type: "danger" })
-            return
-        }
+        // if (pickedServices.length == 0) {
+        //     showMessage({ message: "services should be selected", type: "danger" })
+        //     return
+        // }
         const servicesName = pickedServices.map(service => service.name[currentLanguage])
+        console.log({ servicesName });
+
         const messageToSend = getWhatsAppMessage(currentLanguage, servicesName)
         console.log({ messageToSend });
 
@@ -59,9 +61,13 @@ const VehiclesDetailsScreen = ({ route }) => {
                 <View style={{}}>
 
                     <View style={{ paddingTop: 10 }}>
-                        <Text style={{ fontSize: AppSizes.medium, fontWeight: "bold", textAlign: "center", color: AppColorsTheme2.primary, justifyContent: "center", alignItems: "center", textTransform: "capitalize", fontFamily: AppFonts.Roboto_Med }}>
-                            {vehicle?.branch?.name} {vehicle?.company?.name[currentLanguage]}
+                        <Text style={{ fontSize: AppSizes.medium, fontWeight: "600", textAlign: "center", color: AppColorsTheme2.primary, justifyContent: "center", alignItems: "center", textTransform: "capitalize", fontFamily: AppFonts.Roboto_Med }}>
+                            {vehicle?.company?.name[currentLanguage]}
                         </Text>
+                        <Text style={{ fontSize: AppSizes.medium, fontWeight: "500", textAlign: "center", color: AppColorsTheme2.primary, justifyContent: "center", alignItems: "center", textTransform: "capitalize", fontFamily: AppFonts.Roboto_Med }}>
+                            {vehicle?.branch?.name}
+                        </Text>
+
                     </View>
                     <View style={{ padding: 20, }}>
                         <Text style={{ fontFamily: AppFonts.Roboto_Med, fontSize: AppSizes.medium, paddingHorizontal: 10, marginBottom: 10, textAlign: "left" }}>{t("Driver")}</Text>
@@ -95,6 +101,7 @@ const VehiclesDetailsScreen = ({ route }) => {
                         </View>
                     </View>
                 </View>
+                <VehiclesList selectedId={_id} />
             </ScrollView>
             <View style={{ justifyContent: "space-around", alignItems: "center", height: 60, flexDirection: "row", }}>
                 <View style={{ justifyContent: "center", alignItems: "center" }}>

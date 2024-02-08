@@ -92,8 +92,10 @@
   "FollowUs": "Follow Us",
   "AllowNotification": "Allow Notification",
   "DateOfBirth": "Date Of Birth",
-  "SigninwithApple": "Sign in With Apple",
-  "SigninwithGoogle": "Sign in With Google",
-  "RegisterwithGoogle": "Register with Google",
-  "RegisterwithApple": "Register with Apple"
+  "SigninwithApple": "Apple Login",
+  "SigninwithGoogle": "Google Login",
+  "RegisterwithGoogle": "Google Register",
+  "RegisterwithApple": "Apple Register",
+  "WeWillSendYouMail": "We will send your mail with Confirmation code",
+  "EnterEmailAddress": "Enter email address"
 }
