@@ -11,6 +11,7 @@ import AppSeparator from '../ui/AppSeparator'
 import { useTranslation } from 'react-i18next'
 import { verticalScale } from '../../helpers/Scalling'
 import { fixNumbers } from '../../helpers/AppHelpers'
+import AppText from '../ui/AppText'
 
 const VehicleItem = ({ item, isVertical = false }: { item: any, isVertical: boolean }) => {
 
@@ -19,10 +20,8 @@ const VehicleItem = ({ item, isVertical = false }: { item: any, isVertical: bool
 
 
     function vehiclesPressHandler() {
-        console.log({ item });
 
         navigator.push(ScreenNames.Vehicle_Details_Screen, { _id: item._id })
-        console.log("navigate");
 
     }
     return (
@@ -45,7 +44,7 @@ const VehicleItem = ({ item, isVertical = false }: { item: any, isVertical: bool
                         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                             <View style={{ flexDirection: "row", alignItems: "center" }}>
                                 <AppIcon name='location' />
-                                <Text style={{ fontFamily: AppFonts.Roboto_Med }}>{fixNumbers(item?.distance)} {t("KM")}</Text>
+                                <AppText size={AppSizes.xSmall} >{fixNumbers(item?.distance)} {t("KM")}</AppText>
                             </View>
                             <FillledButton onPress={vehiclesPressHandler} style={{ width: 60, height: 30 }}  >{t("View")}</FillledButton>
                         </View>

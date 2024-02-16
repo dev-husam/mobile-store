@@ -23,6 +23,7 @@ import AppSimpleLoader from '../components/ui/AppSimpleLoader';
 import AppPressable from '../components/ui/AppPressable';
 import AppIcon from '../components/ui/appIcon';
 import ShareWithus from '../components/vehicleDetails/ShareWithus';
+import YourSaftyMatter from '../components/vehicleDetails/YourSaftyMatter';
 
 const VehiclesDetailsScreen = ({ route }) => {
     const { _id } = route?.params
@@ -128,13 +129,11 @@ const VehiclesDetailsScreen = ({ route }) => {
                         <Text style={{ fontSize: AppSizes.medium, fontWeight: "600", textAlign: "center", color: AppColorsTheme2.primary, justifyContent: "center", alignItems: "center", textTransform: "capitalize", fontFamily: AppFonts.Roboto_Med }}>
                             {vehicle?.company?.name[currentLanguage]}
                         </Text>
-                        {/* <Text style={{ fontSize: AppSizes.medium, fontWeight: "500", textAlign: "center", color: AppColorsTheme2.primary, justifyContent: "center", alignItems: "center", textTransform: "capitalize", fontFamily: AppFonts.Roboto_Med }}>
-                            {vehicle?.branch?.name}
-                        </Text> */}
+
 
                     </View>
                     <View style={{ padding: 20, }}>
-                        <Text style={styles.heading}>{t("Driver")}</Text>
+                        <AppText style={{ alignItems: "flex-start" }} textStyle={styles.heading}>{t("Driver")}</AppText>
 
                         <View style={{ marginBottom: 20, backgroundColor: AppColorsTheme2.white, borderRadius: 10, overflow: 'hidden' }}>
                             <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 20, marginVertical: 10 }}>
@@ -143,69 +142,29 @@ const VehiclesDetailsScreen = ({ route }) => {
                                 </View>
 
                                 <View>
-                                    <Text style={{ fontFamily: AppFonts.Roboto_Med, textAlign: "left", fontSize: AppSizes.medium, marginLeft: 10 }}>
+                                    <AppText style={styles.dirverText}>
                                         {t("Name")} : {vehicle?.currentDriver?.name}
-                                    </Text>
-                                    <Text style={{ fontFamily: AppFonts.Roboto_Med, textAlign: "left", fontSize: AppSizes.medium, marginLeft: 10 }}>
+                                    </AppText>
+                                    <AppText style={styles.dirverText}>
                                         {/* {t("Status")} : {vehicle?.workStatus} */}
                                         {t("Status")} : {t("Online")}
 
-                                    </Text>
-                                    <Text style={{ fontFamily: AppFonts.Roboto_Med, textAlign: "left", fontSize: AppSizes.medium, marginLeft: 10 }}>
+                                    </AppText>
+                                    <AppText style={styles.dirverText}>
                                         {t("Phone")} : {vehicle?.currentDriver?.phoneNum}
-                                    </Text>
+                                    </AppText>
                                 </View>
 
                             </View>
                         </View>
                         <View style={{ marginBottom: 20 }} >
-                            <Text style={styles.heading}>{t("AvailableServices")}</Text>
+                            <AppText style={{ alignItems: "flex-start" }} textStyle={styles.heading}>{t("AvailableServices")}</AppText>
                             <AvailableServiceList services={vehicle?.services} pickedServices={pickedServices} setPickedServices={setPickedServices} />
                         </View>
 
-                        {/* share with us */}
-                        {/* <View style={{ marginBottom: 20 }} >
-                            <Text style={styles.heading}>{t("ShareWithUS")}</Text>
-                            <View style={{ backgroundColor: AppColorsTheme2.white, borderRadius: 10, overflow: 'hidden' }}>
-                                <View style={{ paddingHorizontal: 20, flexDirection: "row", justifyContent: "space-around" }}>
-                                    <AppPressable
-                                        // onPress={iconPressHandler.bind(this, "https://twitter.com/yamak_kw")}
-                                        style={styles.iconContainer}>
-                                        <Image style={{ width: 20, height: 20 }} source={require("../assets/images/x.png")} />
-                                    </AppPressable>
 
-                                    <AppPressable
-                                        // onPress={iconPressHandler.bind(this, "https://www.instagram.com/yamak.app/")}
-                                        style={styles.iconContainer}>
-                                        <Image style={{ width: 30, height: 30 }} source={require("../assets/icons/instagram.png")} />
-                                    </AppPressable>
-                                    <AppPressable
-                                        // onPress={iconPressHandler.bind(this, "https://www.facebook.com/profile.php?id=61552273411460")}
-                                        style={styles.iconContainer}>
-                                        <Image style={{ width: 30, height: 30 }} source={require("../assets/icons/facebook.png")} />
-                                    </AppPressable>
-                                    <AppPressable
-                                        // onPress={iconPressHandler.bind(this, "https://www.facebook.com/profile.php?id=61552273411460")}
-                                        style={styles.iconContainer}>
-                                        <AppIcon name='message1' type="AntDesign" size={30} />
-                                    </AppPressable>
-                                    <AppPressable
-                                        // onPress={iconPressHandler.bind(this, "https://www.facebook.com/profile.php?id=61552273411460")}
-                                        style={styles.iconContainer}>
-                                        <AppIcon name='mail' size={30} />
-                                    </AppPressable>
-                                    <AppPressable
-                                        // onPress={iconPressHandler.bind(this, "https://www.facebook.com/profile.php?id=61552273411460")}
-                                        style={styles.iconContainer}>
-                                        <AppIcon name='link' size={30} />
-                                    </AppPressable>
-
-                                </View>
-
-                            </View>
-                        </View> */}
                         <ShareWithus />
-                        <View  >
+                        {/* <View  >
                             <Text style={styles.heading}>{t("YourSaftyMatter")}</Text>
                             <View style={{ backgroundColor: AppColorsTheme2.white, borderRadius: 10, overflow: 'hidden' }}>
                                 <View style={{ alignItems: "flex-start", paddingHorizontal: 20, marginVertical: 10 }}>
@@ -224,7 +183,8 @@ const VehiclesDetailsScreen = ({ route }) => {
                                 </View>
 
                             </View>
-                        </View>
+                        </View> */}
+                        <YourSaftyMatter />
                     </View>
                 </View>
                 <VehiclesList selectedId={_id} />
@@ -290,6 +250,6 @@ const styles = StyleSheet.create({
     },
 
     heading: { fontFamily: AppFonts.Roboto_Med, fontSize: AppSizes.medium, paddingHorizontal: 10, marginBottom: 10, textAlign: "left" },
-    iconContainer: { width: 60, height: 60, justifyContent: "center", alignItems: "center", }
-
+    iconContainer: { width: 60, height: 60, justifyContent: "center", alignItems: "center", },
+    dirverText: { alignItems: "flex-start", fontFamily: AppFonts.Roboto_Med, textAlign: "left", fontSize: AppSizes.medium, marginLeft: 10 }
 })

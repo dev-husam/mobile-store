@@ -8,6 +8,8 @@ import { AppColorsTheme2 } from '../../constants/Colors'
 import { ScreenNames } from '../../constants/ScreenNames'
 import { useTranslation } from 'react-i18next'
 import { horizontalScale } from '../../helpers/Scalling'
+import AppText from '../ui/AppText'
+import { AppSizes } from '../../constants/Sizes'
 
 const ServiceItem = ({ item }: { item: IServices }) => {
     const { logo, name, _id } = item
@@ -25,7 +27,7 @@ const ServiceItem = ({ item }: { item: IServices }) => {
             <View style={styles.imageContainer}>
                 <Image style={styles.image} source={{ uri: item.logo }} />
             </View>
-            <Text style={styles.imageLable}>{name[i18n.language]}</Text>
+            <AppText size={AppSizes.xSmall} textStyle={styles.imageLable}>{name[i18n.language]}</AppText>
         </Pressable>
     )
 }
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: "center",
         alignItems: "center",
-        marginHorizontal: horizontalScale(10),
+        marginHorizontal: horizontalScale(8),
     },
     imageContainer: {
         height: 80,

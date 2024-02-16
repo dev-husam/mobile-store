@@ -9,6 +9,7 @@ import AppPressable from '../components/ui/AppPressable'
 import GoBackButton from '../components/ui/GoBackButton'
 import AppSeparator from '../components/ui/AppSeparator'
 import { useTranslation } from 'react-i18next'
+import AppText from '../components/ui/AppText'
 
 const ContactUsScreen = () => {
     const { t, i18n } = useTranslation()
@@ -28,17 +29,13 @@ const ContactUsScreen = () => {
                     <View style={{}}>
                         <GoBackButton />
                         <View style={{ justifyContent: "center", alignItems: "center", }}>
-                            <Text style={{ fontFamily: AppFonts.Roboto_Med, fontSize: AppSizes.medium, paddingTop: 10 }}>
+                            <AppText style={{ paddingTop: 10 }}>
                                 {t("ContactUs")}
-                            </Text>
-                            {/* <Text style={{ fontFamily: AppFonts.Roboto_Med, fontSize: AppSizes.small, color: AppColorsTheme2.gray }}>
-                                List Of Branches
-                            </Text> */}
+                            </AppText>
+
                         </View>
-                        {/* <Image resizeMode="contain" style={{ height: 80, width: 120 }} source={require("../assets/images/contactus.png")} /> */}
 
                     </View>
-                    {/* <AppSeparator /> */}
 
                     <View style={{ flex: 1, marginTop: 40 }}>
                         <FlatList data={customerServicesList} renderItem={({ item }) => <ContactUsItem item={item} />} />
@@ -46,9 +43,9 @@ const ContactUsScreen = () => {
                     </View>
                 </View>
                 <View style={{ marginBottom: 20 }}>
-                    <Text style={{ fontFamily: AppFonts.Roboto_Med, fontSize: AppSizes.medium, textAlign: "center" }}>
+                    <AppText >
                         {t("FollowUs")}
-                    </Text>
+                    </AppText>
                     <View style={{ flexDirection: "row", justifyContent: "center", marginTop: 10 }}>
                         <AppPressable
                             onPress={iconPressHandler.bind(this, "https://twitter.com/yamak_kw")}
@@ -97,16 +94,16 @@ const ContactUsItem = ({ item }: { item: { phone: string, name: string } }) => {
         </View>
         <View style={{ justifyContent: "center", flex: 1, padding: 10, }}>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <Text style={{ fontFamily: AppFonts.Roboto_Med, marginLeft: 10, fontSize: AppSizes.medium, marginVertical: 8, textTransform: "uppercase" }}>
+                <AppText nlines={2} textStyle={{ fontFamily: AppFonts.Roboto_Med, marginLeft: 10, fontSize: AppSizes.medium, marginVertical: 8, textTransform: "uppercase" }}>
                     {item.name[currentLang]}
-                </Text>
+                </AppText>
             </View>
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
                 <AppIcon name='phone' type="FontAwesome" size={20} />
-                <Text style={{ fontFamily: AppFonts.Roboto_Med, marginVertical: 2, marginLeft: 10 }}>
+                <AppText textStyle={{ fontFamily: AppFonts.Roboto_Med, marginVertical: 2, marginLeft: 10 }}>
                     {item.phone}
-                </Text>
+                </AppText>
             </View>
 
         </View>
@@ -132,14 +129,14 @@ const customerServicesList = [
             en: "customer service - hawally",
             ar: "خدمة الزبائن - حولي"
         },
-        phone: "(+965) 50535103"
+        phone: "(+965) 50759505"
     },
     {
         name: {
             en: "customer service - farwaniya",
             ar: "خدمة الزبائن - فروانيه"
         },
-        phone: "(+965) 66917953"
+        phone: "(+965) 50759505"
     },
     {
         name: {

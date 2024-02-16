@@ -21,14 +21,14 @@ const AppSearch = ({ label = "", onSearch = (text: string) => { }, style }: prop
     return (
         <Pressable
             style={[styles.container, style && style]}>
-            <View style={{ flex: 1, justifyContent: "center" }}>
-                <TextInput
-                    onChangeText={(text) => setSearchTerm(text)}
-                    value={searchTerm}
-                    placeholder={label}
-                    onBlur={handleBlur}
-                    style={{ flex: 1, textAlign: isArabic ? "right" : "left" }} />
-            </View>
+            <TextInput
+                onChangeText={(text) => setSearchTerm(text)}
+                value={searchTerm}
+                placeholder={label}
+                placeholderTextColor={AppColorsTheme2.gray11}
+
+                onBlur={handleBlur}
+                style={{ color: AppColorsTheme2.black, flex: 1, textAlign: isArabic ? "right" : "left" }} />
             {!searchTerm ? <AppIcon name='search' /> : <PressbleAppIcon name='close' onPress={() => setSearchTerm("")} />}
 
         </Pressable>
@@ -41,5 +41,5 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: AppFonts.Roboto_Med
     },
-    container: { borderWidth: 1, height: 50, backgroundColor: AppColorsTheme2.secondary200, borderRadius: 20, padding: 10, flexDirection: "row" }
+    container: { alignItems: "center", borderWidth: 1, height: 50, backgroundColor: AppColorsTheme2.secondary200, borderRadius: 20, paddingHorizontal: 10, flexDirection: "row" }
 })

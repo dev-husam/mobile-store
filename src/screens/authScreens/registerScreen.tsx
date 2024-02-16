@@ -313,7 +313,7 @@ const styles = StyleSheet.create({
     imageContainer: { marginTop: "8%" },
     image: { width: 150, height: 150, resizeMode: "contain", alignSelf: "center", },
     footerText: { fontSize: AppSizes.small, textAlign: "center", fontFamily: AppFonts.Roboto_Med },
-    inputs: { flex: 1, width: "100%", fontWeight: "600", textAlign: I18nManager.isRTL ? "right" : "left" },
+    inputs: { color: AppColorsTheme2.black, flex: 1, width: "100%", fontWeight: "600", textAlign: I18nManager.isRTL ? "right" : "left" },
     inputContainer: { height: 40, borderWidth: 1, width: "75%", borderRadius: 5, flexDirection: "row", alignItems: "center", paddingHorizontal: 10, marginBottom: 10 },
 
     BackButtonStyle: {

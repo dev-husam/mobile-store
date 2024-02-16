@@ -12,6 +12,7 @@ import { AppColorsTheme2 } from '../../constants/Colors'
 import { iosAppStoreLink, androidPlayStoreLink } from '../../constants/CommonConsstats'
 import { Linking } from 'react-native';
 import { useLanguage } from '../../hooks/useLanguage.hook';
+import AppText from '../ui/AppText';
 
 const ShareWithus = () => {
     const { t } = useTranslation();
@@ -54,7 +55,7 @@ App Store:${iosAppStoreLink}`
     }
     return (
         <View style={{ marginBottom: 20 }} >
-            <Text style={styles.heading}>{t("ShareWithUS")}</Text>
+            <AppText style={{ alignItems: "flex-start" }} textStyle={styles.heading}>{t("ShareWithUS")}</AppText>
             <View style={{ backgroundColor: AppColorsTheme2.white, borderRadius: 10, overflow: 'hidden' }}>
                 <View style={{ paddingHorizontal: 16, flexDirection: "row", justifyContent: "space-around" }}>
                     <AppPressable

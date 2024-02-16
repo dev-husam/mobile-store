@@ -4,6 +4,7 @@ import React from "react";
 import { AppSizes } from "../../constants/Sizes";
 import { AppFonts } from "../../constants/fonts";
 import AppIcon from "../ui/appIcon";
+import { AppColorsTheme2 } from "../../constants/Colors";
 
 interface props {
   type?: "Ionicons" | "AntDesign" | "MaterialIcons" | "Entypo" | "FontAwesome" | "Fontisto" | "MaterialCommunityIcons",
@@ -47,7 +48,7 @@ const ProfileLables = ({
 
           <AppIcon name={iconName} size={size} color={color} type={type} />
         </View>
-        <Text style={{ fontSize: AppSizes.medium, fontFamily: AppFonts.Roboto_Med }}>{text}</Text>
+        <Text style={{ fontSize: AppSizes.medium, color: AppColorsTheme2.black, fontFamily: AppFonts.Roboto_Med }}>{text}</Text>
       </View>
       <AppIcon
         type="FontAwesome5"
