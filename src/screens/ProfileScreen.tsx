@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import { AppSizes } from "../constants/Sizes";
 import ProfileHeaders from "../components/Profile/ProfileHeaders";
 import ProfileMainButtons from "../components/Profile/ProfileMainButtons";
+import AppText from "../components/ui/AppText";
 const ProfileScreen = () => {
   const { t } = useTranslation();
   return (
@@ -43,9 +44,9 @@ const ProfileScreen = () => {
         <ProfileHeaders />
         <ProfileMainButtons />
         <ButtonSection />
-        <Text style={{ textAlign: "center", marginBottom: 20 }}>
+        <AppText style={{ marginBottom: 20 }}>
           Powered By Yamak
-        </Text>
+        </AppText>
 
       </ScrollView>
     </Screen>

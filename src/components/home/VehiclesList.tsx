@@ -13,6 +13,7 @@ import { ActivityIndicator } from 'react-native'
 import { useVehicleStore } from '../../store/vehicles.store'
 import { useNavigation } from '@react-navigation/native'
 import { ScreenNames } from '../../constants/ScreenNames'
+import AppText from '../ui/AppText'
 
 
 const renderItem = ({ item }: any) => (
@@ -63,9 +64,9 @@ const VehiclesList = ({ horizontal = true, title = "", selectedId = "" }) => {
         <View>
             <View style={styles.sectionContainer}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                    <Text style={styles.labelText}>
+                    <AppText textStyle={styles.labelText}>
                         {title}
-                    </Text>
+                    </AppText>
                     <Pressable
                         onPress={() => {
                             navigation.navigate(ScreenNames.ALL_VEHICLES_SCREEN)

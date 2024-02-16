@@ -116,9 +116,9 @@ const EditProfileScreen = () => {
                                     }</AppText>
 
                                     <View>
-                                        <Text style={styles.labelText}>
+                                        <AppText alignItems="flex-start" textStyle={styles.labelText}>
                                             {t("Name")}
-                                        </Text>
+                                        </AppText>
                                         <View style={{ height: 40, borderWidth: 1, borderRadius: 5, flexDirection: "row", alignItems: "center", paddingHorizontal: 10, marginBottom: 10 }}>
                                             <View style={{ flex: 1, justifyContent: "center" }}>
                                                 <TextInput
@@ -137,9 +137,9 @@ const EditProfileScreen = () => {
                                     </View>
 
                                     <View>
-                                        <Text style={styles.labelText}>
+                                        <AppText alignItems="flex-start" textStyle={styles.labelText}>
                                             {t("Email")}
-                                        </Text>
+                                        </AppText>
                                         <View style={{ height: 40, borderWidth: 1, borderColor: "gray", borderRadius: 5, flexDirection: "row", alignItems: "center", paddingHorizontal: 10, marginBottom: 10 }}>
                                             <View style={{ flex: 1, justifyContent: "center" }}>
                                                 <TextInput
@@ -157,9 +157,9 @@ const EditProfileScreen = () => {
                                         </View>
                                     </View>
                                     <View>
-                                        <Text style={styles.labelText}>
+                                        <AppText alignItems="flex-start" textStyle={styles.labelText}>
                                             {t("Phone")}
-                                        </Text>
+                                        </AppText>
                                         <View style={{ height: 40, borderWidth: 1, borderRadius: 5, flexDirection: "row", alignItems: "center", paddingHorizontal: 10, marginBottom: 10 }}>
                                             <View style={{ flex: 1, justifyContent: "center", flexDirection: "row" }}>
 
@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10
 
     },
-    inputs: { flex: 1, width: "100%", fontWeight: "600", textAlign: I18nManager.isRTL ? "right" : "left" },
+    inputs: { color: AppColorsTheme2.black, flex: 1, width: "100%", fontWeight: "600", textAlign: I18nManager.isRTL ? "right" : "left" },
 
     textInput: {
         // marginTop: Platform.OS === 'ios' ? 0 : -12,

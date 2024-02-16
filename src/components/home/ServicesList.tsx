@@ -12,6 +12,7 @@ import { AppApiPath } from '../../apis/apisPath'
 // import ServiceListPH from '../placeHolders/ServiceListPH'
 import { ActivityIndicator } from 'react-native'
 import ServiceListPH from '../placeHolders/ServiceListPH'
+import AppText from '../ui/AppText'
 
 
 const renderItem = ({ item }: any) => (
@@ -38,9 +39,9 @@ const ServicesList = () => {
     return (
         <View style={styles.sectionContainer}>
             <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                <Text style={styles.labelText}>
+                <AppText textStyle={styles.labelText}>
                     {t("Services")}
-                </Text>
+                </AppText>
             </View>
             <FlatList
                 showsHorizontalScrollIndicator={false}

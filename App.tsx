@@ -27,10 +27,11 @@ import { addEventListener } from '@react-native-community/netinfo';
 
 function App() {
 
+  // const
 
   return (
     <>
-      <StatusBar animated={true} barStyle={"dark-content"} />
+      <StatusBar animated={true} barStyle={"default"} />
       <I18nextProvider i18n={i18next} >
         <ModalContextProvider>
           <RootFun />

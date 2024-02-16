@@ -1,6 +1,6 @@
 export const AppSizes = {
-    xSmall: 10,
     small: 12,
+    xSmall: 14,
     medium: 16,
     xMedium: 18,
     large: 20,

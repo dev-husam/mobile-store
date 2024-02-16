@@ -200,12 +200,6 @@ const LoginScreen = () => {
                                                     </View>
 
                                                 </AppPressable>) : null}
-
-                                                {/* <AppPressable
-                                                    onPress={() => fbPromptAsync()}
-                                                    style={{ justifyContent: "center", alignItems: "center", width: 50, height: 50, padding: 8 }}>
-                                                    <AppIcon size={30} name='ios-logo-facebook' />
-                                                </AppPressable> */}
                                             </View>
                                         </View>
                                         <AppSeparator />
@@ -238,7 +232,7 @@ const LoginScreen = () => {
                                                     placeholder={t("Password")}
                                                     placeholderTextColor={"#a4a3a8"}
                                                     onBlur={() => setFieldTouched("password")}
-                                                    style={{ flex: 1, width: "100%", textAlign: I18nManager.isRTL ? "right" : "left" }}
+                                                    style={styles.inputs}
                                                     secureTextEntry={true} />
                                             </View>
                                             <AppIcon name="lock" type="FontAwesome" color="gray" />
@@ -314,7 +308,7 @@ const styles = StyleSheet.create({
     imageContainer: { marginTop: "8%" },
     image: { width: 150, height: 150, resizeMode: "contain", alignSelf: "center", },
     footerText: { fontSize: AppSizes.small, textAlign: "center", fontFamily: AppFonts.Roboto_Med },
-    inputs: { flex: 1, width: "100%", fontWeight: "600", textAlign: I18nManager.isRTL ? "right" : "left" },
+    inputs: { color: AppColorsTheme2.black, flex: 1, width: "100%", fontWeight: "600", textAlign: I18nManager.isRTL ? "right" : "left" },
     languageStyle: {
         borderTopRightRadius: 10,
         borderBottomRightRadius: 10,

@@ -93,12 +93,9 @@ const MyCarScreen = ({ navigation }) => {
                     <AppSearch onSearch={handleSearch} label={t("Search")} />
                 </View>
 
-                {/* {loading ? (<ItemsListPh />) : ( */}
                 {loading ? (<ActivityIndicator />) : (
-
                     <UserCarsList OnEmptyPress={OpenBottomSheetHandler} deleteCarHandler={deleteCarHandler} data={carList} filteredItem={filteredData} refreshHandler={refreshHandler} refreshing={refreshing} />
                 )}
-
             </View>
             <BottomSheet ref={bottomSheetRef} snapPoint={"80%"} >
                 <AddNewCarContent onAddCar={addNewCarHandler} />

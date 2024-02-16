@@ -1,13 +1,13 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
+
 
 import Screen from "../components/Screen";
-import { useNavigation } from "@react-navigation/native";
-import { AppFonts } from "../constants/fonts";
-import { AppSizes } from "../constants/Sizes";
 import { AppColorsTheme2 } from "../constants/Colors";
 import { useTranslation } from "react-i18next";
 import PressbleAppIcon from "../components/ui/pressbleAppIcon";
+import AppText from "../components/ui/AppText";
 
 const PrivacyAndPolicyScreen = () => {
   const { t } = useTranslation()
@@ -29,25 +29,26 @@ const PrivacyAndPolicyScreen = () => {
               color="black"
             />
           </View>
-          <Text
-            style={styles.titleText}
+          <AppText
+            style={{ flex: 1, alignItems: "stretch", }}
+            textStyle={styles.titleText}
           >
             {t("PrivacyPolicyForYamak")}
-          </Text>
+          </AppText>
           <View style={{ justifyContent: "center", alignItems: "center" }}>
             <Image style={{ width: 200, height: 200 }} source={require("../assets/images/appLogo.png")} />
 
           </View>
           <View style={{ borderBottomWidth: 1, padding: 8, marginBottom: 10 }}>
-            <Text style={{ fontFamily: AppFonts.Roboto_Med, fontSize: AppSizes.medium, textAlign: "left" }}>
+            <AppText style={{ alignItems: "flex-start" }}>
               {t("Terms&Conditions")}
-            </Text>
+            </AppText>
           </View>
 
-          <Text
-            style={styles.bodyText}
+          <AppText
+            textStyle={styles.bodyText}
           >
-            At Yamak, accessible from Yamak01.com, one of our main priorities
+            At Yamak, accessible from yamak-kw.com, one of our main priorities
             is the privacy of our visitors. This Privacy Policy document contains
             types of information that is collected and recorded by Yamak and how
             we use it. If you have additional questions or require more
@@ -145,7 +146,7 @@ const PrivacyAndPolicyScreen = () => {
             information on our website, we strongly encourage you to contact us
             immediately and we will do our best efforts to promptly remove such
             information from our records.
-          </Text>
+          </AppText>
         </View>
       </ScrollView>
     </Screen>
@@ -157,11 +158,11 @@ export default PrivacyAndPolicyScreen;
 const styles = StyleSheet.create({
   scrollContainer: { flex: 1, },
   titleText: {
+    textAlign: "center",
     marginTop: 10,
     fontWeight: "bold",
     fontSize: 20,
     marginBottom: 20,
-    textAlign: "center",
     borderWidth: 1,
     padding: 10,
     backgroundColor: AppColorsTheme2.offWhite

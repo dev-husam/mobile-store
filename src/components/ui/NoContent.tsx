@@ -17,15 +17,15 @@ const NoContentFound = ({ title = "", message = "", buttonMessage = "", onPress 
         />
       </View>
 
-      <Text style={styles.textTitle}>
+      <AppText textStyle={styles.textTitle}>
         {t(title)}
-      </Text>
-      <Text
-        numberOfLines={2}
-        style={styles.textBody}
+      </AppText>
+      <AppText
+        nlines={2}
+        textStyle={styles.textBody}
       >
         {t(message)}
-      </Text>
+      </AppText>
       {buttonMessage && <Pressable
         onPress={onPress}
         style={({ pressed }) => [

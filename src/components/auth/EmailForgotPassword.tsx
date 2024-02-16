@@ -25,9 +25,9 @@ const EmailForgotPassword = ({ onSubmit, setEmail }) => {
                 <View style={{ flex: 1, alignItems: "center", justifyContent: "space-around", padding: 16 }} >
                     <View>
                         <View style={{ paddingBottom: 16 }}>
-                            <Text style={{ marginVertical: 4, textAlign: "left", fontFamily: AppFonts.Roboto_Med, fontSize: AppSizes.xLarge }}>
+                            <AppText size={AppSizes.xLarge} style={{ alignItems: "flex-start", marginVertical: 4 }}>
                                 {t("ForgotPasswordd")}
-                            </Text>
+                            </AppText>
                         </View>
 
                         <View>

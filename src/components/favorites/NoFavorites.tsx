@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { AppColors, AppColorsTheme2 } from "../../constants/Colors";
 import LottieAnimation from "../ui/LottieAnimation";
 import { ScreenNames } from "../../constants/ScreenNames";
+import AppText from "../ui/AppText";
 
 const NoFavorites = () => {
   const navigation = useNavigation();
@@ -19,15 +20,15 @@ const NoFavorites = () => {
         />
       </View>
 
-      <Text style={styles.textTitle}>
+      <AppText textStyle={styles.textTitle}>
         {t("LooksLikeYouDon'tHaveAnyFavoritesYet")}
-      </Text>
-      <Text
-        numberOfLines={2}
-        style={styles.textBody}
+      </AppText>
+      <AppText
+        nlines={2}
+        textStyle={styles.textBody}
       >
         {t("BrowseOurMap")}
-      </Text>
+      </AppText>
       <Pressable
         onPress={() => navigation.navigate(ScreenNames.Map_Screen)}
         style={({ pressed }) => [
