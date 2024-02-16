@@ -283,7 +283,7 @@ const LoginScreen = () => {
             </View>
 
             {/* </SafeAreaProvider> */}
-            <BottomSheet ref={bottomSheetRef} snapPoint={["40%", "50%", "75%"]} >
+            <BottomSheet ref={bottomSheetRef} snapPoint={["60%", "75%"]} >
                 <EmailForgotPassword onSubmit={onSubmitRestPassword} setEmail={setResetEmail} />
             </BottomSheet>
         </>

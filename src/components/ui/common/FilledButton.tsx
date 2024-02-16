@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
     text: {
         color: "white",
         fontFamily: AppFonts.Roboto_Med,
-        fontSize: AppSizes.medium,
-        fontWeight: "600",
+        fontSize: AppSizes.xMedium,
+        fontWeight: "800",
         letterSpacing: 2,
         textTransform: "capitalize",
     },

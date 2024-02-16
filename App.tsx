@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import 'react-native-reanimated'
 import 'react-native-gesture-handler'
+import Toast from 'react-native-toast-message';
 
 import { RootFun } from './RootFun';
 import { I18nextProvider } from 'react-i18next';
@@ -21,6 +22,7 @@ import 'react-native-url-polyfill/auto';
 import 'react-native-reanimated'
 import 'react-native-gesture-handler'
 import RemotePushController from './src/helpers/RemotePushController';
+import { addEventListener } from '@react-native-community/netinfo';
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
       {/* <RemotePushController /> */}
 
       <AppFlashMessage />
+      <Toast />
     </>
   );
 }

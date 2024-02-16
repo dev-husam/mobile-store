@@ -1,4 +1,5 @@
 import axios from "axios";
+import Toast from "react-native-toast-message";
 import { URL } from 'react-native-url-polyfill';
 
 
@@ -20,6 +21,15 @@ export function ErrorHandlerApi(e: any) {
         });
     }
     return errors.join(" ");
+}
+
+export function showToastMessage(type: "success" | "error", title: string, body: string) {
+    Toast.show({
+        type: type,
+        text1: title,
+        text2: body,
+
+    });
 }
 
 export function httpErrorHandler(error: any) {
