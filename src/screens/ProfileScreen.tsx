@@ -39,7 +39,7 @@ const ProfileScreen = () => {
           </Text>
         </View>
       </View>
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{ flex: 1, }}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1 }} style={{ flex: 1, }}>
         <ProfileHeaders />
         <ProfileMainButtons />
         <ButtonSection />

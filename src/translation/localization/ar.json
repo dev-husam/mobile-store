@@ -114,5 +114,18 @@
   "SigninwithGoogle": "تسجيل دخول جوجل",
   "RegisterwithGoogle": "تسجيل جوجل",
   "RegisterwithApple": "تسجيل ابل",
-  "WeWillSendYouMail": "سوف نرسل بريدك مع رمز التأكيد "
+  "WeWillSendYouMail": "سوف نرسل بريدك مع رمز التأكيد ",
+  "ForgotPasswordd": "نسيت كلمة السر",
+  "EnterYourEmail": "أدخل بريدك الإلكتروني لعملية التحقق، وسنرسل 4 أرقام إلى بريدك الإلكتروني",
+  "TryAgain": "اعد المحاوله",
+  "NoInternetConnectionWasFound": "لم يتم العثور على اتصال بالإنترنت. تحقق من اتصالك أو حاول مرة أخرى !!",
+  "Whoops": "فقد الاتصال",
+  "YourSaftyMatter": "سلامتك تهمنا  ",
+  "onlyMeetInPublic": "اجتمع فقط في الأماكن العامة",
+  "CheckAndIncpect": "قم بتفقد المنتج وفحصه بشكل صحيح قبل شرائه",
+  "NeverPayAnythingInAdvance": "لا تدفع أبدًا أي شيء مقدمًا أو تحول الأموال قبل فحص المنتج",
+  "NeverGoAlone": "لا تذهب أبدًا بمفردك لمقابلة المشتري / البائع، اصطحب دائمًا شخصًا معك",
+  "Call": "اتصل",
+  "Online": "متصل",
+  "ShareWithUS": "شارك معنا"
 }

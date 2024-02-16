@@ -11,7 +11,7 @@ import FilledButton from '../../components/ui/common/FilledButton'
 import { Formik } from 'formik'
 import { loginValidationSchema, resetPasswordValidationSchema } from '../../validationSchemas/loginSchema'
 import AppIcon from '../../components/ui/appIcon'
-import { httpErrorHandler } from '../../helpers/AppHelpers'
+import { httpErrorHandler, showToastMessage } from '../../helpers/AppHelpers'
 import { showMessage } from 'react-native-flash-message'
 import { resetPassword } from '../../apis/Auth.api'
 import { useAuthenticationStoreAsync } from '../../store/auth.store'
@@ -26,10 +26,13 @@ const NewPasswordScreen = ({ route }) => {
             const response = await resetPassword(email, values.password)
             const { accessToken, user } = response.data
             authenticate(accessToken, user)
+            showToastMessage("success", "Success", "reset paassword successfully updated")
 
         } catch (error) {
             const errorMessage = httpErrorHandler(error)
-            showMessage({ message: errorMessage, type: "danger" })
+            // showMessage({ message: errorMessage, type: "danger" })
+            showToastMessage("error", "Error", errorMessage)
+
         }
     }
 

@@ -97,5 +97,19 @@
   "RegisterwithGoogle": "Google Register",
   "RegisterwithApple": "Apple Register",
   "WeWillSendYouMail": "We will send your mail with Confirmation code",
-  "EnterEmailAddress": "Enter email address"
+  "EnterEmailAddress": "Enter email address",
+  "ForgotPasswordd": "Forgot Password ",
+  "EnterYourEmail": "Enter Your Email for the verification process, we wiil send 4 difits cide to your email",
+  "TryAgain": "Try again",
+  "NoInternetConnectionWasFound": " No internet connection was found. Check your connection or try again !!  ",
+  "Whoops": "Whoops",
+  "YourSaftyMatter": "Your safety matter to us",
+  "onlyMeetInPublic": "Only meet in public",
+  "CheckAndIncpect": "Check and inspect the product properly before purchasing it.",
+  "NeverPayAnythingInAdvance": "Never pay anything in advance or transfer money before inspecting the product",
+  "NeverGoAlone": "Never go alone to meet a buyer / seller, always take someone with you",
+  "OrderNow": "Order Now",
+  "Call": "Call",
+  "Online": "Online",
+  "ShareWithUS": "Share with us"
 }
