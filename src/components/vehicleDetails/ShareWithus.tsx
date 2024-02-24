@@ -18,18 +18,18 @@ const ShareWithus = () => {
     const { t } = useTranslation();
     const { currentLanguage } = useLanguage()
 
+    const appLink = `yamak.page.link/app`
+
     const shareSubject = {
         en: "check this adds",
         ar: "شاهد هذا الاعلان"
     }
 
     const shareMessage = {
-        en: `download yamak app now 
-Google Play :${androidPlayStoreLink},
-App Store:${iosAppStoreLink}`,
-        ar: `حمل تطبيق يمك الان  
-Google Play :${androidPlayStoreLink},
-App Store:${iosAppStoreLink}`
+        en: `download yamak app now :
+${appLink}`,
+        ar: ` : حمل تطبيق يمك الان  
+${appLink}`
     }
 
 

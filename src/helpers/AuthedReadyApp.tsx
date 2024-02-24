@@ -1,4 +1,4 @@
-import { Alert, StyleSheet, } from 'react-native'
+import { Alert, Linking, StyleSheet, } from 'react-native'
 import React, { useEffect } from 'react'
 import { useUserLocationStore } from '../store/userLocation.store';
 import userCurrentLocation from '../hooks/userCurrentLocation';
@@ -9,12 +9,13 @@ import { setStorageValues } from './AppAsyncStoreage';
 import { AsyncStorageConstants, NotificationTopicConstants, isIos } from '../constants/CommonConsstats';
 import useNotification from '../notification/useNotification';
 import { updateUserProfile } from '../apis/users.api';
+import { useNavigation } from '@react-navigation/native';
 
 
 const AuthedReadyApp = () => {
 
     const { fcmToken, listenToBackgroundNotifications, subscribeTopic, listenToForegroundNotifications, onNotificationOpenedAppFromQuit, onNotificationOpenedAppFromBackground, checkApplicationNotificationPermission } = useNotification()
-    console.log({ fcmToken });
+    const navigation = useNavigation()
 
 
     useEffect(() => {
@@ -54,20 +55,25 @@ const AuthedReadyApp = () => {
 
 
 
+    // useEffect(() => {
+    //     const getInitalUrl = async () => {
+    //         const initalUrl = await Linking.getInitialURL()
+    //         console.log({ initalUrl });
+
+    //         if (initalUrl === null) {
+    //             return
+    //         }
+    //         if (initalUrl.includes("VehicleDetail")) {
+    //             Alert.alert(initalUrl)
+    //             navigation.navigate(ScreenNames.Vehicle_Details_Screen)
+    //         }
+    //     }
+    //     getInitalUrl()
+
+    // })
 
     return (
-        <>
-            <DrawerStackNavigator />
-            {/* <AppAlert
-                title='location permissions required'
-                message='permission should be granted in order to use the app'
-                confirmMessage='open setting'
-                onConfirm={() => {
-                    Linking.openSettings()
-                }}
-                onCancel={() => BackHandler.exitApp()}
-                visible={isAppDenied} /> */}
-        </>
+        <DrawerStackNavigator />
     )
 }
 

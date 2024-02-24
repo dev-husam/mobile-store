@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
-import { AsyncStorageConstants } from "../constants/CommonConsstats";
+import { AsyncStorageConstants, isDev } from "../constants/CommonConsstats";
 import NetInfo from '@react-native-community/netinfo';
 import { Alert } from "react-native";
 import i18next from "i18next";
@@ -84,10 +84,13 @@ export const makeApiCall = async ({ method, url, data, params }: apiCallProps) =
       // Set dynamic base URL
       await setDynamicBaseURL(config);
 
-      console.log("Api request ==> " + JSON.stringify(config))
       const response = await client(config);
 
-      // console.log("Api response ==> " + JSON.stringify(response.data))
+      if (isDev) {
+        console.log("Api request ==> " + JSON.stringify(config))
+        console.log("Api response ==> " + JSON.stringify(response.data))
+      }
+
 
       return response.data;
     } else {
