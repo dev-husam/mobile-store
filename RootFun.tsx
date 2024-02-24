@@ -46,7 +46,6 @@ export function RootFun() {
         const response = await getAppSetting()
         setAppSetting(response)
     }
-    console.log({ isConnected });
 
     // if (!isConnected) {
     //     return <NoNetworkScreen />

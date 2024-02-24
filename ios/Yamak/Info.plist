@@ -30,6 +30,16 @@
 				<string>com.googleusercontent.apps.899706158244-dpdmje9fhef4vrk9ii746lbhlvdsn6hp</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.yamak.mobapp</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>yamak</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
