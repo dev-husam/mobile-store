@@ -20,8 +20,7 @@ export const ScreenNames = {
     MY_CAR_SCREEN: "MyCar",
     ALL_VEHICLES_SCREEN: "ALL_VEHICLES",
     No_Network_Screen: "NoNetwork",
-
-
+    JOIN_US_SCREEN: "JoinUs",
 
 }
 

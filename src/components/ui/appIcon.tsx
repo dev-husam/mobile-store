@@ -10,13 +10,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
-interface Props {
-    type?: "Ionicons" | "AntDesign" | "MaterialIcons" | "Entypo" | "FontAwesome" | "Fontisto" | "MaterialCommunityIcons" | "FontAwesome5",
-    name?: string,
-    size?: number,
-    color?: string,
-    style?: ViewStyle
-}
 
 const AppIcon = ({ size = 25, color = "black", name = "home", type = "Ionicons", style }: Props) => {
     let iconType = iconTypeEnum[type](name, size, color)
@@ -40,4 +33,14 @@ export const iconTypeEnum = {
     FontAwesome5: (name: string, size: number, color: string) => <FontAwesome5 name={name} size={size} color={color} />,
 
 }
+
+interface Props {
+    type?: IconsTypes,
+    name?: string,
+    size?: number,
+    color?: string,
+    style?: ViewStyle
+}
+export type IconsTypes = "Ionicons" | "AntDesign" | "MaterialIcons" | "Entypo" | "FontAwesome" | "Fontisto" | "MaterialCommunityIcons" | "FontAwesome5"
+
 const styles = StyleSheet.create({})
