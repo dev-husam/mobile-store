@@ -10,6 +10,7 @@ import FavotiesScreen from "../screens/FavotiesScreen";
 import ContactUs from "../screens/ContactUsScreen";
 import MyCarScreen from "../screens/MyCarScreen";
 import { useTranslation } from "react-i18next";
+import JoinUsScreen from "../screens/JoinUsScreen";
 
 const Stack = createStackNavigator();
 const ProfileStack = () => {
@@ -32,6 +33,8 @@ const ProfileStack = () => {
       <Stack.Screen name={ScreenNames.Favorites_Screen} component={FavotiesScreen} />
       <Stack.Screen name={ScreenNames.ContactUs_Screen} options={{ headerShown: false }} component={ContactUs} />
       <Stack.Screen name={ScreenNames.MY_CAR_SCREEN} options={{ headerShown: false }} component={MyCarScreen} />
+      <Stack.Screen name={ScreenNames.JOIN_US_SCREEN} options={{ presentation: "transparentModal", title: "Join us" }} component={JoinUsScreen} />
+
     </Stack.Navigator>
   );
 };
