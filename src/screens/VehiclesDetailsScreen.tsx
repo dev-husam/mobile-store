@@ -150,9 +150,9 @@ const VehiclesDetailsScreen = ({ route }) => {
                                         {t("Status")} : {t("Online")}
 
                                     </AppText>
-                                    <AppText style={styles.dirverText}>
+                                    {/* <AppText style={styles.dirverText}>
                                         {t("Phone")} : {vehicle?.currentDriver?.phoneNum}
-                                    </AppText>
+                                    </AppText> */}
                                 </View>
 
                             </View>
