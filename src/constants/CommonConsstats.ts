@@ -25,6 +25,7 @@ const NotificationTopicConstants = {
 const AppLimitList = 10
 const iosAppStoreLink = "https://apps.apple.com/kw/app/yamak-%D9%8A%D9%85%D9%83/id6473277118"
 const androidPlayStoreLink = "https://play.google.com/store/apps/details?id=com.yamak.mobapp"
+const yamakWebsite = "https://yamak-kw.com"
 
 const appVersion = getVersion()
 const appBuildNumber = getBuildNumber()
@@ -41,5 +42,6 @@ export {
     isDev,
     AppEnv,
     AppLimitList,
-    NotificationTopicConstants
+    NotificationTopicConstants,
+    yamakWebsite
 }

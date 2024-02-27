@@ -13,8 +13,10 @@ export const AppColors = {
 
 export const AppColorsTheme2 = {
   primary200: "#E0EDF3",
+  primaryLight: "#ccd5e1",
   primary: "#002F6C",
   primary700: "#5b8cb8",
+  secandaryLight: "#fdefd3",
   secondary: "#F7B123",
   secondary200: "#d4d5e3",
   offWhite: "#f4f1f6",

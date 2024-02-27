@@ -13,7 +13,6 @@ import { getAppSetting } from "./src/apis/common.api";
 import { useLanguage } from "./src/hooks/useLanguage.hook";
 import { useAppReady } from "./src/hooks/useAppReady";
 import { addEventListener, useNetInfoInstance } from "@react-native-community/netinfo";
-import NoNetworkScreen from "./src/screens/NoNetworkScreen";
 
 
 export function RootFun() {
@@ -46,7 +45,6 @@ export function RootFun() {
         const response = await getAppSetting()
         setAppSetting(response)
     }
-    console.log({ isConnected });
 
     // if (!isConnected) {
     //     return <NoNetworkScreen />

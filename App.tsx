@@ -21,8 +21,7 @@ import i18next from "./src/translation/Translation.config"
 import 'react-native-url-polyfill/auto';
 import 'react-native-reanimated'
 import 'react-native-gesture-handler'
-import RemotePushController from './src/helpers/RemotePushController';
-import { addEventListener } from '@react-native-community/netinfo';
+
 
 
 function App() {
