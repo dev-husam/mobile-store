@@ -24,10 +24,12 @@ import AppPressable from '../components/ui/AppPressable';
 import AppIcon from '../components/ui/appIcon';
 import ShareWithus from '../components/vehicleDetails/ShareWithus';
 import YourSaftyMatter from '../components/vehicleDetails/YourSaftyMatter';
+import LoadingLoatie from '../components/ui/LoadingLootie';
 
 const VehiclesDetailsScreen = ({ route }) => {
     const { _id } = route?.params
     const [vehicle, setVehicle] = useState()
+    const [isFetchingData, setIsFetchingData] = useState(false)
     const [isWhatsLoading, setIsButtonWhatsLoading] = useState(false)
     const [isCallLoading, setIsCallLoading] = useState(false)
     const [pickedServices, setPickedServices] = useState([])
@@ -44,10 +46,14 @@ const VehiclesDetailsScreen = ({ route }) => {
 
     async function fetchVehicleData() {
         try {
+            setIsFetchingData(true)
             const response = await getVehicleById(_id)
             setVehicle(response)
         } catch (error) {
             console.log(error)
+        } finally {
+            setIsFetchingData(false)
+
         }
     }
 
@@ -114,6 +120,13 @@ const VehiclesDetailsScreen = ({ route }) => {
 
     }
 
+    if (isFetchingData)
+        return (
+            <View style={[StyleSheet.absoluteFill, { justifyContent: "center", alignItems: "center" }]}>
+                <LoadingLoatie />
+            </View>
+
+        )
     return (
         <Screen style={{ backgroundColor: AppColorsTheme2.offWhite }}>
 

@@ -6,6 +6,7 @@ import useFetchV2 from '../../hooks/useFetchV2'
 import { AppApiPath } from '../../apis/apisPath'
 import { ActivityIndicator } from 'react-native'
 import { useAddsStore } from '../../store/adds.store'
+import AddsListPh from '../placeHolders/AddsListPh'
 // import AddsListPh from '../placeHolders/AddsListPh'
 
 const AddsList = () => {
@@ -18,8 +19,7 @@ const AddsList = () => {
     }, [addsResponse])
 
     if (loading) {
-        return <ActivityIndicator />
-        // return <AddsListPh />
+        return <AddsListPh />
     }
 
     return (

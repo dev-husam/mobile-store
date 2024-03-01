@@ -1,41 +1,37 @@
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
-
-import React, { useEffect } from 'react'
-import { MotiView } from 'moti';
-import { Skeleton } from 'moti/skeleton';
-import { horizontalScale, verticalScale } from '../../helpers/Scalling';
 
 
+import ContentLoader, { Rect, Circle, Path } from 'react-content-loader/native'
+import { AppColorsTheme2 } from '../../constants/Colors'
+import { SLIDER_WIDTH } from '../ui/carousel-snap/CarouselCardItem'
+import { FlatList, StyleSheet, View } from 'react-native'
+import { horizontalScale, verticalScale } from '../../helpers/Scalling'
 
-const ServiceListPH = () => {
-    const colorMode = 'light';
+const CirclePh = () => (
+
+    <ContentLoader
+        height={80}
+        width={80}
+        style={{ marginHorizontal: horizontalScale(8) }}
+        speed={2}
+        // style={{ borderRadius: 20, overflow: "hidden" }}
+        backgroundColor={AppColorsTheme2.primaryLight}
+        foregroundColor={'#efef'}
+        opacity={0.5}
+
+    >
+        <Circle cx="40" cy="40" r="40" />
+
+    </ContentLoader>
+
+)
+
+
+const ServiceListPH = ({ style }: any) => {
 
     return (
-        <Pressable style={styles.container}>
-            <MotiView style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                <Skeleton colorMode="light" radius="round" height={20} width={120} />
-            </MotiView>
-            <MotiView
-                transition={{
-                    type: 'timing',
-                }}
-                // style={[styles.container]}
-                animate={{ backgroundColor: '#ffffff' }}
-            >
-                <FlatList horizontal data={[1, 2, 3, 4]} renderItem={({ index, item }) => {
-                    return (<View style={{ marginHorizontal: horizontalScale(10) }}>
-                        <Skeleton key={index} colorMode="light" radius="round" height={80} width={80} />
-                        <Spacer />
-                    </View>
-                    )
-                }} />
-
-
-
-
-            </MotiView>
-        </Pressable>
-
+        <View style={[styles.container, style]}>
+            <FlatList horizontal data={[1, 2, 3, 4]} renderItem={() => <CirclePh />} />
+        </View>
     )
 }
 
@@ -45,6 +41,7 @@ const Spacer = ({ height = 16 }) => <View style={{ height }} />;
 
 const styles = StyleSheet.create({
     container: {
+        height: 120,
         padding: 8,
         borderRadius: 10,
         marginVertical: verticalScale(10),
