@@ -7,7 +7,9 @@
 
 import React from 'react';
 import {
+  Button,
   StatusBar,
+  View,
 } from 'react-native';
 import 'react-native-reanimated'
 import 'react-native-gesture-handler'
@@ -21,7 +23,7 @@ import i18next from "./src/translation/Translation.config"
 import 'react-native-url-polyfill/auto';
 import 'react-native-reanimated'
 import 'react-native-gesture-handler'
-
+import { ErrorHandler } from './src/components/ErrorsHandler/ErrorHandler';
 
 
 function App() {
@@ -33,17 +35,17 @@ function App() {
       <StatusBar animated={true} barStyle={"default"} />
       <I18nextProvider i18n={i18next} >
         <ModalContextProvider>
-          <RootFun />
+          <ErrorHandler >
+            <RootFun />
+          </ErrorHandler>
         </ModalContextProvider>
       </I18nextProvider>
-      {/* <RemotePushController /> */}
-
       <AppFlashMessage />
       <Toast />
     </>
   );
-}
 
+}
 
 
 export default App;

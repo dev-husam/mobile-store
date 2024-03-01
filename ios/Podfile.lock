@@ -717,10 +717,18 @@ PODS:
   - RNScreens (3.29.0):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
+  - RNSentry (5.19.1):
+    - hermes-engine
+    - React-Core
+    - React-hermes
+    - Sentry/HybridSDK (= 8.17.1)
   - RNShare (9.4.1):
     - React-Core
   - RNSVG (14.1.0):
     - React-Core
+  - Sentry/HybridSDK (8.17.1):
+    - SentryPrivate (= 8.17.1)
+  - SentryPrivate (8.17.1)
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -819,6 +827,7 @@ DEPENDENCIES:
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNShare (from `../node_modules/react-native-share`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -859,6 +868,8 @@ SPEC REPOS:
     - OpenSSL-Universal
     - PromisesObjC
     - RecaptchaInterop
+    - Sentry
+    - SentryPrivate
     - SocketRocket
     - YogaKit
 
@@ -992,6 +1003,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSentry:
+    :path: "../node_modules/@sentry/react-native"
   RNShare:
     :path: "../node_modules/react-native-share"
   RNSVG:
@@ -1098,8 +1111,11 @@ SPEC CHECKSUMS:
   RNPermissions: 59c96206917535f6373e137a379cd1a0637f4147
   RNReanimated: fdbaa9c964bbab7fac50c90862b6cc5f041679b9
   RNScreens: 3c5b9f4a9dcde752466854b6109b79c0e205dad3
+  RNSentry: 6872121e0af7aa9f3f50643f557d69adc8f7ecdc
   RNShare: 32e97adc8d8c97d4a26bcdd3c45516882184f8b6
   RNSVG: ba3e7232f45e34b7b47e74472386cf4e1a676d0a
+  Sentry: d9f99f9cc13777c5d938650c1e1c85047bb4f0d1
+  SentryPrivate: 839b1e58addf58624087a80b2628e543193fa8ef
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 4c3aa327e4a6a23eeacd71f61c81df1bcdf677d5
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

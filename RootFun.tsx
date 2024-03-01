@@ -22,6 +22,7 @@ export function RootFun() {
     const token = useAuthenticationStoreAsync((state) => state.token)
     const { appIsReady } = useAppReady()
 
+    // throw new Error('My first Sentry error!');
 
     useEffect(() => {
         getStorageItem();
