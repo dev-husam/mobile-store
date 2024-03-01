@@ -12,7 +12,6 @@ const AppSimpleLoader = ({ style }: { style?: ViewStyle }) => {
     return (
         <View style={[styles.animationContainer, style && style]}>
             <LottieView
-
                 resizeMode="cover"
                 autoPlay
                 ref={animation}

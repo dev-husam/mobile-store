@@ -35,8 +35,8 @@ interface props {
     children: string;
     onPress?: () => void;
     icon?: string
-    iconType: IconsTypes,
-    iconStyle: ViewStyle
+    iconType?: IconsTypes,
+    iconStyle?: ViewStyle
 }
 
 const styles = StyleSheet.create({

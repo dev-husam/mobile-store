@@ -11,7 +11,7 @@ const MapScreen: FC<any> = ({ navigation, route }) => {
 
   const [selectedServiceId, setselectedServiceId] = useState<string>();
 
-  const { responseData: vehicelsList } = useFetchV2({ url: selectedServiceId ? `services/${selectedServiceId}/vehicles` : "", method: "get" })
+  const { responseData: vehicelsList, loading: vehiclesLoading } = useFetchV2({ url: selectedServiceId ? `services/${selectedServiceId}/vehicles` : "", method: "get" })
 
   const vehicles = vehicelsList?.list
 
@@ -42,24 +42,14 @@ const MapScreen: FC<any> = ({ navigation, route }) => {
       </View>
 
       <AppMap
+        isfetchingVehicles={vehiclesLoading}
         data={vehicles}
       />
       <View
         style={[styles.footerContainer]}
       >
 
-        {/* {vehicles &&
 
-          <View style={{
-            backgroundColor: AppColorsTheme2.primary200,
-            borderRadius: 10,
-            width: "70%", justifyContent: "center",
-            alignItems: "center",
-          }}>
-            <Text style={{ fontSize: 20 }}>Found {vehicles.length} vehicles</Text>
-          </View>
-
-        } */}
         <ServicesListMap
           selectedServiceId={selectedServiceId}
           setActiveServiceId={handleSelectedService}

@@ -6,10 +6,14 @@ import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { ScreenNames } from "../../constants/ScreenNames";
 import { useUserLocationStore } from "../../store/userLocation.store";
 import { useLanguage } from "../../hooks/useLanguage.hook";
+import AppSimpleLoader from "../ui/AppSimpleLoader";
+import { ActivityIndicator } from "react-native";
+import { AppColorsTheme2 } from "../../constants/Colors";
 
 
 const AppMap: FC<MapProps> = ({
   data,
+  isfetchingVehicles
 }) => {
 
   const [region, setRegion] = useState({
@@ -53,6 +57,7 @@ const AppMap: FC<MapProps> = ({
       })
     }
   }, [data])
+
   return (
     <MapView
       style={styles.map}
@@ -79,8 +84,11 @@ const AppMap: FC<MapProps> = ({
         title=" you"
         coordinate={{ latitude: userLocation?.latitude, longitude: userLocation.longitude }}
       />}
-
-      {data &&
+      {isfetchingVehicles ? (<View style={{ position: "absolute", top: 60, right: 50, }}>
+        <ActivityIndicator size={30} color={AppColorsTheme2.primary} />
+      </View>) : null}
+      {
+        data &&
         data.length > 0 &&
         data.map((item: any, index) => {
           const [long, lat] = item.geoMetry.coordinates
@@ -88,7 +96,6 @@ const AppMap: FC<MapProps> = ({
             <Marker
               onPress={() => {
                 navigation.navigate(ScreenNames.Vehicle_Details_Screen, { _id: item._id })
-                // setRegion({ latitude: lat, longitude: long })
               }}
               key={index}
               coordinate={{ latitude: lat, longitude: long }}
@@ -103,7 +110,9 @@ const AppMap: FC<MapProps> = ({
               />
             </Marker>
           );
-        })}
+        })
+      }
+
     </MapView>
   );
 };
@@ -122,7 +131,8 @@ const styles = StyleSheet.create({
   },
 });
 export interface MapProps {
-  data?: any[]
+  data?: any[],
+  isfetchingVehicles: boolean
   // setSelectedCardId: (id: number) => void;
   // reagon: Reagon | undefined;
   // setReagon: any;

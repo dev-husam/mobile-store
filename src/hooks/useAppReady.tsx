@@ -9,6 +9,8 @@ import { getStorageValues, } from "../helpers/AppAsyncStoreage";
 import { useAppReadyStore } from "../store/appReady.store";
 import { isIos, appVersion, appBuildNumber, iosAppStoreLink, androidPlayStoreLink, AsyncStorageConstants } from "../constants/CommonConsstats";
 import { AppLanguages } from "../constants/languages";
+import { configureSentry } from "../services/sentry/sentry.config";
+import { useAuthenticationStoreAsync } from "../store/auth.store";
 
 let forceUpdate = false
 export function useAppReady(
@@ -23,11 +25,17 @@ export function useAppReady(
   const appSettingRecommended = isIos ? parseFloat(appSetting?.iosRecommendedVersion) : parseFloat(appSetting?.androidRecommendedVersion)
 
   const isNewUpdate = appSettingVersion > parseFloat(appVersion)
+  const user = useAuthenticationStoreAsync((state) => state.user)
 
 
   useEffect(() => {
     getReadyApp()
   }, [appSetting]);
+
+  //initals configrations for the app
+  useEffect(() => {
+    configureSentry(user);
+  }, [])
 
 
   async function handleUpdatePress() {
@@ -40,11 +48,6 @@ export function useAppReady(
   async function getReadyApp() {
     const lang = await getStorageValues(AsyncStorageConstants.languageKey);
     if (!lang) AsyncStorage.setItem(AsyncStorageConstants.languageKey, AppLanguages.english);
-    console.log({
-      appVersion,
-      appBuildNumber,
-      appSettingRecommended
-    });
 
     if (isNewUpdate) {
       if (parseFloat(appVersion) < appSettingRecommended) {
