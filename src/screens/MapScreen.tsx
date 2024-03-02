@@ -20,10 +20,6 @@ const MapScreen: FC<any> = ({ navigation, route }) => {
   }, [params?.id])
 
 
-  // function handleSelectedService(id: string) {
-  //   setselectedServiceId(() => id);
-  // }
-
   const handleSelectedService = useCallback((id: string) => {
     setselectedServiceId(() => id)
   }, [])
@@ -48,7 +44,6 @@ const MapScreen: FC<any> = ({ navigation, route }) => {
       <View
         style={[styles.footerContainer]}
       >
-
 
         <ServicesListMap
           selectedServiceId={selectedServiceId}

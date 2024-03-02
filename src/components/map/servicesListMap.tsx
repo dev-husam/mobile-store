@@ -4,12 +4,13 @@ import ServiceDetail from './ServiceDetail'
 import { ServiceDummy } from '../../constants/data'
 import { useServicesStore } from '../../store/services.store'
 import { ActivityIndicator } from 'react-native'
+import ServiceListPH from '../placeHolders/ServiceListPH'
 
 const ServicesListMap = ({ selectedServiceId, setActiveServiceId }) => {
     const services = useServicesStore((state) => state.services)
     if (!services || services.length == 0) {
         return (
-            <ActivityIndicator />
+            <ServiceListPH style={{ backgroundColor: undefined, margin: 0, padding: 0 }} />
         )
     }
 

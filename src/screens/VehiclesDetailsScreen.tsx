@@ -25,6 +25,7 @@ import AppIcon from '../components/ui/appIcon';
 import ShareWithus from '../components/vehicleDetails/ShareWithus';
 import YourSaftyMatter from '../components/vehicleDetails/YourSaftyMatter';
 import LoadingLoatie from '../components/ui/LoadingLootie';
+import { VehicelsDetailsPh } from '../components/placeHolders/VehicelsDetailsPh';
 
 const VehiclesDetailsScreen = ({ route }) => {
     const { _id } = route?.params
@@ -120,11 +121,9 @@ const VehiclesDetailsScreen = ({ route }) => {
 
     }
 
-    if (isFetchingData)
+    if (true)
         return (
-            <View style={[StyleSheet.absoluteFill, { justifyContent: "center", alignItems: "center" }]}>
-                <LoadingLoatie />
-            </View>
+            <VehicelsDetailsPh />
 
         )
     return (

@@ -3,7 +3,7 @@
 import ContentLoader, { Rect, Circle, Path } from 'react-content-loader/native'
 import { AppColorsTheme2 } from '../../constants/Colors'
 import { SLIDER_WIDTH } from '../ui/carousel-snap/CarouselCardItem'
-import { FlatList, StyleSheet, View } from 'react-native'
+import { FlatList, StyleSheet, View, ViewStyle } from 'react-native'
 import { horizontalScale, verticalScale } from '../../helpers/Scalling'
 
 const CirclePh = () => (
@@ -16,21 +16,20 @@ const CirclePh = () => (
         // style={{ borderRadius: 20, overflow: "hidden" }}
         backgroundColor={AppColorsTheme2.primaryLight}
         foregroundColor={'#efef'}
-        opacity={0.5}
+        opacity={0.7}
 
     >
         <Circle cx="40" cy="40" r="40" />
-
     </ContentLoader>
 
 )
 
 
-const ServiceListPH = ({ style }: any) => {
+const ServiceListPH = ({ style }: { style: ViewStyle }) => {
 
     return (
         <View style={[styles.container, style]}>
-            <FlatList horizontal data={[1, 2, 3, 4]} renderItem={() => <CirclePh />} />
+            <FlatList showsHorizontalScrollIndicator={false} horizontal data={[1, 2, 3, 4, 5]} renderItem={() => <CirclePh />} />
         </View>
     )
 }
