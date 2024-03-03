@@ -37,7 +37,6 @@ const ViewMap = () => {
                     {/* <AppText weight="700" alignItems="flex-start">View map </AppText> */}
                     <View style={{ flexDirection: "row", marginBottom: 4 }}>
                         <AppIcon style={{ marginHorizontal: 4 }} name='map-outline' />
-
                         <AppText weight='400' alignItems="flex-start">{t("ViewOurMap")}</AppText>
                     </View>
                     <View style={{ flexDirection: "row", marginBottom: 4 }}>
@@ -60,20 +59,9 @@ const ViewMap = () => {
                 </View>
                 <View style={{ flex: 1, alignItems: "center" }}>
                     <MapPaper width={150} height={150} />
-                    {/* <Image
-                        resizeMode='contain'
-                        style={{ height: 150, width: 150 }}
-                        source={require("../../assets/images/kw-yamak.jpg")}>
-                    </Image> */}
 
                 </View>
 
-
-                {/* <Image
-                        resizeMode='contain'
-                        style={{ height: 200, width: 300 }}
-                        source={require("../../assets/images/kw-yamak.jpg")}>
-                    </Image> */}
             </View>
 
         </View>

@@ -88,7 +88,7 @@ const ButtonSection = () => {
           iconName={"about"}
           iconColor={AppColorsTheme2.primary}
           text={t("AboutYamakApp")}
-          onPress={navigateOnPressButton.bind(this, ScreenNames.Notification_Screen)}
+          onPress={navigateOnPressButton.bind(this, ScreenNames.ABOUT_YAMAK_APP)}
         />
 
         <ProfileLables
@@ -97,12 +97,7 @@ const ButtonSection = () => {
           text={t("language")}
           onPress={() => pickingLanguageHandler(true)}
         />
-        <ProfileLables
-          iconName={"person"}
-          iconColor={AppColorsTheme2.primary}
-          text={t("PrivacyAndPolicy")}
-          onPress={navigateOnPressButton.bind(this, ScreenNames.Privacy_And_Policy_Screen)}
-        />
+
         <ProfileLables
           type="AntDesign"
           iconName={"solution1"}
