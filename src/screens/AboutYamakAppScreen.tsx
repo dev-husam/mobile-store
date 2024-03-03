@@ -21,7 +21,7 @@ const AboutYamakAppScreen = ({ route, navigation }) => {
 
     return (
         <View style={{ flex: 1 }}>
-            <AppHeader navigation={navigation} title='About Yamak' showBack={true} />
+            <AppHeader navigation={navigation} title={t("AboutYamakApp")} showBack={true} />
             <ScrollView >
 
                 <View style={{ flex: 1, padding: 18 }}>

@@ -7,10 +7,11 @@ import AppText from './ui/AppText';
 import AppIcon from './ui/appIcon';
 import { AppColorsTheme2 } from '../constants/Colors';
 import PressbleAppIcon from './ui/pressbleAppIcon';
+import { useLanguage } from '../hooks/useLanguage.hook';
 
 
 const AppHeader = ({ showBack = true, title = "", logo = true, navigation = undefined }) => {
-
+    const { isArabic } = useLanguage()
     const insets = useSafeAreaInsets();
 
     return (
@@ -19,7 +20,7 @@ const AppHeader = ({ showBack = true, title = "", logo = true, navigation = unde
 
             <View style={{ flex: 1, alignItems: "flex-start" }}>
                 {showBack &&
-                    <PressbleAppIcon color={AppColorsTheme2.white} onPress={() => navigation?.goBack()} name="chevron-back" size={30} />
+                    <PressbleAppIcon color={AppColorsTheme2.white} onPress={() => navigation?.goBack()} name={isArabic ? "chevron-forward" : "chevron-back"} size={30} />
                 }
             </View>
 

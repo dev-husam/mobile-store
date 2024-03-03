@@ -121,7 +121,7 @@ const VehiclesDetailsScreen = ({ route }) => {
 
     }
 
-    if (true)
+    if (isFetchingData)
         return (
             <VehicelsDetailsPh />
 
@@ -131,7 +131,6 @@ const VehiclesDetailsScreen = ({ route }) => {
 
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, }} >
                 <GoBackButton />
-
                 <View style={{ borderBottomWidth: 0.3, justifyContent: "center", alignItems: "center", backgroundColor: AppColorsTheme2.white }}>
                     <Image style={{ height: 250, width: 250 }} resizeMode={"contain"} source={{ uri: vehicle?.iconMap }} />
                 </View>
@@ -141,8 +140,6 @@ const VehiclesDetailsScreen = ({ route }) => {
                         <Text style={{ fontSize: AppSizes.medium, fontWeight: "600", textAlign: "center", color: AppColorsTheme2.primary, justifyContent: "center", alignItems: "center", textTransform: "capitalize", fontFamily: AppFonts.Roboto_Med }}>
                             {vehicle?.company?.name[currentLanguage]}
                         </Text>
-
-
                     </View>
                     <View style={{ padding: 20, }}>
                         <AppText style={{ alignItems: "flex-start" }} textStyle={styles.heading}>{t("Driver")}</AppText>
