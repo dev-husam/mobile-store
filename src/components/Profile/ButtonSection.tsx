@@ -76,42 +76,50 @@ const ButtonSection = () => {
         }
 
 
-        <ProfileLables
+        {/* <ProfileLables
           iconName={"notifications"}
           iconColor={AppColorsTheme2.secondary}
           text={t("notifications")}
+          onPress={navigateOnPressButton.bind(this, ScreenNames.Notification_Screen)}
+        /> */}
+        <ProfileLables
+          imageSource={require("../../assets/images/AppLogoIcon.png")}
+          iconType="image"
+          iconName={"about"}
+          iconColor={AppColorsTheme2.primary}
+          text={t("AboutYamakApp")}
           onPress={navigateOnPressButton.bind(this, ScreenNames.Notification_Screen)}
         />
 
         <ProfileLables
           iconName={"language"}
-          iconColor={AppColorsTheme2.primary}
+          iconColor={AppColorsTheme2.secondary}
           text={t("language")}
           onPress={() => pickingLanguageHandler(true)}
         />
         <ProfileLables
           iconName={"person"}
-          iconColor={AppColorsTheme2.secondary}
+          iconColor={AppColorsTheme2.primary}
           text={t("PrivacyAndPolicy")}
           onPress={navigateOnPressButton.bind(this, ScreenNames.Privacy_And_Policy_Screen)}
         />
         <ProfileLables
           type="AntDesign"
           iconName={"solution1"}
-          iconColor={AppColorsTheme2.primary}
+          iconColor={AppColorsTheme2.secondary}
           text={t("JoinUs")}
           onPress={navigateOnPressButton.bind(this, ScreenNames.JOIN_US_SCREEN)}
         />
         <ProfileLables
           iconName={"deleteuser"}
           type={"AntDesign"}
-          iconColor={AppColorsTheme2.secondary}
+          iconColor={AppColorsTheme2.primary}
           text={t("DeleteAccount")}
           onPress={() => setDeletingAccount(true)}
         />
         <ProfileLables
           iconName={"logout"}
-          iconColor={AppColorsTheme2.primary}
+          iconColor={AppColorsTheme2.secondary}
           text={t("Logout")}
           onPress={logoutHandler}
         />

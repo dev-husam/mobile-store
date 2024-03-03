@@ -72,7 +72,6 @@ export const VehicelsDetailsPh = () => {
 
 
                     <View style={{ height: 200, marginHorizontal: 20, marginBottom: 20 }}>
-
                         <ContentLoader
                             speed={2}
                             style={{ marginRight: 10, borderRadius: 10, overflow: "hidden" }}
