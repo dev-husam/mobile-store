@@ -121,10 +121,9 @@ const VehiclesDetailsScreen = ({ route }) => {
 
     }
 
-    if (true)
+    if (isFetchingData)
         return (
             <VehicelsDetailsPh />
-
         )
     return (
         <Screen style={{ backgroundColor: AppColorsTheme2.offWhite }}>

@@ -7,7 +7,7 @@ import Screen from '../Screen'
 export const VehicelsDetailsPh = () => {
     return (
         <Screen>
-            <ScrollView contentContainerStyle={{ flex: 1 }}>
+            <ScrollView contentContainerStyle={{ flex: 1, backgroundColor: AppColorsTheme2.offWhite }}>
 
                 <View style={styles.container}>
                     <View style={{ marginBottom: 10 }}>
@@ -97,6 +97,7 @@ export const VehicelsDetailsPh = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: AppColorsTheme2.offWhite
     }
 })
