@@ -101,20 +101,20 @@ const ButtonSection = () => {
         <ProfileLables
           type="AntDesign"
           iconName={"solution1"}
-          iconColor={AppColorsTheme2.secondary}
+          iconColor={AppColorsTheme2.primary}
           text={t("JoinUs")}
           onPress={navigateOnPressButton.bind(this, ScreenNames.JOIN_US_SCREEN)}
         />
         <ProfileLables
           iconName={"deleteuser"}
           type={"AntDesign"}
-          iconColor={AppColorsTheme2.primary}
+          iconColor={AppColorsTheme2.secondary}
           text={t("DeleteAccount")}
           onPress={() => setDeletingAccount(true)}
         />
         <ProfileLables
           iconName={"logout"}
-          iconColor={AppColorsTheme2.secondary}
+          iconColor={AppColorsTheme2.primary}
           text={t("Logout")}
           onPress={logoutHandler}
         />

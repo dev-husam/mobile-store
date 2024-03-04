@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Linking, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useTransition } from 'react'
 import JoiunUs from "../assets/images/joiunUs.svg"
 import { AppColorsTheme2 } from '../constants/Colors'
@@ -18,9 +18,9 @@ const JoinUsScreen = ({ navigation }) => {
     }
     return (
         <View style={{ flex: 1 }}>
-            <AppHeader navigation={navigation} />
+            <AppHeader title={t("JoinUs")} navigation={navigation} />
 
-            <View style={{ flex: 1, backgroundColor: AppColorsTheme2.offWhite, padding: horizontalScale(16) }}>
+            <View style={{ flex: 1, backgroundColor: AppColorsTheme2.offWhite, paddingHorizontal: horizontalScale(16) }}>
                 <ScrollView contentContainerStyle={{ flexGrow: 1, flex: 1 }}>
 
 
@@ -36,7 +36,7 @@ const JoinUsScreen = ({ navigation }) => {
                             <AppText style={{ marginLeft: 8 }} weight='700' > {t("HowToApplyForIt")} </AppText>
                         </View>
                         <View style={{ flexDirection: "row", marginTop: 20, }}>
-                            <View style={{ width: "12%", marginRight: 20 }}>
+                            <View style={{ width: "8%", marginRight: 20 }}>
                                 <View style={{ borderColor: "gray", alignSelf: "flex-end", borderRadius: 1, height: 280.8, borderWidth: 4, borderStyle: "dashed", }} />
                                 <View style={{ position: "absolute", right: -2, top: 0, backgroundColor: AppColorsTheme2.secandaryLight, borderRadius: 100, width: 30, height: 30, justifyContent: "center", alignItems: "center" }}>
                                     <AppText weight="bold" color={AppColorsTheme2.secondary} >1</AppText>
@@ -50,8 +50,8 @@ const JoinUsScreen = ({ navigation }) => {
                             </View>
                             <View>
                                 <View style={{ height: 100, }}>
-                                    <AppText weight='700' alignItems='flex-start'>
-                                        Prepare you all your paper needed
+                                    <AppText style={{ marginBottom: 8 }} weight='700' alignItems='flex-start'>
+                                        {t("PrepareAllYourPaper")}
                                     </AppText>
 
                                     <AppText color='gray' weight='500' alignItems='flex-start'>
@@ -63,8 +63,8 @@ const JoinUsScreen = ({ navigation }) => {
                                 </View>
 
                                 <View style={{ height: 100, }}>
-                                    <AppText weight='700' alignItems='flex-start'>
-                                        Send information to us
+                                    <AppText style={{ marginBottom: 8 }} weight='700' alignItems='flex-start'>
+                                        {t("SendInformationToUs")}
                                     </AppText>
                                     <AppText color='gray' weight='500' alignItems='flex-start'>
                                         - Mail to : "yamak.app@gmail.com"
@@ -74,14 +74,14 @@ const JoinUsScreen = ({ navigation }) => {
                                     </AppText>
                                 </View>
                                 <View style={{ marginBottom: 70 }}>
-                                    <AppText weight='700' alignItems='flex-start'>
-                                        download our driver app
+                                    <AppText style={{ marginBottom: 8 }} weight='700' alignItems='flex-start'>
+                                        {t("DownloadOurDriverApp")}
                                     </AppText>
                                     <AppText onPress={() => copyToClipBoardHandler(iosAppStoreLink)} nlines={1} color='gray' weight='500' alignItems='flex-start'>
-                                        - App store : "{iosAppStoreLink}"
+                                        - App store
                                     </AppText>
                                     <AppText onPress={() => copyToClipBoardHandler(androidPlayStoreLink)} color='gray' nlines={1} weight='500' alignItems='flex-start'>
-                                        - Google play : "{androidPlayStoreLink}"
+                                        - Google play
                                     </AppText>
                                 </View>
                             </View>
@@ -92,7 +92,7 @@ const JoinUsScreen = ({ navigation }) => {
 
                     </View>
                 </ScrollView>
-                <View>
+                <View >
                     <View style={{}}>
                         <View style={{ flexDirection: "row", backgroundColor: AppColorsTheme2.primaryLight, marginBottom: 8 }}>
                             <AppText style={{ flex: 1 }} >{yamakWebsite}</AppText>
@@ -100,7 +100,7 @@ const JoinUsScreen = ({ navigation }) => {
                         </View>
                     </View>
                 </View>
-                <FilledButton  >contact help</FilledButton>
+                <FilledButton style={{ marginBottom: 10 }} onPress={() => { Linking.openURL("tel://+96550759505") }} >{t("ContactHelp")}</FilledButton>
 
             </View >
         </View>

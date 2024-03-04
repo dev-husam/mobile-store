@@ -1058,7 +1058,7 @@
 				CODE_SIGN_ENTITLEMENTS = Yamak/Yamak.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = GBT2N5V28S;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Yamak/Info.plist;
@@ -1091,7 +1091,7 @@
 				CODE_SIGN_ENTITLEMENTS = Yamak/Yamak.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = GBT2N5V28S;
 				INFOPLIST_FILE = Yamak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
