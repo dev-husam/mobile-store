@@ -18,7 +18,7 @@ import NearByVehiclePH from '../placeHolders/NearByVehiclePH'
 
 
 const renderItem = ({ item }: any) => (
-    <VehicleItem item={item} />
+    <VehicleItem isVertical={false} item={item} />
 );
 const VehiclesList = ({ horizontal = true, title = "", selectedId = "" }) => {
     const { t } = useTranslation()
@@ -38,7 +38,6 @@ const VehiclesList = ({ horizontal = true, title = "", selectedId = "" }) => {
         return vehicles?.filter(el => el?._id !== selectedId)
     }, [selectedId, vehicles])
 
-    console.log("render");
 
     useEffect(() => {
         setParams({

@@ -4,7 +4,7 @@ import { PermissionsAndroid, Platform, StyleSheet, Text, View } from 'react-nati
 import messaging from '@react-native-firebase/messaging';
 import PushNotification from "react-native-push-notification";
 
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { getStorageValues, setStorageValues } from '../helpers/AppAsyncStoreage';
 import { AsyncStorageConstants } from '../constants/CommonConsstats';
 
@@ -54,14 +54,14 @@ const useNotification = () => {
                 });
         }
     }
-    async function subscribeTopic(topic: string) {
+    const subscribeTopic = useCallback((topic: string) => {
         messaging()
             .subscribeToTopic(topic)
             .then(() => console.log("Subscribed to topic:", topic))
             .catch((e) => {
                 console.log(e);
             });
-    };
+    }, [])
     const listenToForegroundNotifications = async () => {
         const unsubscribe = messaging().onMessage(async remoteMessage => {
 

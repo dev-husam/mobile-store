@@ -1,5 +1,5 @@
 import { FlatList, Image, Pressable, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { useFetch } from '../../hooks/useFetch.hook'
 import { Dimensions } from 'react-native';
 import MapPaper from "../../assets/images/Paper map-cuate.svg"
@@ -15,6 +15,7 @@ import AppText from '../ui/AppText';
 import { AppSizes } from '../../constants/Sizes';
 import FillledButton from '../ui/FillledButton';
 import AppIcon from '../ui/appIcon';
+import NearByVehiclePH from '../placeHolders/NearByVehiclePH';
 
 
 
@@ -23,8 +24,22 @@ const renderItem = ({ item }: any) => (
 );
 const windowWidth = Dimensions.get("screen").width;
 const ViewMap = () => {
+    const [loading, setIsLoading] = useState(false)
     const navigation = useNavigation()
     const { t } = useTranslation()
+
+    useEffect(() => {
+        setIsLoading(true)
+        setTimeout(() => {
+            setIsLoading(false)
+
+        }, 1000);
+    }, [])
+
+    if (loading) {
+        return <NearByVehiclePH />
+
+    }
 
 
     return (
@@ -80,7 +95,7 @@ const ViewMap = () => {
     )
 }
 
-export default ViewMap
+export default memo(ViewMap)
 
 const styles = StyleSheet.create({
     labelText: { fontSize: AppSizes.medium, fontFamily: AppFonts.Roboto_Med },
