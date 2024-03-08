@@ -2,8 +2,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import { AsyncStorageConstants, isDev } from "../constants/CommonConsstats";
 import NetInfo from '@react-native-community/netinfo';
-import { Alert } from "react-native";
+import { Alert, Platform } from "react-native";
 import i18next from "i18next";
+import { getStorageValues } from "../helpers/AppAsyncStoreage";
 
 //localhost
 // const baseUrl = "http://localhost:5001/api/mobile/v1/"
@@ -20,15 +21,19 @@ export const client = axios.create({
   baseURL: baseUrl,
   headers: {
     "Content-type": "application/json",
+    "device": Platform.OS
   },
 });
 
 client.interceptors.request.use(async req => {
+  const language = getStorageValues(AsyncStorageConstants.languageKey)
   let token = await AsyncStorage.getItem("auth")
   if (!token) return
   token = JSON.parse(token)
   req.headers["Authorization"] = `Bearer ${token?.state?.token}`
   req.headers['request-startTime'] = new Date()
+  req.headers['language'] = language
+
 
   return req;
 });
@@ -86,9 +91,9 @@ export const makeApiCall = async ({ method, url, data, params }: apiCallProps) =
 
       const response = await client(config);
 
-      if (isDev) {
+      if (isDev || __DEV__) {
         console.log("Api request ==> " + JSON.stringify(config))
-        console.log("Api response ==> " + JSON.stringify(response.data))
+        // console.log("Api response ==> " + JSON.stringify(response.data))
       }
 
 
