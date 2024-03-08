@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Pressable, I18nManager } from "react-native";
+import { StyleSheet, Text, View, Pressable, I18nManager, Image } from "react-native";
 import React from "react";
 
 import { AppSizes } from "../../constants/Sizes";
@@ -13,10 +13,14 @@ interface props {
   text: string;
   size?: number,
   color?: string,
+  imageSource?: any,
+  iconType?: "icon" | "image",
   onPress: () => void
 }
 
 const ProfileLables = ({
+  iconType = "icon",
+  imageSource,
   iconName,
   iconColor = "black",
   text,
@@ -25,38 +29,40 @@ const ProfileLables = ({
   type = "MaterialIcons",
   onPress,
 }: props) => {
-  return (
-    <Pressable
-      onPress={onPress}
-      style={({ pressed }) => {
-        return [styles.labelContainer, pressed && styles.pressed];
-      }}
-    >
-      <View style={{ flexDirection: "row", alignItems: "center", flex: 1 }}>
-        <View
-          style={{
-            width: 40,
-            backgroundColor: iconColor,
-            height: 40,
-            justifyContent: "center",
-            alignItems: "center",
-            borderWidth: 1,
-            borderRadius: 20,
-            marginRight: 20,
-          }}
-        >
 
-          <AppIcon name={iconName} size={size} color={color} type={type} />
-        </View>
-        <Text style={{ fontSize: AppSizes.medium, color: AppColorsTheme2.black, fontFamily: AppFonts.Roboto_Med }}>{text}</Text>
+  const buttonIcon = iconType == "icon" ? (<AppIcon name={iconName} size={size} color={color} type={type} />
+  ) : (<Image style={{ width: 35, height: 35 }} resizeMode='contain' source={imageSource} />)
+
+  return (<Pressable
+    onPress={onPress}
+    style={({ pressed }) => {
+      return [styles.labelContainer, pressed && styles.pressed];
+    }}
+  >
+    <View style={{ flexDirection: "row", alignItems: "center", flex: 1 }}>
+      <View
+        style={{
+          width: 40,
+          backgroundColor: iconColor,
+          height: 40,
+          justifyContent: "center",
+          alignItems: "center",
+          borderWidth: 1,
+          borderRadius: 20,
+          marginRight: 20,
+        }}
+      >
+        {buttonIcon}
       </View>
-      <AppIcon
-        type="FontAwesome5"
-        name={I18nManager.isRTL ? "chevron-left" : "chevron-right"}
-        size={20}
-        color="black"
-      />
-    </Pressable>
+      <Text style={{ fontSize: AppSizes.medium, color: AppColorsTheme2.black, fontFamily: AppFonts.Roboto_Med }}>{text}</Text>
+    </View>
+    <AppIcon
+      type="FontAwesome5"
+      name={I18nManager.isRTL ? "chevron-left" : "chevron-right"}
+      size={20}
+      color="black"
+    />
+  </Pressable>
   );
 };
 

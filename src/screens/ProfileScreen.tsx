@@ -3,6 +3,7 @@ import {
   Text,
   View,
   ScrollView,
+  Linking,
 } from "react-native";
 import React from "react";
 
@@ -14,6 +15,7 @@ import { AppSizes } from "../constants/Sizes";
 import ProfileHeaders from "../components/Profile/ProfileHeaders";
 import ProfileMainButtons from "../components/Profile/ProfileMainButtons";
 import AppText from "../components/ui/AppText";
+import { yamakWebsite } from "../constants/CommonConsstats";
 const ProfileScreen = () => {
   const { t } = useTranslation();
   return (
@@ -44,7 +46,7 @@ const ProfileScreen = () => {
         <ProfileHeaders />
         <ProfileMainButtons />
         <ButtonSection />
-        <AppText style={{ marginBottom: 20 }}>
+        <AppText onPress={() => { Linking.openURL(yamakWebsite) }} style={{ marginBottom: 20 }}>
           Powered By Yamak
         </AppText>
 

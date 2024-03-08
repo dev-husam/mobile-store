@@ -10,8 +10,11 @@ import GoBackButton from '../components/ui/GoBackButton'
 import AppSeparator from '../components/ui/AppSeparator'
 import { useTranslation } from 'react-i18next'
 import AppText from '../components/ui/AppText'
+import AppHeader from '../components/AppHeader'
+import { horizontalScale } from '../helpers/Scalling'
+import FollowUsFotter from '../components/ui/FollowUsFotter'
 
-const ContactUsScreen = () => {
+const ContactUsScreen = ({ navigation }) => {
     const { t, i18n } = useTranslation()
     const currentLang = i18n.language
 
@@ -20,58 +23,46 @@ const ContactUsScreen = () => {
     }
 
     return (
-        <Screen>
-            {/* <ScrollView style={{ flex: 1, backgroundColor: AppColorsTheme2.offWhite }}> */}
-            <View style={{ flex: 1, backgroundColor: AppColorsTheme2.offWhite, }}>
+        <View style={{ flex: 1, backgroundColor: AppColorsTheme2.offWhite, }}>
+            <AppHeader navigation={navigation} title={t("ContactUs")} showBack={true} />
 
 
-                <View style={{ padding: 24, flex: 1 }}>
-                    <View style={{}}>
-                        <GoBackButton />
-                        <View style={{ justifyContent: "center", alignItems: "center", }}>
-                            <AppText style={{ paddingTop: 10 }}>
-                                {t("ContactUs")}
-                            </AppText>
+            <View style={{ paddingHorizontal: horizontalScale(24), flex: 1 }}>
 
-                        </View>
-
-                    </View>
-
-                    <View style={{ flex: 1, marginTop: 40 }}>
-                        <FlatList data={customerServicesList} renderItem={({ item }) => <ContactUsItem item={item} />} />
-
-                    </View>
-                </View>
-                <View style={{ marginBottom: 20 }}>
-                    <AppText >
-                        {t("FollowUs")}
-                    </AppText>
-                    <View style={{ flexDirection: "row", justifyContent: "center", marginTop: 10 }}>
-                        <AppPressable
-                            onPress={iconPressHandler.bind(this, "https://twitter.com/yamak_kw")}
-                            style={styles.iconContainer}>
-                            <Image style={{ width: 30, height: 30 }} source={require("../assets/images/x.png")} />
-                        </AppPressable>
-                        <AppPressable
-
-                            onPress={iconPressHandler.bind(this, "https://www.linkedin.com/in/yamak-undefined-a0923929a/")}
-                            style={styles.iconContainer}>
-                            <Image style={{ width: 50, height: 50 }} source={require("../assets/icons/linkedin.png")} />
-                        </AppPressable>
-                        <AppPressable
-                            onPress={iconPressHandler.bind(this, "https://www.instagram.com/yamak.app/")}
-                            style={styles.iconContainer}>
-                            <Image style={{ width: 40, height: 40 }} source={require("../assets/icons/instagram.png")} />
-                        </AppPressable>
-                        <AppPressable onPress={iconPressHandler.bind(this, "https://www.facebook.com/profile.php?id=61552273411460")} style={styles.iconContainer}>
-                            <Image style={{ width: 40, height: 40 }} source={require("../assets/icons/facebook.png")} />
-                        </AppPressable>
-                    </View>
+                <View style={{ flex: 1, marginTop: 40 }}>
+                    <FlatList data={customerServicesList} renderItem={({ item }) => <ContactUsItem item={item} />} />
 
                 </View>
             </View>
-            {/* </ScrollView> */}
-        </Screen>
+            <FollowUsFotter />
+            {/* <View style={{ marginBottom: 20 }}>
+                <AppText >
+                    {t("FollowUs")}
+                </AppText>
+                <View style={{ flexDirection: "row", justifyContent: "center", marginTop: 10 }}>
+                    <AppPressable
+                        onPress={iconPressHandler.bind(this, "https://twitter.com/yamak_kw")}
+                        style={styles.iconContainer}>
+                        <Image style={{ width: 30, height: 30 }} source={require("../assets/images/x.png")} />
+                    </AppPressable>
+                    <AppPressable
+
+                        onPress={iconPressHandler.bind(this, "https://www.linkedin.com/in/yamak-undefined-a0923929a/")}
+                        style={styles.iconContainer}>
+                        <Image style={{ width: 50, height: 50 }} source={require("../assets/icons/linkedin.png")} />
+                    </AppPressable>
+                    <AppPressable
+                        onPress={iconPressHandler.bind(this, "https://www.instagram.com/yamak.app/")}
+                        style={styles.iconContainer}>
+                        <Image style={{ width: 40, height: 40 }} source={require("../assets/icons/instagram.png")} />
+                    </AppPressable>
+                    <AppPressable onPress={iconPressHandler.bind(this, "https://www.facebook.com/profile.php?id=61552273411460")} style={styles.iconContainer}>
+                        <Image style={{ width: 40, height: 40 }} source={require("../assets/icons/facebook.png")} />
+                    </AppPressable>
+                </View>
+
+            </View> */}
+        </View>
     )
 }
 
@@ -88,7 +79,7 @@ const ContactUsItem = ({ item }: { item: { phone: string, name: string } }) => {
 
     return (<Pressable
         onPress={() => contactPressHandler(item.phone)}
-        style={{ marginBottom: 10, flexDirection: "row", borderTopWidth: 0.5, paddingVertical: 10 }}>
+        style={{ marginBottom: 10, flexDirection: "row", borderBottomWidth: 0.5, paddingVertical: 10 }}>
         <View style={{ borderRadius: 10, justifyContent: "center", alignItems: "center" }}>
             <Image source={require("../assets/images/appLogo.png")} resizeMode="contain" style={{ width: 80, height: 80 }} />
         </View>
