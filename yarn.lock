@@ -7675,6 +7675,11 @@ react-native-flash-message@^0.4.1:
     prop-types "^15.8.1"
     react-native-iphone-screen-helper "^2.0.2"
 
+react-native-freshchat-sdk@^4.4.5:
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/react-native-freshchat-sdk/-/react-native-freshchat-sdk-4.4.5.tgz#1e59ad835351bc8a8b2554134f41936802980844"
+  integrity sha512-CglY/pDWOdLWxOoKx9L+7Ck1gSB06+5tv3rnWznr4XafbyepCjst2/BbpBZq7T8SDzB7ls5e2JSWpml1Bnrn1w==
+
 react-native-gesture-handler@^2.14.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.14.0.tgz#d6aec0d8b2e55c67557fd6107e828c0a1a248be8"

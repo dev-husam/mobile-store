@@ -10,6 +10,7 @@ import { AsyncStorageConstants, NotificationTopicConstants, isIos } from '../con
 import useNotification from '../notification/useNotification';
 import { updateUserProfile } from '../apis/users.api';
 import { useNavigation } from '@react-navigation/native';
+import { initFreshChat } from '../services/freshchat/freshchat.config';
 
 
 const AuthedReadyApp = () => {
@@ -20,6 +21,8 @@ const AuthedReadyApp = () => {
 
     //first render no dependences
     useEffect(() => {
+        listenToNotifications();
+        initFreshChat()
         subscribeTopic(NotificationTopicConstants.yamakAll)
     }, [])
 
@@ -30,22 +33,20 @@ const AuthedReadyApp = () => {
 
         console.log("render");
 
-        const listenToNotifications = () => {
-            try {
-                checkApplicationNotificationPermission()
-                onNotificationOpenedAppFromQuit();
-                listenToBackgroundNotifications();
-                listenToForegroundNotifications();
-                onNotificationOpenedAppFromBackground();
-                // subscribeTopic(NotificationTopicConstants.yamakAll)
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        listenToNotifications();
+
     }, [fcmToken]);
 
-
+    const listenToNotifications = () => {
+        try {
+            checkApplicationNotificationPermission()
+            onNotificationOpenedAppFromQuit();
+            listenToBackgroundNotifications();
+            listenToForegroundNotifications();
+            onNotificationOpenedAppFromBackground();
+        } catch (error) {
+            console.log(error);
+        }
+    };
     //userLocation
     const updateUserLocation = useUserLocationStore((state) => state?.updateUserLocation)
     const { currentLocation } = userCurrentLocation()

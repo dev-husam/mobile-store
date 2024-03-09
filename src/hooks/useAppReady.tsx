@@ -11,6 +11,7 @@ import { isIos, appVersion, appBuildNumber, iosAppStoreLink, androidPlayStoreLin
 import { AppLanguages } from "../constants/languages";
 import { configureSentry } from "../services/sentry/sentry.config";
 import { useAuthenticationStoreAsync } from "../store/auth.store";
+import { SetFreshChatUserInfo } from "../services/freshchat/freshchat.config";
 
 let forceUpdate = false
 export function useAppReady(
@@ -35,6 +36,7 @@ export function useAppReady(
   //initals configrations for the app
   useEffect(() => {
     configureSentry(user);
+    SetFreshChatUserInfo(user)
   }, [])
 
 

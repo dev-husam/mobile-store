@@ -22,6 +22,8 @@ export const ScreenNames = {
     No_Network_Screen: "NoNetwork",
     JOIN_US_SCREEN: "JoinUs",
     ABOUT_YAMAK_APP: "AboutYamak",
+    FRESHCHAT_SCREEN: "FreshChat",
+
 }
 
 export const StackNames = {
