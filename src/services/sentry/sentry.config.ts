@@ -3,7 +3,7 @@ import * as Sentry from '@sentry/react-native';
 import Config from 'react-native-config';
 import { appVersion } from '../../constants/CommonConsstats';
 
-const configureSentry = async (user: any) => {
+const initSentry = async (user: any) => {
     try {
 
         if (!__DEV__)
@@ -16,10 +16,6 @@ const configureSentry = async (user: any) => {
                 maxBreadcrumbs: 50, // Set the maximum number of breadcrumbs to be captured
                 shutdownTimeout: 5000, //
             });
-
-        if (user) {
-            setSentryUserContext(user);
-        }
     } catch (error) {
         console.error('Error configuring Sentry:', error);
     }
@@ -34,7 +30,8 @@ const captureMessage = (message: string, options = {}): void => {
 };
 
 
-const setSentryUserContext = (user: any) => {
+const setSentryUserInfo = (user: any) => {
+
     Sentry.setUser({
         id: user?._id,
         name: user?.name,
@@ -43,4 +40,4 @@ const setSentryUserContext = (user: any) => {
     });
 };
 
-export { configureSentry, setSentryUserContext, captureException, captureMessage };
+export { initSentry, setSentryUserInfo, captureException, captureMessage };

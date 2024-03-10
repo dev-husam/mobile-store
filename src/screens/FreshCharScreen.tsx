@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 import AppHeader from '../components/AppHeader'
 import { AppColorsTheme2 } from '../constants/Colors'
 
-const FreshCharScreen = () => {
+const FreshCharScreen = ({ navigation }) => {
     const { t } = useTranslation()
 
     function handlePress() {
@@ -16,7 +16,7 @@ const FreshCharScreen = () => {
     }
     return (
         <View style={{ flex: 1, backgroundColor: AppColorsTheme2.offWhite }}>
-            <AppHeader title={t("ChatWithUs")} />
+            <AppHeader navigation={navigation} title={t("ChatWithUs")} />
             <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: AppColorsTheme2.offWhite }}>
                 <ChatBotSvg width={300} height={300} />
                 <FilledButton style={{ marginTop: 30 }} onPress={handlePress}>

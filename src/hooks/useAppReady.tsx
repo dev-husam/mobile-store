@@ -9,7 +9,7 @@ import { getStorageValues, } from "../helpers/AppAsyncStoreage";
 import { useAppReadyStore } from "../store/appReady.store";
 import { isIos, appVersion, appBuildNumber, iosAppStoreLink, androidPlayStoreLink, AsyncStorageConstants } from "../constants/CommonConsstats";
 import { AppLanguages } from "../constants/languages";
-import { configureSentry } from "../services/sentry/sentry.config";
+import { configureSentry, setSentryUserInfo } from "../services/sentry/sentry.config";
 import { useAuthenticationStoreAsync } from "../store/auth.store";
 import { SetFreshChatUserInfo } from "../services/freshchat/freshchat.config";
 
@@ -32,12 +32,13 @@ export function useAppReady(
   useEffect(() => {
     getReadyApp()
   }, [appSetting]);
-
   //initals configrations for the app
   useEffect(() => {
-    configureSentry(user);
-    SetFreshChatUserInfo(user)
-  }, [])
+    if (user) {
+      setSentryUserInfo(user);
+      SetFreshChatUserInfo(user)
+    }
+  }, [user])
 
 
   async function handleUpdatePress() {

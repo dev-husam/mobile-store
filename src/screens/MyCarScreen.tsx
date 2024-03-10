@@ -7,35 +7,44 @@ import AppSearch from '../components/home/Search'
 import { AppColorsTheme2 } from '../constants/Colors'
 import { AppSizes } from '../constants/Sizes'
 import { deviceWidth } from '../constants/CommonConsstats'
-import { FlatList } from 'react-native-gesture-handler'
 import { horizontalScale, verticalScale } from '../helpers/Scalling'
 import BottomSheet from '../components/ui/BottomSheet'
 import { useTranslation } from 'react-i18next'
-import CarItem from '../components/Profile/myCarList/CarItem'
-import AddNewCarContet from '../components/Profile/myCarList/AddNewCarContent'
+import { useQuery } from '@tanstack/react-query'
+
 import AddNewCarContent from '../components/Profile/myCarList/AddNewCarContent'
 import useFetchV2 from '../hooks/useFetchV2'
 import { AppApiPath } from '../apis/apisPath'
 import { addUserCars, deleteUserCars, getUserCars } from '../apis/userCars.api'
-// import MyCarListPh from '../components/placeHolders/MyCarListPh'
 import LoadingLoatie from '../components/ui/LoadingLootie'
 import UserCarsList from '../components/Profile/myCarList/CarList'
 import { ActivityIndicator } from 'react-native'
-// import ItemsListPh from '../components/placeHolders/ItemsListPh'
+import { AppQueryConstatns } from '../constants/queryClient.constants'
+import AppHeader from '../components/AppHeader'
 
-
+const RightIcon = ({ onPress }) => {
+    return (
+        <PressbleAppIcon color='white' name="add" size={30} onPress={onPress}></PressbleAppIcon>
+    )
+}
 const MyCarScreen = ({ navigation }) => {
 
     const [refreshing, setRefreshing] = useState(false)
     const [isCallingApi, setIsCallingApi] = useState(false)
     const [carList, setCarList] = useState([])
     const [filteredData, setFilteredData] = useState(carList);
+    const { isPending, error, data: queryData } = useQuery({
+        queryKey: [AppQueryConstatns.carList],
+        queryFn: getUserCars
+    })
     const { responseData: data, loading } = useFetchV2({ method: "get", url: AppApiPath.userCarsListApi })
 
     const bottomSheetRef = useRef()
     const { t } = useTranslation()
 
     useEffect(() => {
+        console.log({ queryData });
+
         setCarList(data?.list)
     }, [data])
 
@@ -78,16 +87,20 @@ const MyCarScreen = ({ navigation }) => {
     },
         []
     )
+
+
     return (
-        <Screen>
+        <View style={{ flex: 1 }}>
+
             {isCallingApi && <LoadingLoatie />}
+            <AppHeader
+                navigation={navigation}
+                title={t("MyCarList")}
+                RightIcon={RightIcon}
+                rightIconProps={{ onPress: OpenBottomSheetHandler }}
+            />
             <View style={{ paddingHorizontal: 24, flex: 1, backgroundColor: AppColorsTheme2.offWhite }}>
-                <View style={{ position: "absolute", right: deviceWidth * 0.07, top: 10 }}>
-                    <PressbleAppIcon name="add" size={30} onPress={OpenBottomSheetHandler}></PressbleAppIcon>
-                </View>
-                <View style={{ marginTop: 30 }}>
-                    <AppText size={AppSizes.large} textStyle={{ textAlign: "center", textTransform: "capitalize" }}>{t("MyCarList")}</AppText>
-                </View>
+
 
                 <View style={{ marginTop: 20 }}>
                     <AppSearch onSearch={handleSearch} label={t("Search")} />
@@ -97,39 +110,12 @@ const MyCarScreen = ({ navigation }) => {
                     <UserCarsList OnEmptyPress={OpenBottomSheetHandler} deleteCarHandler={deleteCarHandler} data={carList} filteredItem={filteredData} refreshHandler={refreshHandler} refreshing={refreshing} />
                 )}
             </View>
-            <BottomSheet ref={bottomSheetRef} snapPoint={"80%"} >
+            <BottomSheet ref={bottomSheetRef} snapPoint={["80%"]} >
                 <AddNewCarContent onAddCar={addNewCarHandler} />
             </BottomSheet>
-        </Screen >
+        </View >
     )
 }
 
 export default MyCarScreen
 
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: verticalScale(10),
-        alignSelf: "center",
-        // padding: 16,
-    },
-
-    trashDetails: {
-        flex: 0.2,
-        padding: 12,
-    },
-    carMake: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#333',
-    },
-    carModel: {
-        fontSize: 16,
-        color: '#666',
-    },
-    carYear: {
-        fontSize: 14,
-        color: '#999',
-    },
-})

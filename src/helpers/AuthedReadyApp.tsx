@@ -11,19 +11,18 @@ import useNotification from '../notification/useNotification';
 import { updateUserProfile } from '../apis/users.api';
 import { useNavigation } from '@react-navigation/native';
 import { initFreshChat } from '../services/freshchat/freshchat.config';
+import { initSentry } from '../services/sentry/sentry.config';
 
 
 const AuthedReadyApp = () => {
 
     const { fcmToken, listenToBackgroundNotifications, subscribeTopic, listenToForegroundNotifications, onNotificationOpenedAppFromQuit, onNotificationOpenedAppFromBackground, checkApplicationNotificationPermission } = useNotification()
-    const navigation = useNavigation()
-
 
     //first render no dependences
     useEffect(() => {
         listenToNotifications();
         initFreshChat()
-        subscribeTopic(NotificationTopicConstants.yamakAll)
+        initSentry()
     }, [])
 
     useEffect(() => {
@@ -31,14 +30,12 @@ const AuthedReadyApp = () => {
             updateUserProfile({ fcmToken: fcmToken })
         }
 
-        console.log("render");
-
-
     }, [fcmToken]);
 
     const listenToNotifications = () => {
         try {
             checkApplicationNotificationPermission()
+            subscribeTopic(NotificationTopicConstants.yamakAll)
             onNotificationOpenedAppFromQuit();
             listenToBackgroundNotifications();
             listenToForegroundNotifications();
@@ -58,24 +55,6 @@ const AuthedReadyApp = () => {
         }
     }, [currentLocation]);
 
-
-
-    // useEffect(() => {
-    //     const getInitalUrl = async () => {
-    //         const initalUrl = await Linking.getInitialURL()
-    //         console.log({ initalUrl });
-
-    //         if (initalUrl === null) {
-    //             return
-    //         }
-    //         if (initalUrl.includes("VehicleDetail")) {
-    //             Alert.alert(initalUrl)
-    //             navigation.navigate(ScreenNames.Vehicle_Details_Screen)
-    //         }
-    //     }
-    //     getInitalUrl()
-
-    // })
 
     return (
         <DrawerStackNavigator />

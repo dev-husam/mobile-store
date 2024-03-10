@@ -1,9 +1,9 @@
 import { Alert, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
-import AppPressable from '../../ui/AppPressable';
 import FilledButton from '../../ui/common/FilledButton';
 import { useTranslation } from 'react-i18next';
 import AppText from '../../ui/AppText';
+import UserCarSvg from "../../../assets/svgs/userCar.svg"
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const AddNewCarContent = ({ onAddCar }) => {
@@ -50,7 +50,10 @@ const AddNewCarContent = ({ onAddCar }) => {
             paddingTop: 20,
         }} style={styles.container}>
             <AppText textStyle={styles.title}>{t("EnterNewCarDetails")}</AppText>
+            <View style={{ top: -10, justifyContent: "center", alignItems: "center" }}>
+                <UserCarSvg width={500} height={200} />
 
+            </View>
             <View style={styles.inputContainer}>
                 <AppText textStyle={styles.label}>{t("CarMake")}</AppText>
                 <TextInput
@@ -99,7 +102,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 20,
+        marginBottom: 0,
         textAlign: "center"
     },
     inputContainer: {

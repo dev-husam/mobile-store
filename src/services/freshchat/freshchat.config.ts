@@ -20,8 +20,6 @@ const initFreshChat = () => {
 
 }
 const SetFreshChatUserInfo = (user: any) => {
-    console.log({ user });
-
     var freshchatUser = new FreshchatUser();
     freshchatUser.firstName = user?.name;
     freshchatUser.email = user?.email;
