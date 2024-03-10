@@ -68,6 +68,8 @@
 	<string>$(PRODUCT_NAME) use your location to find the nearest available vehicles for a more convenient and efficient service</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>$(PRODUCT_NAME) use your location to find the nearest available vehicles for a more convenient and efficient service</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photo library to allow you to attach images and share them in the chat for better communication and support</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>

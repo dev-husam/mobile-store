@@ -92,7 +92,7 @@ export const makeApiCall = async ({ method, url, data, params }: apiCallProps) =
       const response = await client(config);
 
       if (isDev || __DEV__) {
-        console.log("Api request ==> " + JSON.stringify(config))
+        // console.log("Api request ==> " + JSON.stringify(config))
         // console.log("Api response ==> " + JSON.stringify(response.data))
       }
 

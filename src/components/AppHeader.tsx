@@ -10,9 +10,10 @@ import PressbleAppIcon from './ui/pressbleAppIcon';
 import { useLanguage } from '../hooks/useLanguage.hook';
 
 
-const AppHeader = ({ showBack = true, title = "", logo = true, navigation = undefined }) => {
+const AppHeader = ({ RightIcon = null, rightIconProps, showBack = true, title = "", logo = true, navigation = undefined }) => {
     const { isArabic } = useLanguage()
     const insets = useSafeAreaInsets();
+
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -36,10 +37,11 @@ const AppHeader = ({ showBack = true, title = "", logo = true, navigation = unde
 
 
             <View style={{ alignSelf: "center", flex: 1, alignItems: "flex-end" }}>
-                {
-                    logo && (
-                        <Image style={{ width: 50, height: 50 }} source={ImagePath.AppLogoPng} />
-                    )}
+
+
+                {RightIcon ? <RightIcon {...rightIconProps} /> : (<Image style={{ width: 50, height: 50 }} source={ImagePath.AppLogoPng} />
+                )}
+
             </View>
 
 

@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import React, { useState, useEffect, FC, useCallback } from "react";
 
 import AppMap from "../components/map/Map";
 import ServicesListMap from "../components/map/servicesListMap";
 
 import useFetchV2 from "../hooks/useFetchV2";
+import { AppColorsTheme2 } from "../constants/Colors";
 
 const MapScreen: FC<any> = ({ navigation, route }) => {
   const params = route?.params
@@ -41,9 +42,13 @@ const MapScreen: FC<any> = ({ navigation, route }) => {
         isfetchingVehicles={vehiclesLoading}
         data={vehicles}
       />
+      {vehiclesLoading && (<View style={{ position: "absolute", top: 60, right: 50, }}>
+        <ActivityIndicator size={"large"} color={AppColorsTheme2.primary} />
+      </View>)}
       <View
         style={[styles.footerContainer]}
       >
+
 
         <ServicesListMap
           selectedServiceId={selectedServiceId}
