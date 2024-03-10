@@ -1,4 +1,4 @@
-import { Platform, RefreshControl, ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { Button, Platform, RefreshControl, ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import { AppColorsTheme2 } from "../constants/Colors";
 import ServicesList from "../components/home/ServicesList";
@@ -12,6 +12,8 @@ import { useServicesStore } from "../store/services.store";
 import { useAddsStore } from "../store/adds.store";
 import { useVehicleStore } from "../store/vehicles.store";
 import Config from "react-native-config";
+import * as Sentry from "@sentry/react-native";
+import { captureException } from "../services/sentry/sentry.config";
 
 
 

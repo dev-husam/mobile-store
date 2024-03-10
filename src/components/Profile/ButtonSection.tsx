@@ -76,25 +76,28 @@ const ButtonSection = () => {
         }
 
 
-        <ProfileLables
+        {/* <ProfileLables
           iconName={"notifications"}
           iconColor={AppColorsTheme2.secondary}
           text={t("notifications")}
           onPress={navigateOnPressButton.bind(this, ScreenNames.Notification_Screen)}
+        /> */}
+        <ProfileLables
+          imageSource={require("../../assets/images/AppLogoIcon.png")}
+          iconType="image"
+          iconName={"about"}
+          iconColor={AppColorsTheme2.primary}
+          text={t("AboutYamakApp")}
+          onPress={navigateOnPressButton.bind(this, ScreenNames.ABOUT_YAMAK_APP)}
         />
 
         <ProfileLables
           iconName={"language"}
-          iconColor={AppColorsTheme2.primary}
+          iconColor={AppColorsTheme2.secondary}
           text={t("language")}
           onPress={() => pickingLanguageHandler(true)}
         />
-        <ProfileLables
-          iconName={"person"}
-          iconColor={AppColorsTheme2.secondary}
-          text={t("PrivacyAndPolicy")}
-          onPress={navigateOnPressButton.bind(this, ScreenNames.Privacy_And_Policy_Screen)}
-        />
+
         <ProfileLables
           type="AntDesign"
           iconName={"solution1"}

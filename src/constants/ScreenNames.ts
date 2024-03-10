@@ -21,7 +21,7 @@ export const ScreenNames = {
     ALL_VEHICLES_SCREEN: "ALL_VEHICLES",
     No_Network_Screen: "NoNetwork",
     JOIN_US_SCREEN: "JoinUs",
-
+    ABOUT_YAMAK_APP: "AboutYamak",
 }
 
 export const StackNames = {

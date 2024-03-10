@@ -18,13 +18,17 @@ const AuthedReadyApp = () => {
     const navigation = useNavigation()
 
 
+    //first render no dependences
+    useEffect(() => {
+        subscribeTopic(NotificationTopicConstants.yamakAll)
+    }, [])
+
     useEffect(() => {
         if (fcmToken) {
-            console.log({ update: fcmToken });
-
             updateUserProfile({ fcmToken: fcmToken })
         }
 
+        console.log("render");
 
         const listenToNotifications = () => {
             try {
@@ -33,7 +37,7 @@ const AuthedReadyApp = () => {
                 listenToBackgroundNotifications();
                 listenToForegroundNotifications();
                 onNotificationOpenedAppFromBackground();
-                subscribeTopic(NotificationTopicConstants.yamakAll)
+                // subscribeTopic(NotificationTopicConstants.yamakAll)
             } catch (error) {
                 console.log(error);
             }

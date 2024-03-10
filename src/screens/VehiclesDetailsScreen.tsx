@@ -24,10 +24,13 @@ import AppPressable from '../components/ui/AppPressable';
 import AppIcon from '../components/ui/appIcon';
 import ShareWithus from '../components/vehicleDetails/ShareWithus';
 import YourSaftyMatter from '../components/vehicleDetails/YourSaftyMatter';
+import LoadingLoatie from '../components/ui/LoadingLootie';
+import { VehicelsDetailsPh } from '../components/placeHolders/VehicelsDetailsPh';
 
 const VehiclesDetailsScreen = ({ route }) => {
     const { _id } = route?.params
     const [vehicle, setVehicle] = useState()
+    const [isFetchingData, setIsFetchingData] = useState(false)
     const [isWhatsLoading, setIsButtonWhatsLoading] = useState(false)
     const [isCallLoading, setIsCallLoading] = useState(false)
     const [pickedServices, setPickedServices] = useState([])
@@ -44,10 +47,14 @@ const VehiclesDetailsScreen = ({ route }) => {
 
     async function fetchVehicleData() {
         try {
+            setIsFetchingData(true)
             const response = await getVehicleById(_id)
             setVehicle(response)
         } catch (error) {
             console.log(error)
+        } finally {
+            setIsFetchingData(false)
+
         }
     }
 
@@ -114,12 +121,15 @@ const VehiclesDetailsScreen = ({ route }) => {
 
     }
 
+    if (isFetchingData)
+        return (
+            <VehicelsDetailsPh />
+        )
     return (
         <Screen style={{ backgroundColor: AppColorsTheme2.offWhite }}>
 
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, }} >
                 <GoBackButton />
-
                 <View style={{ borderBottomWidth: 0.3, justifyContent: "center", alignItems: "center", backgroundColor: AppColorsTheme2.white }}>
                     <Image style={{ height: 250, width: 250 }} resizeMode={"contain"} source={{ uri: vehicle?.iconMap }} />
                 </View>
@@ -129,8 +139,6 @@ const VehiclesDetailsScreen = ({ route }) => {
                         <Text style={{ fontSize: AppSizes.medium, fontWeight: "600", textAlign: "center", color: AppColorsTheme2.primary, justifyContent: "center", alignItems: "center", textTransform: "capitalize", fontFamily: AppFonts.Roboto_Med }}>
                             {vehicle?.company?.name[currentLanguage]}
                         </Text>
-
-
                     </View>
                     <View style={{ padding: 20, }}>
                         <AppText style={{ alignItems: "flex-start" }} textStyle={styles.heading}>{t("Driver")}</AppText>

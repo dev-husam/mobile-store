@@ -31,8 +31,7 @@ const ServicesList = () => {
     }, [responseData])
 
     if (loading) {
-        // return (<ServiceListPH />)
-        return (<ActivityIndicator />)
+        return (<ServiceListPH />)
 
     }
 

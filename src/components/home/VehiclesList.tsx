@@ -14,10 +14,11 @@ import { useVehicleStore } from '../../store/vehicles.store'
 import { useNavigation } from '@react-navigation/native'
 import { ScreenNames } from '../../constants/ScreenNames'
 import AppText from '../ui/AppText'
+import NearByVehiclePH from '../placeHolders/NearByVehiclePH'
 
 
 const renderItem = ({ item }: any) => (
-    <VehicleItem item={item} />
+    <VehicleItem isVertical={false} item={item} />
 );
 const VehiclesList = ({ horizontal = true, title = "", selectedId = "" }) => {
     const { t } = useTranslation()
@@ -37,7 +38,6 @@ const VehiclesList = ({ horizontal = true, title = "", selectedId = "" }) => {
         return vehicles?.filter(el => el?._id !== selectedId)
     }, [selectedId, vehicles])
 
-    console.log("render");
 
     useEffect(() => {
         setParams({
@@ -50,8 +50,7 @@ const VehiclesList = ({ horizontal = true, title = "", selectedId = "" }) => {
 
     if (loading) {
         return (
-            // <NearByVehiclePH />
-            <ActivityIndicator />
+            <NearByVehiclePH />
         )
 
     }
@@ -61,32 +60,30 @@ const VehiclesList = ({ horizontal = true, title = "", selectedId = "" }) => {
 
 
     return (
-        <View>
-            <View style={styles.sectionContainer}>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-                    <AppText textStyle={styles.labelText}>
-                        {title}
-                    </AppText>
-                    <Pressable
-                        onPress={() => {
-                            navigation.navigate(ScreenNames.ALL_VEHICLES_SCREEN)
-                        }}
-                    >
-                        <Text style={styles.ViewLabelText}>
-                            {t("ViewAll")}
-                        </Text>
-                    </Pressable>
+        <View style={styles.sectionContainer}>
+            <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                <AppText textStyle={styles.labelText}>
+                    {title}
+                </AppText>
+                <Pressable
+                    onPress={() => {
+                        navigation.navigate(ScreenNames.ALL_VEHICLES_SCREEN)
+                    }}
+                >
+                    <Text style={styles.ViewLabelText}>
+                        {t("ViewAll")}
+                    </Text>
+                </Pressable>
 
-                </View>
-
-                <FlatList
-
-                    showsHorizontalScrollIndicator={false}
-                    horizontal={horizontal}
-                    data={vehicles}
-                    renderItem={renderItem}
-                />
             </View>
+
+            <FlatList
+
+                showsHorizontalScrollIndicator={false}
+                horizontal={horizontal}
+                data={vehicles}
+                renderItem={renderItem}
+            />
         </View>
     )
 }

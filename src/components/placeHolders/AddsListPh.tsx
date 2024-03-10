@@ -1,51 +1,37 @@
-// import { Dimensions, StyleSheet, Animated, View } from 'react-native'
-
-// import { horizontalScale, verticalScale } from '../../helpers/Scalling';
-// import { AppColorsTheme2 } from '../../constants/Colors';
-// import { MotiView } from 'moti';
-// import { Skeleton } from 'moti/skeleton';
-// export const SLIDER_WIDTH = Dimensions.get('window').width + 80
-// export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
 
 
+import ContentLoader, { Rect, Circle, Path } from 'react-content-loader/native'
+import { Code } from 'react-content-loader'
 
-// const AddsListPh = () => {
+import { AppColorsTheme2 } from '../../constants/Colors'
+import { SLIDER_WIDTH } from '../ui/carousel-snap/CarouselCardItem'
+import { StyleSheet, View } from 'react-native'
+import { horizontalScale, verticalScale } from '../../helpers/Scalling'
 
-//     return (
-//         <MotiView style={styles.sectionContainer}>
-//             <Skeleton colorMode="light" height={200} width={ITEM_WIDTH} />
-//         </MotiView>
+const AddsListPh = () => (
+    <View style={styles.container}>
+        <ContentLoader
+            height={200}
+            speed={2}
+            style={{ borderRadius: 20, overflow: "hidden" }}
+            backgroundColor={AppColorsTheme2.primaryLight}
+            foregroundColor={'#fff'}
+            opacity={0.5}
+        // viewBox="0 0 380 70"
+        >
+            <Path x={50} y={50} />
+        </ContentLoader>
+    </View>
 
-//     )
-// }
+)
+export default AddsListPh
 
-// export default AddsListPh
+const styles = StyleSheet.create({
+    container: {
+        padding: horizontalScale(8),
 
-// const styles = StyleSheet.create({
-//     sectionContainer: {
-//         padding: horizontalScale(8),
-//         borderRadius: 10,
-//         marginVertical: verticalScale(10),
-//         marginHorizontal: horizontalScale(20),
-
-//     },
-//     card: {
-//         paddingHorizontal: 10,
-//         flexDirection: 'row',
-//         backgroundColor: AppColorsTheme2.secondary,
-//         borderRadius: 10,
-//         overflow: 'hidden',
-//         marginBottom: 16,
-//         elevation: 3,
-//         shadowColor: '#000',
-//         shadowOffset: { width: 0, height: 2 },
-//         shadowOpacity: 0.2,
-//         shadowRadius: 4,
-//         height: 100,
-//         alignItems: "center",
-//         borderWidth: 2,
-//         borderColor: AppColorsTheme2.primary
-//     },
-
-// })
+        // marginVertical: verticalScale(10),
+        marginHorizontal: horizontalScale(20),
+    }
+})
