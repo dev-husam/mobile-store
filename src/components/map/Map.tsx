@@ -13,7 +13,6 @@ import { AppColorsTheme2 } from "../../constants/Colors";
 
 const AppMap: FC<MapProps> = ({
   data,
-  isfetchingVehicles
 }) => {
 
   const [region, setRegion] = useState({
@@ -84,9 +83,7 @@ const AppMap: FC<MapProps> = ({
         title=" you"
         coordinate={{ latitude: userLocation?.latitude, longitude: userLocation.longitude }}
       />}
-      {isfetchingVehicles ? (<View style={{ position: "absolute", top: 60, right: 50, }}>
-        <ActivityIndicator size={30} color={AppColorsTheme2.primary} />
-      </View>) : null}
+
       {
         data &&
         data.length > 0 &&

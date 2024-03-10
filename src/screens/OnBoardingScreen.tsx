@@ -20,7 +20,7 @@ const OnBoardingScreen = () => {
     const [pagIndex, setPageIndex] = useState(0)
     const navigation = useNavigation()
     function handleOnSkip() {
-        navigation.navigate("drawer")
+        navigation?.replace("drawer")
     }
     const changePageHandler = (index) => {
         setPageIndex(index);

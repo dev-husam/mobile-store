@@ -42,6 +42,12 @@ const AboutYamakAppScreen = ({ route, navigation }) => {
                         onPress={navigateOnPressButton.bind(this, ScreenNames.Privacy_And_Policy_Screen)}
                     />
                     <ProfileLables
+                        iconName={"chat"}
+                        iconColor={AppColorsTheme2.primary}
+                        text={t("ChatWithUs")}
+                        onPress={navigateOnPressButton.bind(this, ScreenNames.FRESHCHAT_SCREEN)}
+                    />
+                    <ProfileLables
                         type="Entypo"
                         iconName={"bug"}
                         iconColor={AppColorsTheme2.primary}

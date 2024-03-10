@@ -10,17 +10,19 @@ import { AsyncStorageConstants, NotificationTopicConstants, isIos } from '../con
 import useNotification from '../notification/useNotification';
 import { updateUserProfile } from '../apis/users.api';
 import { useNavigation } from '@react-navigation/native';
+import { initFreshChat } from '../services/freshchat/freshchat.config';
+import { initSentry } from '../services/sentry/sentry.config';
 
 
 const AuthedReadyApp = () => {
 
     const { fcmToken, listenToBackgroundNotifications, subscribeTopic, listenToForegroundNotifications, onNotificationOpenedAppFromQuit, onNotificationOpenedAppFromBackground, checkApplicationNotificationPermission } = useNotification()
-    const navigation = useNavigation()
-
 
     //first render no dependences
     useEffect(() => {
-        subscribeTopic(NotificationTopicConstants.yamakAll)
+        listenToNotifications();
+        initFreshChat()
+        initSentry()
     }, [])
 
     useEffect(() => {
@@ -28,24 +30,20 @@ const AuthedReadyApp = () => {
             updateUserProfile({ fcmToken: fcmToken })
         }
 
-        console.log("render");
-
-        const listenToNotifications = () => {
-            try {
-                checkApplicationNotificationPermission()
-                onNotificationOpenedAppFromQuit();
-                listenToBackgroundNotifications();
-                listenToForegroundNotifications();
-                onNotificationOpenedAppFromBackground();
-                // subscribeTopic(NotificationTopicConstants.yamakAll)
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        listenToNotifications();
     }, [fcmToken]);
 
-
+    const listenToNotifications = () => {
+        try {
+            checkApplicationNotificationPermission()
+            subscribeTopic(NotificationTopicConstants.yamakAll)
+            onNotificationOpenedAppFromQuit();
+            listenToBackgroundNotifications();
+            listenToForegroundNotifications();
+            onNotificationOpenedAppFromBackground();
+        } catch (error) {
+            console.log(error);
+        }
+    };
     //userLocation
     const updateUserLocation = useUserLocationStore((state) => state?.updateUserLocation)
     const { currentLocation } = userCurrentLocation()
@@ -57,24 +55,6 @@ const AuthedReadyApp = () => {
         }
     }, [currentLocation]);
 
-
-
-    // useEffect(() => {
-    //     const getInitalUrl = async () => {
-    //         const initalUrl = await Linking.getInitialURL()
-    //         console.log({ initalUrl });
-
-    //         if (initalUrl === null) {
-    //             return
-    //         }
-    //         if (initalUrl.includes("VehicleDetail")) {
-    //             Alert.alert(initalUrl)
-    //             navigation.navigate(ScreenNames.Vehicle_Details_Screen)
-    //         }
-    //     }
-    //     getInitalUrl()
-
-    // })
 
     return (
         <DrawerStackNavigator />

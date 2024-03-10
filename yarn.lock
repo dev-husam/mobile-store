@@ -2865,6 +2865,18 @@
     deepmerge "^4.3.1"
     svgo "^3.0.2"
 
+"@tanstack/query-core@5.25.0":
+  version "5.25.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.25.0.tgz#e08ed0a9fad34c8005d1a282e57280031ac50cdc"
+  integrity sha512-vlobHP64HTuSE68lWF1mEhwSRC5Q7gaT+a/m9S+ItuN+ruSOxe1rFnR9j0ACWQ314BPhBEVKfBQ6mHL0OWfdbQ==
+
+"@tanstack/react-query@^5.25.0":
+  version "5.25.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.25.0.tgz#f4dac794cf10dd956aa56dbbdf67049a5ba2669d"
+  integrity sha512-u+n5R7mLO7RmeiIonpaCRVXNRWtZEef/aVZ/XGWRPa7trBIvGtzlfo0Ah7ZtnTYfrKEVwnZ/tzRCBcoiqJ/tFw==
+  dependencies:
+    "@tanstack/query-core" "5.25.0"
+
 "@trysound/sax@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
@@ -7674,6 +7686,11 @@ react-native-flash-message@^0.4.1:
   dependencies:
     prop-types "^15.8.1"
     react-native-iphone-screen-helper "^2.0.2"
+
+react-native-freshchat-sdk@^4.4.5:
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/react-native-freshchat-sdk/-/react-native-freshchat-sdk-4.4.5.tgz#1e59ad835351bc8a8b2554134f41936802980844"
+  integrity sha512-CglY/pDWOdLWxOoKx9L+7Ck1gSB06+5tv3rnWznr4XafbyepCjst2/BbpBZq7T8SDzB7ls5e2JSWpml1Bnrn1w==
 
 react-native-gesture-handler@^2.14.0:
   version "2.14.0"

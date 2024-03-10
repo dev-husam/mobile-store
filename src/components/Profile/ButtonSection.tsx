@@ -33,7 +33,7 @@ const ButtonSection = () => {
   const removeAuthentication = useAuthenticationStoreAsync((state) => state.removeAuthentication)
 
   function logoutHandler() {
-    removeAuthentication()
+    Alert.alert("are you sure you want logout", undefined, [{ text: "Ok", onPress: removeAuthentication }, { style: "destructive", text: "cancel" }])
   }
   async function deleteAccountPressHandler() {
     try {
