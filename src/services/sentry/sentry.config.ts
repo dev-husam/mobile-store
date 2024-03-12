@@ -3,7 +3,7 @@ import * as Sentry from '@sentry/react-native';
 import Config from 'react-native-config';
 import { appVersion } from '../../constants/CommonConsstats';
 
-const initSentry = async (user: any) => {
+const initSentry = async () => {
     try {
 
         if (!__DEV__)
@@ -31,6 +31,7 @@ const captureMessage = (message: string, options = {}): void => {
 
 
 const setSentryUserInfo = (user: any) => {
+    console.log("user init", user);
 
     Sentry.setUser({
         id: user?._id,

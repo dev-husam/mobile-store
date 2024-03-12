@@ -2,15 +2,18 @@ import { NavigationContainer } from "@react-navigation/native";
 import { useEffect, } from "react";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet"
+import { changeIcon, } from 'react-native-change-icon';
 
 import AuthedReadyApp from "./src/helpers/AuthedReadyApp";
 import AuthStackNavigator from "./src/navigations/AuthStackNavigator";
 import { useAppReadyStore } from "./src/store/appReady.store";
 import { useAuthenticationStoreAsync } from "./src/store/auth.store";
 import { getStorageValues, setStorageValues } from "./src/helpers/AppAsyncStoreage";
-import { AsyncStorageConstants } from "./src/constants/CommonConsstats";
+import { AsyncStorageConstants, isIos } from "./src/constants/CommonConsstats";
 import { getAppSetting } from "./src/apis/common.api";
 import { useAppReady } from "./src/hooks/useAppReady";
+
+
 
 
 export function RootFun() {
@@ -19,12 +22,24 @@ export function RootFun() {
     const token = useAuthenticationStoreAsync((state) => state.token)
     const { appIsReady } = useAppReady()
 
+
     // throw new Error('My first Sentry error!');
 
     useEffect(() => {
         getStorageItem();
         callAppApis();
+        setAppIconImage()
     }, [])
+
+    const setAppIconImage = async () => {
+        try {
+            if (isIos)
+                changeIcon("Ramadan_AppIcon")
+        } catch (error) {
+            console.log("error setting icon", error)
+
+        }
+    }
 
     //check first lunch app view onboarding
     const getStorageItem = async () => {

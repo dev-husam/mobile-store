@@ -98,6 +98,8 @@
 		047215D72B23BF32005E22A7 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 047215C42B23BF32005E22A7 /* MaterialIcons.ttf */; };
 		0B22DE232B35E531006DDB64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B22DE222B35E531006DDB64 /* GoogleService-Info.plist */; };
 		0BC951BD2B484C8000ACDDF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BC951BC2B484C8000ACDDF2 /* GoogleService-Info.plist */; };
+		0D4204462B9FDB04004AF74C /* Ramadan_AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4204452B9FDB04004AF74C /* Ramadan_AppIcon.png */; };
+		0D4204482B9FDB7B004AF74C /* defualt_AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D4204472B9FDB7B004AF74C /* defualt_AppIcon.png */; };
 		0F3254F5F5E943E297B4B523 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43F1FD7AFC2F4C2B9BFD1E69 /* Roboto-Thin.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -149,6 +151,8 @@
 		0B22DE222B35E531006DDB64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B57F07A2B380D600024997A /* Yamak-Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Yamak-Dev.entitlements"; sourceTree = "<group>"; };
 		0BC951BC2B484C8000ACDDF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0D4204452B9FDB04004AF74C /* Ramadan_AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ramadan_AppIcon.png; sourceTree = "<group>"; };
+		0D4204472B9FDB7B004AF74C /* defualt_AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defualt_AppIcon.png; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Yamak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yamak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Yamak/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Yamak/AppDelegate.mm; sourceTree = "<group>"; };
@@ -277,9 +281,19 @@
 			path = dev;
 			sourceTree = "<group>";
 		};
+		0D4204442B9FDA92004AF74C /* AppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				0D4204472B9FDB7B004AF74C /* defualt_AppIcon.png */,
+				0D4204452B9FDB04004AF74C /* Ramadan_AppIcon.png */,
+			);
+			path = AppIcons;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* Yamak */ = {
 			isa = PBXGroup;
 			children = (
+				0D4204442B9FDA92004AF74C /* AppIcons */,
 				043DDDC72B262E1000BAF67F /* Yamak.entitlements */,
 				047215B12B23BF32005E22A7 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -570,6 +584,7 @@
 				047215CE2B23BF32005E22A7 /* Ionicons.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				790A373F7AF84151A4804786 /* Roboto-Black.ttf in Resources */,
+				0D4204482B9FDB7B004AF74C /* defualt_AppIcon.png in Resources */,
 				FE74C89E23DC46619CB1DEAE /* Roboto-BlackItalic.ttf in Resources */,
 				58F57B34BB834E1BB22D76CD /* Roboto-Bold.ttf in Resources */,
 				047215D62B23BF32005E22A7 /* FontAwesome6_Brands.ttf in Resources */,
@@ -590,6 +605,7 @@
 				2A5BBFA10B7D4732B6DF0505 /* Roboto-MediumItalic.ttf in Resources */,
 				603B0E0921504A5194F317AD /* Roboto-Regular.ttf in Resources */,
 				047215C52B23BF32005E22A7 /* Fontisto.ttf in Resources */,
+				0D4204462B9FDB04004AF74C /* Ramadan_AppIcon.png in Resources */,
 				047215D52B23BF32005E22A7 /* SimpleLineIcons.ttf in Resources */,
 				0BC951BD2B484C8000ACDDF2 /* GoogleService-Info.plist in Resources */,
 				047215D12B23BF32005E22A7 /* FontAwesome.ttf in Resources */,
