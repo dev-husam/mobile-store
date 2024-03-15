@@ -46,7 +46,7 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>Ramadan_AppIcon</string>
+				<string>defualt_AppIcon</string>
 			</array>
 			<key>UINewsstandBindingEdge</key>
 			<string>UINewsstandBindingEdgeLeft</string>
@@ -110,6 +110,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Yamak uses your device's camera to capture photos and videos, allowing you to create and share moments with your contacts seamlessly</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>$(PRODUCT_NAME) use your location to find the nearest available vehicles for a more convenient and efficient service</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
