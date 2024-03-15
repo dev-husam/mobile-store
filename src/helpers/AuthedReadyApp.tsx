@@ -1,15 +1,13 @@
-import { Alert, Linking, StyleSheet, } from 'react-native'
+import { StyleSheet, } from 'react-native'
 import React, { useEffect } from 'react'
 import { useUserLocationStore } from '../store/userLocation.store';
 import userCurrentLocation from '../hooks/userCurrentLocation';
-import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 import DrawerStackNavigator from '../navigations/drawerStackNavigator';
 import { setStorageValues } from './AppAsyncStoreage';
 import { AsyncStorageConstants, NotificationTopicConstants, isIos } from '../constants/CommonConsstats';
 import useNotification from '../notification/useNotification';
 import { updateUserProfile } from '../apis/users.api';
-import { useNavigation } from '@react-navigation/native';
 import { initFreshChat } from '../services/freshchat/freshchat.config';
 import { initSentry } from '../services/sentry/sentry.config';
 

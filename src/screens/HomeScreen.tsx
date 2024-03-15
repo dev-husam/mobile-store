@@ -11,13 +11,6 @@ import { getAllVehicles } from "../apis/vehicles.api";
 import { useServicesStore } from "../store/services.store";
 import { useAddsStore } from "../store/adds.store";
 import { useVehicleStore } from "../store/vehicles.store";
-import Config from "react-native-config";
-import * as Sentry from "@sentry/react-native";
-import { captureException } from "../services/sentry/sentry.config";
-
-
-
-console.log({ env: Config.NODE_ENV });
 
 
 export type Props = {
@@ -53,6 +46,25 @@ const HomeScreen: React.FC<Props> = () => {
     setVehicles(vehicles)
   }
 
+  async function handlePress(iconName: string) {
+    console.log("pressed");
+
+    try {
+      changeIcon(iconName).then(res => {
+        console.log({ res });
+
+      });
+
+      // getIcon().then(res => {
+      //   console.log("res ", res);
+
+      // });
+    } catch (error) {
+      console.log(error);
+
+    }
+  }
+
   return (
     <ScrollView
       contentContainerStyle={{ flexGrow: 1 }}
@@ -60,6 +72,7 @@ const HomeScreen: React.FC<Props> = () => {
         <RefreshControl
           refreshing={refreshing}
           onRefresh={pullToRefreshFunction}
+
         />}
       showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
