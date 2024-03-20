@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { useEffect, } from "react";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet"
-import { changeIcon, } from 'react-native-change-icon';
+// import { changeIcon, } from 'react-native-change-icon';
 
 import AuthedReadyApp from "./src/helpers/AuthedReadyApp";
 import AuthStackNavigator from "./src/navigations/AuthStackNavigator";
@@ -28,18 +28,18 @@ export function RootFun() {
     useEffect(() => {
         getStorageItem();
         callAppApis();
-        setAppIconImage()
+        // setAppIconImage()
     }, [])
 
-    const setAppIconImage = async () => {
-        try {
-            if (isIos)
-                changeIcon("Ramadan_AppIcon")
-        } catch (error) {
-            console.log("error setting icon", error)
+    // const setAppIconImage = async () => {
+    //     try {
+    //         if (isIos)
+    //             changeIcon("Ramadan_AppIcon")
+    //     } catch (error) {
+    //         console.log("error setting icon", error)
 
-        }
-    }
+    //     }
+    // }
 
     //check first lunch app view onboarding
     const getStorageItem = async () => {

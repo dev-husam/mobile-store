@@ -29,7 +29,14 @@ const HomeStackNavigator = () => {
                 </View>
                 ,
                 headerLeft: () => <View style={styles.imageContainer}>
-                    <PressbleAppIcon onPress={() => { navigation.navigate(ScreenNames.Map_Screen) }} name='map-marker-radius-outline' color={AppColorsTheme2.white} size={30} type="MaterialCommunityIcons" />
+                    <PressbleAppIcon 
+                    onPress={() => { 
+                        // navigation.navigate(ScreenNames.Map_Screen) 
+                        }}
+                         name='cart-outline' 
+                         color={AppColorsTheme2.white} 
+                         size={25}
+                          type="MaterialCommunityIcons" />
                 </View>,
                 headerStyle: {
                     backgroundColor: AppColorsTheme2.primary

@@ -46,24 +46,7 @@ const HomeScreen: React.FC<Props> = () => {
     setVehicles(vehicles)
   }
 
-  async function handlePress(iconName: string) {
-    console.log("pressed");
 
-    try {
-      changeIcon(iconName).then(res => {
-        console.log({ res });
-
-      });
-
-      // getIcon().then(res => {
-      //   console.log("res ", res);
-
-      // });
-    } catch (error) {
-      console.log(error);
-
-    }
-  }
 
   return (
     <ScrollView
@@ -77,10 +60,10 @@ const HomeScreen: React.FC<Props> = () => {
       showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         {/* <Text>{Config.NODE_ENV}</Text> */}
-        <ServicesList />
+        {/* <ServicesList />
         <AddsList />
         <VehiclesList />
-        <ViewMap />
+        <ViewMap /> */}
       </View>
     </ScrollView>
   );

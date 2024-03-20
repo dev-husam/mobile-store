@@ -5,6 +5,7 @@ import { ScreenNames, StackNames } from '../constants/ScreenNames';
 import MapScreen from '../screens/MapScreen';
 import HomeStackNavigator from './HomeStackNAvigator';
 import ProfileStack from './ProfileStack';
+import CartStack from './CartStack';
 // import HomeStackNavigator from './HomeStackNavigator.tsx';
 
 const Tab = createBottomTabNavigator();
@@ -30,13 +31,24 @@ export default function TabNavigator() {
                 }}
             />
             <Tab.Screen
-                name={ScreenNames.Map_Screen} component={MapScreen}
+                name={ScreenNames.CATEGORY_SCREEN} 
+                component={MapScreen}
                 options={{
                     tabBarIcon: ({ color, size, focused }) => {
-                        return <AppIcon type='Ionicons' color={color} name='map' />
+                        return <AppIcon type="MaterialIcons" color={color} name='category' />
                     }
                 }}
             />
+                  <Tab.Screen
+                name={StackNames.CART_STACK} 
+                component={CartStack}
+                options={{
+                    tabBarIcon: ({ color, size, focused }) => {
+                        return <AppIcon type='Ionicons' color={color} name="cart" />
+                    }
+                }}
+            />
+
             <Tab.Screen
                 options={{
                     tabBarIcon: ({ color, size, focused }) => {

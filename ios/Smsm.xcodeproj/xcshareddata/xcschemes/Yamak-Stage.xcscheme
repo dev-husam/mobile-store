@@ -26,7 +26,7 @@
                BlueprintIdentifier = "042DFB472B26E2D00076AD2F"
                BuildableName = "Yamak-Stage.app"
                BlueprintName = "Yamak-Stage"
-               ReferencedContainer = "container:Yamak.xcodeproj">
+               ReferencedContainer = "container:Smsm.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "042DFB472B26E2D00076AD2F"
             BuildableName = "Yamak-Stage.app"
             BlueprintName = "Yamak-Stage"
-            ReferencedContainer = "container:Yamak.xcodeproj">
+            ReferencedContainer = "container:Smsm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,7 +72,7 @@
             BlueprintIdentifier = "042DFB472B26E2D00076AD2F"
             BuildableName = "Yamak-Stage.app"
             BlueprintName = "Yamak-Stage"
-            ReferencedContainer = "container:Yamak.xcodeproj">
+            ReferencedContainer = "container:Smsm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

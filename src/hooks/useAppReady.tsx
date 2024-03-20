@@ -52,14 +52,14 @@ export function useAppReady(
     const lang = await getStorageValues(AsyncStorageConstants.languageKey);
     if (!lang) AsyncStorage.setItem(AsyncStorageConstants.languageKey, AppLanguages.english);
 
-    if (isNewUpdate) {
-      if (parseFloat(appVersion) < appSettingRecommended) {
-        forceUpdate = true
-      }
-      await showModal({
-        content: <AppForceUpdateContent isForceUpdate={forceUpdate} cancelMessage={"update later"} onCancel={handleUpdateLaterPress} onConfirm={handleUpdatePress} message={"Please Update The App To The Newer Version"} title={"Update Required"} />
-      })
-    }
+    // if (isNewUpdate) {
+    //   if (parseFloat(appVersion) < appSettingRecommended) {
+    //     forceUpdate = true
+    //   }
+    //   await showModal({
+    //     content: <AppForceUpdateContent isForceUpdate={forceUpdate} cancelMessage={"update later"} onCancel={handleUpdateLaterPress} onConfirm={handleUpdatePress} message={"Please Update The App To The Newer Version"} title={"Update Required"} />
+    //   })
+    // }
 
 
 

@@ -23,11 +23,14 @@ export const ScreenNames = {
     JOIN_US_SCREEN: "JoinUs",
     ABOUT_YAMAK_APP: "AboutYamak",
     FRESHCHAT_SCREEN: "FreshChat",
-
+    CART_SCREEN: "CART_SCREEN",
+    CATEGORY_SCREEN: "CATEGORY_SCREEN",
 }
 
 export const StackNames = {
     Home_Stack: "Home_Stack",
     Profile_Stack: "Profile_Stack",
-    Map_Stack: "Map_Stack"
+    Map_Stack: "Map_Stack",
+    CART_STACK: "CART_STACK"
+
 }

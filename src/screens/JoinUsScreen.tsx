@@ -6,7 +6,7 @@ import { horizontalScale } from '../helpers/Scalling'
 import AppText from '../components/ui/AppText'
 import AppIcon from '../components/ui/appIcon'
 import FilledButton from '../components/ui/common/FilledButton'
-import { androidPlayStoreLink, iosAppStoreLink, yamakWebsite } from '../constants/CommonConsstats'
+import { androidPlayStoreLink, iosAppStoreLink, AppGlobalWebiste } from '../constants/CommonConsstats'
 import Clipboard from '@react-native-clipboard/clipboard'
 import { useTranslation } from 'react-i18next'
 import AppHeader from '../components/AppHeader'
@@ -95,8 +95,8 @@ const JoinUsScreen = ({ navigation }) => {
                 <View >
                     <View style={{}}>
                         <View style={{ flexDirection: "row", backgroundColor: AppColorsTheme2.primaryLight, marginBottom: 8 }}>
-                            <AppText style={{ flex: 1 }} >{yamakWebsite}</AppText>
-                            <FilledButton onPress={() => copyToClipBoardHandler(yamakWebsite)} style={{ minWidth: 0, borderRadius: 8, padding: 8, backgroundColor: AppColorsTheme2.primary, width: 120 }} >Copy</FilledButton>
+                            <AppText style={{ flex: 1 }} >{AppGlobalWebiste}</AppText>
+                            <FilledButton onPress={() => copyToClipBoardHandler(AppGlobalWebiste)} style={{ minWidth: 0, borderRadius: 8, padding: 8, backgroundColor: AppColorsTheme2.primary, width: 120 }} >Copy</FilledButton>
                         </View>
                     </View>
                 </View>
