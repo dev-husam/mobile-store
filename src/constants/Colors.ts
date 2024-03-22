@@ -19,7 +19,7 @@ export const AppColorsTheme2 = {
   secandaryLight: "#fdefd3",
   secondary: "#2A4B45",
   secondary200: "#d4d5e3",
-  offWhite: "#f4f1f6",
+  offWhite: "#EEFFFE",
   // backgroundColor: "#f4f1f6"
   // gray: "#e5e5e5",
   gray: "#ABB0B8",

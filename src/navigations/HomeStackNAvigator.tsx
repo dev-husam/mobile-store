@@ -11,6 +11,7 @@ import PressbleAppIcon from '../components/ui/pressbleAppIcon';
 import { useNavigation } from '@react-navigation/native';
 import AllVicelessScreen from '../screens/AllVicelessScreen';
 import NoNetworkScreen from '../screens/NoNetworkScreen';
+import ProductDetails from '../screens/ProductDetailsScreen';
 
 const HomeStack = createStackNavigator();
 
@@ -22,7 +23,7 @@ const HomeStackNavigator = () => {
             screenOptions={{ headerShown: false }}
             initialRouteName={ScreenNames.Home_Screen} >
             <HomeStack.Screen name={ScreenNames.Home_Screen} options={{
-                headerShown: true,
+                headerShown: false,
                 title: "",
                 headerRight: () => <View style={styles.imageContainer}>
                     <Image source={require("../assets/images/appLogo.png")} resizeMode={"cover"} style={styles.image} />
@@ -44,7 +45,9 @@ const HomeStackNavigator = () => {
             }}
 
                 component={HomeScreen} />
-            <HomeStack.Screen name={ScreenNames.Vehicle_Details_Screen} component={VehiclesDetailsScreen} />
+            {/* <HomeStack.Screen name={ScreenNames.Vehicle_Details_Screen} component={VehiclesDetailsScreen} /> */}
+            <HomeStack.Screen name={ScreenNames.PRODUCT_DETAILS_SCREEN} component={ProductDetails} />
+
             <HomeStack.Screen name={ScreenNames.ALL_VEHICLES_SCREEN} component={AllVicelessScreen} />
             {/* <HomeStack.Screen name={ScreenNames.No_Network_Screen} component={NoNetworkScreen} /> */}
 

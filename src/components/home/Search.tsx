@@ -5,6 +5,7 @@ import AppIcon from '../ui/appIcon'
 import { AppFonts } from '../../constants/fonts'
 import { useLanguage } from '../../hooks/useLanguage.hook'
 import PressbleAppIcon from '../ui/pressbleAppIcon'
+import { AppSizes } from '../../constants/Sizes'
 
 interface props { style?: ViewStyle, label: string, onSearch: (text: string) => void }
 const AppSearch = ({ label = "", onSearch = (text: string) => { }, style }: props) => {
@@ -28,8 +29,8 @@ const AppSearch = ({ label = "", onSearch = (text: string) => { }, style }: prop
                 placeholderTextColor={AppColorsTheme2.gray11}
 
                 onBlur={handleBlur}
-                style={{ color: AppColorsTheme2.black, flex: 1, textAlign: isArabic ? "right" : "left" }} />
-            {!searchTerm ? <AppIcon name='search' /> : <PressbleAppIcon name='close' onPress={() => setSearchTerm("")} />}
+                style={{ fontSize:AppSizes.medium, color: AppColorsTheme2.black, flex: 1, textAlign: isArabic ? "right" : "left" }} />
+            {!searchTerm ? <AppIcon name='search' color={AppColorsTheme2.gray} /> : <PressbleAppIcon name='close' onPress={() => setSearchTerm("")} />}
 
         </Pressable>
     )
@@ -41,5 +42,5 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: AppFonts.Roboto_Med
     },
-    container: { alignItems: "center", borderWidth: 1, height: 50, backgroundColor: AppColorsTheme2.secondary200, borderRadius: 20, paddingHorizontal: 10, flexDirection: "row" }
+    container: { alignItems: "center",  height: 50, backgroundColor: AppColorsTheme2.offGray, borderRadius: 20, paddingHorizontal: 10, flexDirection: "row" }
 })

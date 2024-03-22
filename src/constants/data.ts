@@ -121,3 +121,28 @@ export interface IServices {
   status?: string
 
 };
+
+export const CategoriesDataList =[
+  {id:1,title:{en:"smartphones",ar:"هواتف"}},
+  {id:2,title:{en:"HeadPhones",ar:"سماعات"}},
+  {id:3,title:{en:"Laptop",ar:"لابتوب"}},
+  // {id:4,title:{en:"",ar:""}},
+  // {id:5,title:{en:"",ar:""}}
+]
+
+export const ProductsDataList =[
+  {id:1,title:{en:"smartphones",ar:"هواتف"},price:100},
+  {id:2,title:{en:"HeadPhones",ar:"سماعات"},price:50},
+  {id:3,title:{en:"Laptop",ar:"لابتوب"},price:70},
+  {id:1,title:{en:"smartphones",ar:"هواتف"},price:100},
+  {id:2,title:{en:"HeadPhones",ar:"سماعات"},price:50},
+  {id:3,title:{en:"Laptop",ar:"لابتوب"},price:70},
+  {id:1,title:{en:"smartphones",ar:"هواتف"},price:100},
+  {id:2,title:{en:"HeadPhones",ar:"سماعات"},price:50},
+  {id:3,title:{en:"Laptop",ar:"لابتوب"},price:70},
+  {id:1,title:{en:"smartphones",ar:"هواتف"},price:100},
+  {id:2,title:{en:"HeadPhones",ar:"سماعات"},price:50},
+  {id:3,title:{en:"Laptop",ar:"لابتوب"},price:70},
+  // {id:4,title:{en:"",ar:""}},
+  // {id:5,title:{en:"",ar:""}}
+]

@@ -8,15 +8,18 @@ import AppIcon from './ui/appIcon';
 import { AppColorsTheme2 } from '../constants/Colors';
 import PressbleAppIcon from './ui/pressbleAppIcon';
 import { useLanguage } from '../hooks/useLanguage.hook';
+import AppSearch from './home/Search';
 
 
-const AppHeader = ({ RightIcon = null, rightIconProps, showBack = true, title = "", logo = true, navigation = undefined }) => {
+const AppHeader = ({ RightIcon = null, rightIconProps, showBack = false, title = "", logo = true, navigation = undefined }) => {
     const { isArabic } = useLanguage()
     const insets = useSafeAreaInsets();
 
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
+<View style={{flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
+
 
 
             <View style={{ flex: 1, alignItems: "flex-start" }}>
@@ -28,7 +31,7 @@ const AppHeader = ({ RightIcon = null, rightIconProps, showBack = true, title = 
             {
                 title && (
                     <View style={{ flex: 4, alignItems: "center" }}>
-                        <AppText color="white" size={20} >
+                        <AppText color={AppColorsTheme2.secondary} size={25} >
                             {title}
                         </AppText>
                     </View>
@@ -39,13 +42,17 @@ const AppHeader = ({ RightIcon = null, rightIconProps, showBack = true, title = 
             <View style={{ alignSelf: "center", flex: 1, alignItems: "flex-end" }}>
 
 
-                {RightIcon ? <RightIcon {...rightIconProps} /> : (<Image style={{ width: 50, height: 50 }} source={ImagePath.AppLogoPng} />
+                {RightIcon ? <RightIcon {...rightIconProps} /> : (<Image  style={{ width: 80, height: 50 }} source={ImagePath.AppLogoPng} />
                 )}
 
             </View>
 
 
-
+            </View>
+            <View style={{paddingVertical:10}}>
+            <AppSearch label='Search Anything ...' style={{width:"100%"}} />
+            </View>
+        
         </View>
     )
 }
@@ -54,10 +61,12 @@ export default AppHeader
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: "row",
+        // flexDirection: "row",
         paddingHorizontal: 16,
         backgroundColor: AppColorsTheme2.primary,
         justifyContent: "center",
         alignItems: "center",
+        borderBottomRightRadius:20,
+        borderBottomLeftRadius:20
     }
 })

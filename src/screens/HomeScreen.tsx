@@ -11,6 +11,9 @@ import { getAllVehicles } from "../apis/vehicles.api";
 import { useServicesStore } from "../store/services.store";
 import { useAddsStore } from "../store/adds.store";
 import { useVehicleStore } from "../store/vehicles.store";
+import AppHeader from "../components/AppHeader";
+import HomeCategoriesList from "../components/home/Categories/HomeCategoriesList";
+import HomeProductsList from "../components/home/Products/HomeProductsList";
 
 
 export type Props = {
@@ -49,7 +52,10 @@ const HomeScreen: React.FC<Props> = () => {
 
 
   return (
-    <ScrollView
+    <View style={{flex:1}}>
+              <AppHeader title={"Smsm"} />
+
+    {/* <ScrollView
       contentContainerStyle={{ flexGrow: 1 }}
       refreshControl={
         <RefreshControl
@@ -57,15 +63,20 @@ const HomeScreen: React.FC<Props> = () => {
           onRefresh={pullToRefreshFunction}
 
         />}
-      showsVerticalScrollIndicator={false}>
+      showsVerticalScrollIndicator={false}> */}
       <View style={styles.container}>
         {/* <Text>{Config.NODE_ENV}</Text> */}
-        {/* <ServicesList />
-        <AddsList />
-        <VehiclesList />
-        <ViewMap /> */}
+   
+   <AddsList />
+   <HomeCategoriesList />
+   <HomeProductsList />
+       {/* <ServicesList /> */}
+        {/* <ViewMap />  */}
+        {/* <VehiclesList />  */}
       </View>
-    </ScrollView>
+    {/* </ScrollView> */}
+    </View>
+
   );
 };
 

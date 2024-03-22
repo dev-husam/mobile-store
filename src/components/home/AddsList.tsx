@@ -35,8 +35,9 @@ const styles = StyleSheet.create({
     sectionContainer: {
         padding: horizontalScale(8),
         borderRadius: 10,
-        marginVertical: verticalScale(10),
-        marginHorizontal: horizontalScale(20),
+       
+        // marginVertical: verticalScale(10),
+        marginHorizontal: horizontalScale(10),
 
     }
 })

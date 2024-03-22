@@ -25,6 +25,8 @@ export const ScreenNames = {
     FRESHCHAT_SCREEN: "FreshChat",
     CART_SCREEN: "CART_SCREEN",
     CATEGORY_SCREEN: "CATEGORY_SCREEN",
+    PRODUCT_DETAILS_SCREEN: "PRODUCT_DETAILS_SCREEN",
+
 }
 
 export const StackNames = {
