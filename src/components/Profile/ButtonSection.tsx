@@ -1,6 +1,7 @@
 import { Alert, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import ImgPath from "../../constants/AppImgs"
 
 import ProfileLables from "./ProfileLables";
 import LanguagePicker from "../languagePicker";
@@ -83,7 +84,7 @@ const ButtonSection = () => {
           onPress={navigateOnPressButton.bind(this, ScreenNames.Notification_Screen)}
         /> */}
         <ProfileLables
-          imageSource={require("../../assets/images/AppLogoIcon.png")}
+          imageSource={ImgPath.AppLogoPng}
           iconType="image"
           iconName={"about"}
           iconColor={AppColorsTheme2.primary}

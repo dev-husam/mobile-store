@@ -30,7 +30,9 @@ const styles = StyleSheet.create({
     container: {
         zIndex: 999,
         position: "absolute",
-        flex: 1, left: 20,
+        flex: 1,
+        top:50,
+        left: 20,
         borderWidth: 1,
         padding: 4,
         borderRadius: 10,

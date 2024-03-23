@@ -28,7 +28,7 @@ const HomeProductItem = ({item,navigation}) => {
         </View>
 
         </View>
-        <AppText size={18} weight="700" alignItems="flex-start">$ {item.price}</AppText>
+        <AppText size={18} weight="700" alignItems="flex-start">KD {item.price}</AppText>
 
         </View>
      

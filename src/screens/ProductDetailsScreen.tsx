@@ -146,10 +146,12 @@ const ProductDetailsScreen = ({route}) => {
           <VehicelsDetailsPh />
       )
   return (
-      <Screen style={{ backgroundColor: AppColorsTheme2.offWhite }}>
+    <View style={{flex:1}}>
+
+<GoBackButton />
 
           <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, }} >
-              <GoBackButton />
+          
               <View style={{ borderBottomWidth: 0.3, justifyContent: "center", alignItems: "center", backgroundColor: AppColorsTheme2.white }}>
                   <Image style={{ height: 250, width: 300 }} resizeMode={"contain"} source={ImgPath.AppLogoPng} />
               </View>
@@ -161,36 +163,7 @@ const ProductDetailsScreen = ({route}) => {
                       </Text>
                   </View>
                   <View style={{ padding: 20, }}>
-                      <AppText style={{ alignItems: "flex-start" }} textStyle={styles.heading}>{t("Driver")}</AppText>
-
-                      <View style={{ marginBottom: 20, backgroundColor: AppColorsTheme2.white, borderRadius: 10, overflow: 'hidden' }}>
-                          <View style={{ flexDirection: "row", alignItems: "center", paddingHorizontal: 20, marginVertical: 10 }}>
-                              <View style={{ borderWidth: 1, width: 80, height: 80, borderRadius: 40, justifyContent: "center", alignItems: "center" }}>
-                                  <Image style={{ width: 60, height: 60, borderRadius: 40 }} source={{ uri: vehicle?.currentDriver?.photo ? vehicle?.currentDriver?.photo : "https://res.cloudinary.com/db9nm5unr/image/upload/v1694248776/pngwing.com_blkll6.png" }} />
-                              </View>
-
-                              <View>
-                                  <AppText style={styles.dirverText}>
-                                      {t("Name")} : {vehicle?.currentDriver?.name}
-                                  </AppText>
-                                  <AppText style={styles.dirverText}>
-                                      {/* {t("Status")} : {vehicle?.workStatus} */}
-                                      {t("Status")} : {t("Online")}
-
-                                  </AppText>
-                                  {/* <AppText style={styles.dirverText}>
-                                      {t("Phone")} : {vehicle?.currentDriver?.phoneNum}
-                                  </AppText> */}
-                              </View>
-
-                          </View>
-                      </View>
-                      <View style={{ marginBottom: 20 }} >
-                          <AppText style={{ alignItems: "flex-start" }} textStyle={styles.heading}>{t("AvailableServices")}</AppText>
-                          <AvailableServiceList services={vehicle?.services} pickedServices={pickedServices} setPickedServices={setPickedServices} />
-                      </View>
-
-
+           
                       <ShareWithus />
            
                       <YourSaftyMatter />
@@ -240,8 +213,8 @@ const ProductDetailsScreen = ({route}) => {
 
           </View>
 
-      </Screen >
-  )
+          </View> 
+           )
 }
 
 export default ProductDetailsScreen

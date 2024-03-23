@@ -67,8 +67,8 @@ const HomeScreen: React.FC<Props> = () => {
       <View style={styles.container}>
         {/* <Text>{Config.NODE_ENV}</Text> */}
    
-   <AddsList />
-   <HomeCategoriesList />
+   {/* <AddsList />
+   <HomeCategoriesList /> */}
    <HomeProductsList />
        {/* <ServicesList /> */}
         {/* <ViewMap />  */}

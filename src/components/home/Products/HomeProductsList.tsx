@@ -9,6 +9,8 @@ import { horizontalScale } from '../../../helpers/Scalling';
 import HomeProductItem from './HomeProductItem';
 import { CategoriesDataList, ProductsDataList } from '../../../constants/data';
 import { useNavigation } from '@react-navigation/native';
+import AddsList from '../AddsList';
+import HomeCategoriesList from '../Categories/HomeCategoriesList';
 
 
 const RenderItem = ({ item,navigation }: any) => (
@@ -31,6 +33,14 @@ const HomeProductsList = () => {
                 </AppText>
     </View> */}
     <FlatList
+    ListHeaderComponent={()=>{
+        return(
+            <>
+            <AddsList />
+            <HomeCategoriesList />
+            </>
+        )
+    }}
     keyExtractor={(item,index)=>{
         return `${item.id}-${index}`}}
     style={{
