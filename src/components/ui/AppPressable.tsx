@@ -1,18 +1,25 @@
-import { Pressable, StyleSheet, Text, View, ViewStyle } from 'react-native'
-import React from 'react'
+import {Pressable, StyleSheet, ViewStyle} from 'react-native';
+import React, {forwardRef} from 'react';
 
-const AppPressable = ({ children, style, onPress }: { children?: React.ReactNode, style?: ViewStyle, onPress?: () => void }) => {
-    return (
-        <Pressable
-            onPress={onPress}
-            style={({ pressed }) => [style, pressed && styles.pressed]} >
-            {children}
-        </Pressable>
-    )
+interface props {
+  children?: React.ReactNode;
+  style?: ViewStyle;
+
+  onPress?: () => void;
 }
+const AppPressable = forwardRef(({children, style, onPress}: props, ref) => {
+  return (
+    <Pressable
+      ref={ref}
+      onPress={onPress}
+      style={({pressed}) => [style, pressed && styles.pressed]}>
+      {children}
+    </Pressable>
+  );
+});
 
-export default AppPressable
+export default AppPressable;
 
 const styles = StyleSheet.create({
-    pressed: { opacity: 0.7 }
-})
+  pressed: {opacity: 0.7},
+});

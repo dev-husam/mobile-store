@@ -1,10 +1,12 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
+import config from "react-native-config"
 import { AsyncStorageConstants, isDev } from "../constants/CommonConsstats";
 import NetInfo from '@react-native-community/netinfo';
 import { Alert, Platform } from "react-native";
 import i18next from "i18next";
 import { getStorageValues } from "../helpers/AppAsyncStoreage";
+console.log({config});
 
 //localhost
 // const baseUrl = "http://localhost:5001/api/mobile/v1/"
@@ -13,7 +15,7 @@ import { getStorageValues } from "../helpers/AppAsyncStoreage";
 //phone a33
 // const baseUrl = "http://192.168.131.228:5001/api/mobile/v1/"
 //server
-const baseUrl = process.env.EXPO_PUBLIC_API_PRO || "https://yamak-kw.com/api/mobile/v1/"
+const baseUrl = config.API_URL || "https://yamak-kw.com/api/mobile/v1/"
 
 
 
@@ -60,9 +62,11 @@ const setAuthorizationHeader = async (config: any) => {
 
 const setDynamicBaseURL = async (config) => {
   let baseURL = await AsyncStorage.getItem(AsyncStorageConstants.env);
-  baseURL = baseURL ? JSON.parse(baseURL)?.url : null
+  baseURL = baseURL ? JSON.parse(baseURL)?.url : "http://192.168.1.57:5001/api/mobile"
   // baseURL = "http://192.168.23.228:5001/api/mobile/v1/"
-  config.baseURL = baseURL || "https://yamak-kw.com/api/mobile/v1/"
+  // config.baseURL = baseURL || "https://yamak-kw.com/api/mobile/v1/"
+  console.log({baseURL});
+  
   return config;
 };
 
@@ -92,7 +96,7 @@ export const makeApiCall = async ({ method, url, data, params }: apiCallProps) =
       const response = await client(config);
 
       if (isDev || __DEV__) {
-        // console.log("Api request ==> " + JSON.stringify(config))
+        console.log("Api request ==> " + JSON.stringify(config))
         // console.log("Api response ==> " + JSON.stringify(response.data))
       }
 

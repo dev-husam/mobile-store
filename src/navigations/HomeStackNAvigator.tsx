@@ -47,16 +47,10 @@ const HomeStackNavigator = () => {
                 component={HomeScreen} />
             {/* <HomeStack.Screen name={ScreenNames.Vehicle_Details_Screen} component={VehiclesDetailsScreen} /> */}
             <HomeStack.Screen name={ScreenNames.PRODUCT_DETAILS_SCREEN} component={ProductDetails} />
+            <HomeStack.Screen name={ScreenNames.Search_Screen} component={SearchScreen} />
 
-            <HomeStack.Screen name={ScreenNames.ALL_VEHICLES_SCREEN} component={AllVicelessScreen} />
             {/* <HomeStack.Screen name={ScreenNames.No_Network_Screen} component={NoNetworkScreen} /> */}
 
-            <HomeStack.Screen
-                options={{
-                    presentation: "modal"
-                }}
-                name={ScreenNames.Search_Screen}
-                component={SearchScreen} />
 
         </HomeStack.Navigator>
     )

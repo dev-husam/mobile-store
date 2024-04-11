@@ -1,46 +1,62 @@
-import { Pressable, StyleSheet, Text, TextInput, View, ViewStyle } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { AppColorsTheme2 } from '../../constants/Colors'
-import AppIcon from '../ui/appIcon'
-import { AppFonts } from '../../constants/fonts'
-import { useLanguage } from '../../hooks/useLanguage.hook'
-import PressbleAppIcon from '../ui/pressbleAppIcon'
-import { AppSizes } from '../../constants/Sizes'
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  ViewStyle,
+} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {useTranslation} from 'react-i18next';
 
-interface props { style?: ViewStyle, label: string, onSearch: (text: string) => void }
-const AppSearch = ({ label = "", onSearch = (text: string) => { }, style }: props) => {
-    const { isArabic } = useLanguage()
-    const [searchTerm, setSearchTerm] = useState('');
-    useEffect(() => {
-        onSearch(searchTerm)
-    }, [searchTerm]);
+import {AppColorsTheme2} from '../../constants/Colors';
+import AppIcon from '../ui/appIcon';
+import {AppFonts} from '../../constants/fonts';
+import {useLanguage} from '../../hooks/useLanguage.hook';
+import PressbleAppIcon from '../ui/pressbleAppIcon';
+import AppText from '../ui/AppText';
 
-    const handleBlur = () => {
-        // Trigger onSearch when the user finishes typing
-        onSearch(searchTerm);
-    };
-    return (
-        <Pressable
-            style={[styles.container, style && style]}>
-            <TextInput
-                onChangeText={(text) => setSearchTerm(text)}
-                value={searchTerm}
-                placeholder={label}
-                placeholderTextColor={AppColorsTheme2.gray11}
-
-                onBlur={handleBlur}
-                style={{ fontSize:AppSizes.medium, color: AppColorsTheme2.black, flex: 1, textAlign: isArabic ? "right" : "left" }} />
-            {!searchTerm ? <AppIcon name='search' color={AppColorsTheme2.gray} /> : <PressbleAppIcon name='close' onPress={() => setSearchTerm("")} />}
-
-        </Pressable>
-    )
+interface props {
+  onPress: () => {};
+  style?: ViewStyle;
+  label: string;
+  onSearch: (text: string) => void;
 }
+const AppSearch = ({
+  onPress,
+  label = '',
+  onSearch = (text: string) => {},
+  style,
+}: props) => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const {t} = useTranslation();
 
-export default AppSearch
+  return (
+    <Pressable onPress={onPress} style={[styles.container, style && style]}>
+      <AppText color={'gray'} alignItems="flex-start" style={{flex: 1}}>
+        {t('Search')}
+      </AppText>
+      {!searchTerm ? (
+        <AppIcon name="search" color={AppColorsTheme2.gray} />
+      ) : (
+        <PressbleAppIcon name="close" onPress={() => setSearchTerm('')} />
+      )}
+    </Pressable>
+  );
+};
+
+export default AppSearch;
 
 const styles = StyleSheet.create({
-    text: {
-        fontFamily: AppFonts.Roboto_Med
-    },
-    container: { alignItems: "center",  height: 50, backgroundColor: AppColorsTheme2.offGray, borderRadius: 20, paddingHorizontal: 10, flexDirection: "row" }
-})
+  text: {
+    fontFamily: AppFonts.Roboto_Med,
+  },
+  container: {
+    alignItems: 'center',
+    height: 50,
+    backgroundColor: AppColorsTheme2.offGray,
+    borderRadius: 20,
+    paddingHorizontal: 10,
+    flexDirection: 'row',
+  },
+});

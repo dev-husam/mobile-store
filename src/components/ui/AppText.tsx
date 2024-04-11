@@ -1,26 +1,20 @@
-import { FlexAlignType, StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native'
-import React, { ReactNode } from 'react'
-import { AppFonts } from '../../constants/fonts'
-import { AppSizes } from '../../constants/Sizes'
-import { AppColorsTheme2 } from '../../constants/Colors'
-import { useLanguage } from '../../hooks/useLanguage.hook'
+import React, {ReactNode} from 'react';
+import {Text, TextStyle, View, ViewStyle, TextProps} from 'react-native';
+import {useLanguage} from '../../hooks/useLanguage.hook';
+import {AppSizes} from '../../constants/Sizes';
+import {AppColorsTheme2} from '../../constants/Colors';
+import {AppFonts} from '../../constants/fonts';
 
-
-
-const AppText = ({ onPress, weight = "normal", children, size = AppSizes.medium, color = AppColorsTheme2.black, textStyle, style, alignItems = "center", nlines = undefined }: props) => {
-    const { isArabic } = useLanguage()
-
-    return (
-        <View style={[{ justifyContent: "center", alignItems: alignItems }, style && style]}>
-            <Text onPress={onPress} numberOfLines={nlines} style={[{ fontFamily: AppFonts.Roboto_Med, fontSize: size, color, fontWeight: weight }, isArabic && styles.arabicRight, textStyle && textStyle,]}>{children}</Text>
-        </View>
-    )
-}
-
-export default AppText
-interface props {
-    onPress?: () => void, nlines?: number, alignItems?: FlexAlignType, children: ReactNode, size?: number, textStyle?: TextStyle, style?: ViewStyle, color?: string,
-    weight?:
+interface AppTextProps extends TextProps {
+  onPress?: () => void;
+  nlines?: number;
+  alignItems?: 'flex-start' | 'center' | 'flex-end';
+  children: ReactNode;
+  size?: number;
+  textStyle?: TextStyle;
+  style?: ViewStyle;
+  color?: string;
+  weight?:
     | 'normal'
     | 'bold'
     | '100'
@@ -31,10 +25,43 @@ interface props {
     | '600'
     | '700'
     | '800'
-    | '900'
+    | '900';
 }
-const styles = StyleSheet.create({
-    arabicRight: {
-        textAlign: "left"
-    }
-})
+
+const AppText = ({
+  onPress,
+  weight = 'normal',
+  children,
+  size = AppSizes.medium,
+  color = AppColorsTheme2.black,
+  textStyle,
+  style,
+  alignItems = 'flex-start',
+  nlines,
+  ...restProps
+}: AppTextProps) => {
+  const {isArabic} = useLanguage();
+
+  return (
+    <View style={[{justifyContent: 'center', alignItems}, style]}>
+      <Text
+        onPress={onPress}
+        numberOfLines={nlines}
+        style={[
+          {
+            fontFamily: AppFonts.Roboto_Med,
+            fontSize: size,
+            color,
+            fontWeight: weight,
+            textAlign: isArabic ? 'left' : 'auto',
+          },
+          textStyle && textStyle,
+        ]}
+        {...restProps}>
+        {children}
+      </Text>
+    </View>
+  );
+};
+
+export default AppText;

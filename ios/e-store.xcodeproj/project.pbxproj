@@ -42,10 +42,10 @@
 		58F57B34BB834E1BB22D76CD /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDD64E8D00B242B1A71F9443 /* Roboto-Bold.ttf */; };
 		603B0E0921504A5194F317AD /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27CE7AE1E97046DD946AF644 /* Roboto-Regular.ttf */; };
 		6AF57926CF124F57BACAF081 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2981234E1194C52A8AD8E80 /* Roboto-BoldItalic.ttf */; };
-		784C864A900A10C67545AE21 /* libPods-Yamak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 598D6694FC67CB0995EA855A /* libPods-Yamak.a */; };
 		790A373F7AF84151A4804786 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE484CA4AF594579A98AF1DC /* Roboto-Black.ttf */; };
 		7B65466D42AE4E69B6C1DA15 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C43704E0741998EEDEBC7 /* Roboto-Italic.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		CA81C155ADBC92DDA4393CD4 /* libPods-e-store.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CC6E89E01421101BD2F92F /* libPods-e-store.a */; };
 		D27874AB13A348519BE21B74 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6560A3CFA1654910BB9E3C0D /* Roboto-Light.ttf */; };
 		FE74C89E23DC46619CB1DEAE /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83807D9A3C9E4EF68AE751F7 /* Roboto-BlackItalic.ttf */; };
 /* End PBXBuildFile section */
@@ -53,6 +53,7 @@
 /* Begin PBXFileReference section */
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* YamakTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YamakTests.m; sourceTree = "<group>"; };
+		011F0D14BCD9D4AB1D31E19A /* Pods-e-store.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-store.debug.xcconfig"; path = "Target Support Files/Pods-e-store/Pods-e-store.debug.xcconfig"; sourceTree = "<group>"; };
 		043DDDC72B262E1000BAF67F /* Yamak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Yamak.entitlements; path = Yamak/Yamak.entitlements; sourceTree = "<group>"; };
 		047215B22B23BF32005E22A7 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		047215B32B23BF32005E22A7 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
@@ -78,7 +79,7 @@
 		0D042B702BA10A5200EC25AE /* Ramadan_AppIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ramadan_AppIcon@3x.png"; sourceTree = "<group>"; };
 		0D042B712BA10A5200EC25AE /* defualt_AppIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defualt_AppIcon@3x.png"; sourceTree = "<group>"; };
 		0D042B722BA10A5200EC25AE /* defualt_AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defualt_AppIcon@2x.png"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Smsm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smsm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* e-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Yamak/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Yamak/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Yamak/Images.xcassets; sourceTree = "<group>"; };
@@ -88,7 +89,7 @@
 		23DFD69DC5C203DA825F3430 /* Pods-Yamak-Yamak-Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamak-Yamak-Dev.release.xcconfig"; path = "Target Support Files/Pods-Yamak-Yamak-Dev/Pods-Yamak-Yamak-Dev.release.xcconfig"; sourceTree = "<group>"; };
 		27CE7AE1E97046DD946AF644 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		43F1FD7AFC2F4C2B9BFD1E69 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../src/assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		598D6694FC67CB0995EA855A /* libPods-Yamak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47CC6E89E01421101BD2F92F /* libPods-e-store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-e-store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6560A3CFA1654910BB9E3C0D /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../src/assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		6EC2C3B9679BB46943FADD08 /* libPods-Yamak-Yamak-Dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak-Yamak-Dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD965A60D51E32D69DC2FDD /* Pods-Yamak-Yamak-Stage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yamak-Yamak-Stage.release.xcconfig"; path = "Target Support Files/Pods-Yamak-Yamak-Stage/Pods-Yamak-Yamak-Stage.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		CDD64E8D00B242B1A71F9443 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		D846AA17669A43BF938E7A5B /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-MediumItalic.ttf"; path = "../src/assets/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		E815023826AFEF52AD4C3C3A /* libPods-Yamak-Yamak-Stage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Yamak-Yamak-Stage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC6E316FB00C6D80FE4DD496 /* Pods-e-store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-store.release.xcconfig"; path = "Target Support Files/Pods-e-store/Pods-e-store.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EE484CA4AF594579A98AF1DC /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../src/assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
 		EE75EDDFCF4B4FF9A3278E64 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../src/assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -114,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				784C864A900A10C67545AE21 /* libPods-Yamak.a in Frameworks */,
+				CA81C155ADBC92DDA4393CD4 /* libPods-e-store.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,9 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				598D6694FC67CB0995EA855A /* libPods-Yamak.a */,
 				6EC2C3B9679BB46943FADD08 /* libPods-Yamak-Yamak-Dev.a */,
 				E815023826AFEF52AD4C3C3A /* libPods-Yamak-Yamak-Stage.a */,
+				47CC6E89E01421101BD2F92F /* libPods-e-store.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -249,7 +251,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Smsm.app */,
+				13B07F961A680F5B00A75B9A /* e-store.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,6 +265,8 @@
 				23DFD69DC5C203DA825F3430 /* Pods-Yamak-Yamak-Dev.release.xcconfig */,
 				1BB9FC47660D23093D6FEDE2 /* Pods-Yamak-Yamak-Stage.debug.xcconfig */,
 				7CD965A60D51E32D69DC2FDD /* Pods-Yamak-Yamak-Stage.release.xcconfig */,
+				011F0D14BCD9D4AB1D31E19A /* Pods-e-store.debug.xcconfig */,
+				EC6E316FB00C6D80FE4DD496 /* Pods-e-store.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -270,9 +274,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* Smsm */ = {
+		13B07F861A680F5B00A75B9A /* e-store */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Smsm" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "e-store" */;
 			buildPhases = (
 				0195EE037ED5552618209C5A /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -289,9 +293,9 @@
 			);
 			dependencies = (
 			);
-			name = Smsm;
+			name = "e-store";
 			productName = Yamak;
-			productReference = 13B07F961A680F5B00A75B9A /* Smsm.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* e-store.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -307,7 +311,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Smsm" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "e-store" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -320,7 +324,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Smsm */,
+				13B07F861A680F5B00A75B9A /* e-store */,
 			);
 		};
 /* End PBXProject section */
@@ -405,7 +409,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Yamak-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-e-store-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -418,15 +422,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yamak/Pods-Yamak-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-e-store/Pods-e-store-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yamak/Pods-Yamak-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-e-store/Pods-e-store-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yamak/Pods-Yamak-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-e-store/Pods-e-store-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		73553F475E13411A864649DE /* Upload Debug Symbols to Sentry */ = {
@@ -449,15 +453,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yamak/Pods-Yamak-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-e-store/Pods-e-store-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Yamak/Pods-Yamak-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-e-store/Pods-e-store-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yamak/Pods-Yamak-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-e-store/Pods-e-store-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D9479870904C6360B78EC627 /* [CP-User] [RNFB] Core Configuration */ = {
@@ -509,7 +513,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 924543781C379D9571ABBFE1 /* Pods-Yamak.debug.xcconfig */;
+			baseConfigurationReference = 011F0D14BCD9D4AB1D31E19A /* Pods-e-store.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -533,7 +537,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.smsm.kw;
-				PRODUCT_NAME = Smsm;
+				PRODUCT_NAME = "e-store";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -543,7 +547,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C02FE379846B632768E3E4E4 /* Pods-Yamak.release.xcconfig */;
+			baseConfigurationReference = EC6E316FB00C6D80FE4DD496 /* Pods-e-store.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -566,7 +570,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.smsm.kw;
-				PRODUCT_NAME = Smsm;
+				PRODUCT_NAME = "e-store";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -746,7 +750,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Smsm" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "e-store" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -755,7 +759,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Smsm" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "e-store" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
